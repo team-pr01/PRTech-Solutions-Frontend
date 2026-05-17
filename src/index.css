@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-Inter: Inter, sans-serif;
+  --font-Manrope: "Manrope", sans-serif;
+  --font-Playfair-Display: "Playfair Display", serif;
+
+  /* Colors */
+
+  /* Primary */
+
+  --color-primary-10: #06A0ED;
+  --color-primary-15: "#6D86F9";
+
+  /* secondary */
+  --color-secondary-10: #;
+  --color-secondary-20: #262b35;
+  --color-secondary-30: #232323;
+  --color-secondary-40: #313642;
+  --color-secondary-50: #020817;
+  --color-secondary-60: #0a1222;
+  --color-secondary-65: #1A1F2C;
+
+  /* neutral */
+
+  --color-neutral-10: #DBE2EB;
+  --color-neutral-15: #ffffff0d;
+  --color-neutral-20: #000;
+  --color-neutral-30: #d8d8d8;
+  --color-neutral-40: #bababa;
+  --color-neutral-50: #b3b3b3;
+  --color-neutral-60: #aaaaaa;
+  --color-neutral-65: #979797;
+  --color-neutral-70: #616161;
+  --color-neutral-80: #272727;
+  --color-neutral-85: #c7c7c726;
+  --color-neutral-90: #727272;
+
+  /* Shadows */
+   --shadow-button: 0 4px 8px 0 rgba(57, 78, 102, 0.25), 0 0 0 1px #687D96;
+
+  /* Gradients */
+  --gradient-navbar-button: linear-gradient(180deg, #06A0ED 21.5%, rgba(7, 160, 236, 0.60) 82.81%);
+  --gradient-primary-button: linear-gradient(180deg, #06A0ED 21.5%, rgba(0, 128, 255, 0.60) 82.81%), #06A0ED;
+
+  /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
+}
+
+.bg-gradient-navbar-button {
+  background: var(--gradient-navbar-button);
+}
+
+.bg-gradient-primary-button {
+  background: var(--gradient-primary-button);
+}
+
+
+button{
+  cursor: pointer;
+}
+
+
+/* index.css or globals.css */
+
+/* Modern Marquee Styles */
+.marquee-track {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  animation: marquee-scroll 30s linear infinite;
+  width: max-content;
+}
+
+/* Pause animation on hover */
+.marquee-track:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Keyframe animations */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive speed adjustment */
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 20s;
+  }
+}
+
+/* Optional: Add a shimmer effect on hover */
+.marquee-content > div {
+  transition: all 0.3s ease;
+}
+
+.marquee-content > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
