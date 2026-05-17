@@ -71,7 +71,7 @@ const Hero = () => {
 
           <div className="flex items-center justify-center gap-6">
             <Button label="Get Your Project Feasibility Review" />
-            <Button variant="secondary" label="Explore Systems We've Built" />
+            <Button variant="tertiary" label="Explore Systems We've Built" />
           </div>
         </div>
       </Container>

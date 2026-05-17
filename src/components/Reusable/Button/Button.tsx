@@ -5,17 +5,19 @@ const Button = ({
   label,
   onClick,
 }: {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
   label: string;
   onClick?: () => void;
 }) => {
   return (
     <button
       onClick={onClick}
-      className={`rounded-[30px] py-2 pr-2 pl-8 text-white font-Manrope font-medium flex items-center gap-3 w-fit border ${
+      className={`rounded-[30px] py-2 pr-2 pl-8 font-Manrope font-medium flex items-center gap-3 w-fit border ${
         variant === "primary"
-          ? "border-primary-15 bg-gradient-primary-button"
-          : "border-white bg-none"
+          ? "border-primary-15 bg-gradient-primary-button text-white"
+          : variant === "secondary"
+            ? "bg-white border-white text-neutral-65"
+            : "border-white bg-none text-white"
       }`}
     >
       {label}
