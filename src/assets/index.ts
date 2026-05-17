@@ -9,6 +9,9 @@ import cursorTop from "./icons/cursor-top.svg";
 import arrowDown from "./icons/arrow-down.svg";
 import arrowRightUpBlue from "./icons/arrow-right-up-blue.svg";
 import arrowRightUpWhite from "./icons/arrow-right-up-white.svg";
+import cursorWindow from "./icons/cursor-window.svg";
+import cursorBlue from "./icons/cursor-blue.svg";
+import penTool from "./icons/pen-tool.svg";
 
 export const IMAGES = {
     logo,
@@ -22,4 +25,7 @@ export const ICONS = {
     arrowDown,
     arrowRightUpBlue,
     arrowRightUpWhite,
+    cursorWindow,
+    cursorBlue,
+    penTool,
 };
