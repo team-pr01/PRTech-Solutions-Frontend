@@ -5,7 +5,7 @@ const Button = ({
   label,
   onClick,
 }: {
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "outlinePrimary";
   label: string;
   onClick?: () => void;
 }) => {
@@ -17,7 +17,9 @@ const Button = ({
           ? "border-primary-15 bg-gradient-primary-button text-white"
           : variant === "secondary"
             ? "bg-white border-white text-neutral-65"
-            : "border-white bg-none text-white"
+            : variant === "outlinePrimary"
+              ? "border-primary-10 bg-transparent text-neutral-65"
+              : "border-white bg-none text-white"
       }`}
     >
       {label}

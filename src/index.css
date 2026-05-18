@@ -35,12 +35,13 @@
   --color-neutral-70: #1B2A3C;
   --color-neutral-80: #727881;
   --color-neutral-85: #61686C;
-  /* --color-neutral-90: #727272; */
+  --color-neutral-90: #e2e4e94d;
 
   /* Shadows */
    --shadow-button: 0 4px 8px 0 rgba(57, 78, 102, 0.25), 0 0 0 1px #687D96;
    --shadow-chip: 0 4px 10.2px 0 rgba(40, 77, 246, 0.20);
    --shadow-stats-heading: 0 4px 5px rgba(132, 132, 132, 0.25);
+   --shadow-industry-icon: 0 4px 11.3px 0 rgba(194, 194, 194, 0.20), 0 19px 11.1px 0 rgba(217, 217, 217, 0.25) inset;
 
   /* Gradients */
   --gradient-navbar-button: linear-gradient(180deg, #06A0ED 21.5%, rgba(7, 160, 236, 0.60) 82.81%);
@@ -49,6 +50,7 @@
   --gradient-latest-project-bg: radial-gradient(53.74% 62.68% at -6.15% -4.83%, rgba(71, 151, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #FFF 0%, #FFF 60%, #EAF8FF 90%, #FFF 100%);
   --gradient-project-metrics-bg: linear-gradient(142deg, #FFF 38.48%, #AFE5FF 124.99%);
   --gradient-comparison: linear-gradient(180deg, #06A0ED 0%, rgba(0, 128, 255, 0.80) 100%);
+  --gradient-industry-line: linear-gradient(180deg, #06A0ED 0%, rgba(171, 171, 171, 0.07) 100%);
 
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
@@ -75,6 +77,10 @@
 
 .bg-gradient-comparison {
   background: var(--gradient-comparison);
+}
+
+.bg-gradient-industry-line {
+  background: var(--gradient-industry-line);
 }
 
 

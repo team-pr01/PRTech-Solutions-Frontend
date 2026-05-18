@@ -6,6 +6,7 @@ import project01 from "./images/project01.png";         // Dummmmmmmyyyyyy
 import dummyProject from "./images/dummy-project.webp"; // Dummmmmmmyyyyyy
 import serviceBg from "./images/service-bg.webp";
 import comparisonBg from "./images/comparison-bg.webp";
+import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -27,6 +28,16 @@ import inHouseTeam from "./icons/in-house-team.svg";
 import agencies from "./icons/creative-agencies.svg";
 import freelancers from "./icons/freelancers.svg";
 import selfServiceTools from "./icons/self-service-tools.svg";
+import ecommerce from "./icons/industries/ecommerce.svg";
+import edtech from "./icons/industries/edtech.svg";
+import fintech from "./icons/industries/fintech.svg";
+import fitness from "./icons/industries/fitness.svg";
+import healthcare from "./icons/industries/healthcare.svg";
+import manufacturing from "./icons/industries/manufacturing.svg";
+import realEstate from "./icons/industries/real-estate.svg";
+import saas from "./icons/industries/saas.svg";
+import travel from "./icons/industries/travel.svg";
+
 
 export const IMAGES = {
     logo,
@@ -36,6 +47,7 @@ export const IMAGES = {
     dummyProject, // Dummmmmmmyyyyyy
     serviceBg,
     comparisonBg,
+    dummyIndustry, // Dummmmmmmyyyyyy
 };
 
 export const ICONS = {
@@ -58,4 +70,13 @@ export const ICONS = {
     agencies,
     freelancers,
     selfServiceTools,
+    ecommerce,
+    edtech,
+    fintech,
+    fitness,
+    healthcare,
+    manufacturing,
+    realEstate,
+    saas,
+    travel,
 };
