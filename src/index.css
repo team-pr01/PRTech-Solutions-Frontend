@@ -48,6 +48,7 @@
   --gradient-service-card-icon-bg: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
   --gradient-latest-project-bg: radial-gradient(53.74% 62.68% at -6.15% -4.83%, rgba(71, 151, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #FFF 0%, #FFF 60%, #EAF8FF 90%, #FFF 100%);
   --gradient-project-metrics-bg: linear-gradient(142deg, #FFF 38.48%, #AFE5FF 124.99%);
+  --gradient-comparison: linear-gradient(180deg, #06A0ED 0%, rgba(0, 128, 255, 0.80) 100%);
 
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
@@ -70,6 +71,10 @@
 
 .bg-gradient-project-metrics-bg {
   background: var(--gradient-project-metrics-bg);
+}
+
+.bg-gradient-comparison {
+  background: var(--gradient-comparison);
 }
 
 
