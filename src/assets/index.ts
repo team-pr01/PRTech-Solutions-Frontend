@@ -1,7 +1,8 @@
 // IMAGES
 import logo from "./images/PRTech-Solutions.webp";
 import heroBg from "./images/hero-bg.webp";
-import project01 from "./images/project01.png";
+import project01 from "./images/project01.png";         // Dummmmmmmyyyyyy
+import dummyProject from "./images/dummy-project.webp"; // Dummmmmmmyyyyyy
 import serviceBg from "./images/service-bg.webp";
 
 // ICONS
@@ -21,7 +22,8 @@ import maintenance from "./icons/maintenance.svg";
 export const IMAGES = {
     logo,
     heroBg,
-    project01,
+    project01,    // Dummmmmmmyyyyyy
+    dummyProject, // Dummmmmmmyyyyyy
     serviceBg,
 };
 

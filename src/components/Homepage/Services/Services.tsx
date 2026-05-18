@@ -80,7 +80,7 @@ const Services = () => {
         <Container>
           <div className="flex items-center justify-center gap-2">
             <div className="size-4 rounded-full border-2 border-white flex items-center justify-center">
-              <div className="size-2 rounded-full bg-white"></div>
+              <div className="size-1.5 rounded-full bg-white"></div>
             </div>
             <p className="text-white font-medium uppercase">Services</p>
           </div>
@@ -93,7 +93,7 @@ const Services = () => {
             <span className="text-primary-10">Your Business</span>
           </h2>
 
-          <p className="text-white font-Manrope text-xl leading-8 max-w-205 mx-auto font-normal mt-6">
+          <p className="text-white font-Manrope leading-8 max-w-205 mx-auto font-normal mt-6">
             We don’t offer fixed service bundles. <br />
             Every solution is designed based on your business model, users, and
             growth goals.
