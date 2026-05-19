@@ -4,6 +4,7 @@ import Hero from "../../components/Homepage/Hero/Hero";
 import Industries from "../../components/Homepage/Industries/Industries";
 import LatestProjects from "../../components/Homepage/LatestProjects/LatestProjects";
 import Services from "../../components/Homepage/Services/Services";
+import CTA from "../../components/Reusable/CTA/CTA";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <LatestProjects/>
       <Comparison/>
       <Industries/>
+      <CTA/>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import dummyProject from "./images/dummy-project.webp"; // Dummmmmmmyyyyyy
 import serviceBg from "./images/service-bg.webp";
 import comparisonBg from "./images/comparison-bg.webp";
 import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
+import ctaBg1 from "./images/cta-bg1.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -48,6 +49,7 @@ export const IMAGES = {
     serviceBg,
     comparisonBg,
     dummyIndustry, // Dummmmmmmyyyyyy
+    ctaBg1,
 };
 
 export const ICONS = {
