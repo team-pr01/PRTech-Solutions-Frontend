@@ -8,6 +8,13 @@ import serviceBg from "./images/service-bg.webp";
 import comparisonBg from "./images/comparison-bg.webp";
 import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
 import ctaBg1 from "./images/cta-bg1.webp";
+import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
+import aiAssistant from "./images/ai-assistant.webp";
+import intelligentMatching from "./images/intelligent-matching.webp";
+import contentAware from "./images/content-aware.webp";
+import smartWorkflowAutomation from "./images/smart-workflow-automation.webp";
+import customAiIntegration from "./images/custom-ai-integration.webp";
+import aiSolutionsCardBg from "./images/ai-solutions-card-bg.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -50,6 +57,14 @@ export const IMAGES = {
     comparisonBg,
     dummyIndustry, // Dummmmmmmyyyyyy
     ctaBg1,
+    dummyClientPicture,
+    aiAssistant,
+    intelligentMatching,
+    contentAware,
+    smartWorkflowAutomation,
+    customAiIntegration,
+    aiSolutionsCardBg
+
 };
 
 export const ICONS = {

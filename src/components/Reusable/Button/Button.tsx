@@ -12,7 +12,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`rounded-[30px] py-2 pr-2 pl-8 font-Manrope font-medium flex items-center gap-3 w-fit border ${
+      className={`rounded-[30px] py-2 pr-2 pl-8 font-Manrope font-medium flex items-center gap-3 w-fit border h-fit ${
         variant === "primary"
           ? "border-primary-15 bg-gradient-primary-button text-white"
           : variant === "secondary"
