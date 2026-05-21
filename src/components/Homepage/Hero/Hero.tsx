@@ -83,7 +83,7 @@ const Hero = () => {
             {featuredProjects.map((project, index) => (
               <div
                 key={index}
-                className="relative w-80 h-96 shrink-0 rounded-2xl overflow-hidden group cursor-pointer mx-3"
+                className="relative w-100 h-70 shrink-0 rounded-2xl overflow-hidden group cursor-pointer"
               >
                 <img
                   src={project}

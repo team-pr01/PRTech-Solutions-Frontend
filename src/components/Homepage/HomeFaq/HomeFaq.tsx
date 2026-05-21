@@ -43,26 +43,6 @@ const HomeFaq = () => {
       description:
         "We offer flexible pricing models: fixed-cost for defined scope, hourly for ongoing work, or dedicated team monthly retainers. We provide transparent quotes with no hidden fees.",
     },
-    {
-      title: "Will I own the source code?",
-      description:
-        "Yes. Full source code ownership is transferred to you upon project completion. We also provide documentation and can assist with in-house team handover.",
-    },
-    {
-      title: "Do you offer a free consultation?",
-      description:
-        "Yes. We offer a complimentary 30-minute discovery call to understand your requirements and provide initial guidance on your project feasibility.",
-    },
-    {
-      title: "What happens if I'm not satisfied with the work?",
-      description:
-        "Client satisfaction is our priority. We provide milestone-based approvals and regular demos. If issues arise, we work diligently to resolve them within the agreed scope.",
-    },
-    {
-      title: "Can you help with scaling my existing application?",
-      description:
-        "Absolutely. We audit your current architecture, identify bottlenecks, and implement scalable solutions to handle increased users, transactions, or data volume.",
-    },
   ];
   return (
     <div className="bg-gradient-faq-bg font-Manrope py-25">
