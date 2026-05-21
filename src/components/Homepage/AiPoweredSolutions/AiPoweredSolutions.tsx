@@ -153,7 +153,7 @@ const AiPoweredSolutions = () => {
             </div>
 
             <div className="flex items-center justify-center mt-10">
-              <Button variant="tertiary" label=" Get Your AI Strategy Plan" />
+              <Button variant="tertiary" label="Get Your AI Strategy Plan" />
             </div>
           </div>
         </Container>

@@ -2,6 +2,7 @@ import AboutUs from "../../components/Homepage/AboutUs/AboutUs";
 import AiPoweredSolutions from "../../components/Homepage/AiPoweredSolutions/AiPoweredSolutions";
 import Comparison from "../../components/Homepage/Comparison/Comparison";
 import Hero from "../../components/Homepage/Hero/Hero";
+import HomeFaq from "../../components/Homepage/HomeFaq/HomeFaq";
 import Industries from "../../components/Homepage/Industries/Industries";
 import LatestProjects from "../../components/Homepage/LatestProjects/LatestProjects";
 import Services from "../../components/Homepage/Services/Services";
@@ -20,6 +21,7 @@ const Home = () => {
       <CTA/>
       <Testimonials/>
       <AiPoweredSolutions/>
+      <HomeFaq/>
     </div>
   );
 };
