@@ -31,6 +31,8 @@ import productDevelopment from "./icons/product-development.svg";
 import uiUxDesign from "./icons/ui-ux-design.svg";
 import deployment from "./icons/deployment.svg";
 import maintenance from "./icons/maintenance.svg";
+import aiAutomation from "./icons/ai-automation.svg";
+import technicalConsultation from "./icons/technical-consultation.svg";
 import tickMarkWhite from "./icons/tick-mark-white.svg";
 import tickMarkGreen from "./icons/tick-mark-green.svg";
 import crossRed from "./icons/cross-red.svg";
@@ -88,6 +90,8 @@ export const ICONS = {
     uiUxDesign,
     deployment,
     maintenance,
+    aiAutomation,
+    technicalConsultation,
     tickMarkWhite,
     tickMarkGreen,
     crossRed,

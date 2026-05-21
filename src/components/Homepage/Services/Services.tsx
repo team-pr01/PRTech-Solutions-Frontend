@@ -14,24 +14,30 @@ const Services = () => {
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
       description:
         "We design and build web and mobile applications tailored to your business — focusing on scalability, performance, and real-world usability.",
+      cta: "Explore Development",
+      path: "/services/development",
     },
     {
       id: "02",
       title: "UI/UX & Conversion-Focused Design",
       icon: ICONS.uiUxDesign,
       imgSrc:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80",
       description:
-        "We design and build web and mobile applications tailored to your business — focusing on scalability, performance, and real-world usability.",
+        "We create user experiences that are intuitive, engaging, and built to guide users toward action — not just look visually appealing.",
+      cta: "Explore Design",
+      path: "/services/design",
     },
     {
       id: "03",
       title: "Cloud, DevOps & System Infrastructure",
       icon: ICONS.deployment,
       imgSrc:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
       description:
-        "We design and build web and mobile applications tailored to your business — focusing on scalability, performance, and real-world usability.",
+        "We set up and optimize the technical foundation of your product to ensure it runs fast, securely, and can scale without issues.",
+      cta: "Explore Infrastructure",
+      path: "/services/infrastructure",
     },
     {
       id: "04",
@@ -40,7 +46,31 @@ const Services = () => {
       imgSrc:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
       description:
-        "We design and build web and mobile applications tailored to your business — focusing on scalability, performance, and real-world usability.",
+        "We continuously monitor, improve, and support your system to ensure it performs reliably as your business grows.",
+      cta: "Explore Support",
+      path: "/services/support",
+    },
+    {
+      id: "05",
+      title: "Business Automation & AI Systems",
+      icon: ICONS.aiAutomation,
+      imgSrc:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80",
+      description:
+        "We build systems that automate operations, manage workflows, and integrate AI to reduce manual effort and improve efficiency.",
+      cta: "Explore Automation",
+      path: "/services/automation",
+    },
+    {
+      id: "06",
+      title: "Strategy & Technical Consultation",
+      icon: ICONS.technicalConsultation,
+      imgSrc:
+        "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=600&q=80",
+      description:
+        "Before building anything, we analyze your business, identify gaps, and recommend the right technical approach to achieve your goals.",
+      cta: "Get Consultation",
+      path: "/services/consultation",
     },
   ];
 
