@@ -13,15 +13,28 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <AboutUs/>
-      <Services/>
-      <LatestProjects/>
-      <Comparison/>
-      <Industries/>
-      <CTA/>
-      <Testimonials/>
-      <AiPoweredSolutions/>
-      <HomeFaq/>
+      <AboutUs />
+      <Services />
+      <LatestProjects />
+      <Comparison />
+      <Industries />
+      <CTA
+        title="Ready to Build a System That Actually Grows Your Business?"
+        description="We don't just build websites — we create systems that generate leads, automate operations, and help you scale faster."
+        primaryButton={{
+          label: "Let's Get Started",
+          onClick: () => console.log("Get Started clicked"),
+          variant: "primary",
+        }}
+        secondaryButton={{
+          label: "See Our Services",
+          onClick: () => console.log("See Services clicked"),
+          variant: "tertiary",
+        }}
+      />
+      <Testimonials />
+      <AiPoweredSolutions />
+      <HomeFaq />
     </div>
   );
 };

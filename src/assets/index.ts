@@ -8,6 +8,7 @@ import serviceBg from "./images/service-bg.webp";
 import comparisonBg from "./images/comparison-bg.webp";
 import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
 import ctaBg1 from "./images/cta-bg1.webp";
+import ctaBg2 from "./images/cta-bg2.webp";
 import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
 import aiAssistant from "./images/ai-assistant.webp";
 import intelligentMatching from "./images/intelligent-matching.webp";
@@ -15,6 +16,7 @@ import contentAware from "./images/content-aware.webp";
 import smartWorkflowAutomation from "./images/smart-workflow-automation.webp";
 import customAiIntegration from "./images/custom-ai-integration.webp";
 import aiSolutionsCardBg from "./images/ai-solutions-card-bg.webp";
+import footerGradient from "./images/footer-gradient.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -45,6 +47,10 @@ import manufacturing from "./icons/industries/manufacturing.svg";
 import realEstate from "./icons/industries/real-estate.svg";
 import saas from "./icons/industries/saas.svg";
 import travel from "./icons/industries/travel.svg";
+import phone from "./icons/phone.svg";
+import email from "./icons/email.svg";
+import location from "./icons/location.svg";
+import footerShape from "./icons/footer-shape.svg";
 
 
 export const IMAGES = {
@@ -57,13 +63,15 @@ export const IMAGES = {
     comparisonBg,
     dummyIndustry, // Dummmmmmmyyyyyy
     ctaBg1,
+    ctaBg2,
     dummyClientPicture,
     aiAssistant,
     intelligentMatching,
     contentAware,
     smartWorkflowAutomation,
     customAiIntegration,
-    aiSolutionsCardBg
+    aiSolutionsCardBg,
+    footerGradient,
 
 };
 
@@ -96,4 +104,8 @@ export const ICONS = {
     realEstate,
     saas,
     travel,
+    phone,
+    email,
+    location,
+    footerShape,
 };
