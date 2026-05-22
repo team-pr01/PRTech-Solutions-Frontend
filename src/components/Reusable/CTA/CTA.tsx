@@ -20,6 +20,7 @@ interface CTAProps {
   showButtons?: boolean;
   className?: string;
   textColor?: string;
+  contentAlignment?: "left" | "center" | "right";
 }
 
 const CTA = ({
@@ -31,9 +32,30 @@ const CTA = ({
   showButtons = true,
   className = "",
   textColor = "text-white",
+  contentAlignment = "center",
 }: CTAProps) => {
+  const alignmentClasses = {
+    left: "text-left items-start",
+    center: "text-center items-center",
+    right: "text-right items-end",
+  };
+
+  const buttonAlignment = {
+    left: "justify-start",
+    center: "justify-center",
+    right: "justify-end",
+  };
+
+  const marginAuto = {
+    left: "ml-0 mr-auto",
+    center: "mx-auto",
+    right: "ml-auto mr-0",
+  };
+
   return (
-    <div className={`relative h-170 font-medium overflow-hidden font-Manrope ${className}`}>
+    <div
+      className={`relative h-140 font-medium overflow-hidden font-Manrope ${className}`}
+    >
       <img
         src={backgroundImage}
         alt=""
@@ -42,17 +64,21 @@ const CTA = ({
 
       <div className="absolute inset-0 flex items-center justify-center">
         <Container>
-          <div className="text-center flex flex-col items-center justify-center">
-            <h2 className={`${textColor} text-center text-[48px] font-semibold leading-12 max-w-230 mx-auto`}>
+          <div className={`flex flex-col ${alignmentClasses[contentAlignment]} justify-center`}>
+            <h2
+              className={`${textColor} text-[48px] font-semibold leading-12 max-w-230 ${marginAuto[contentAlignment]}`}
+            >
               {title}
             </h2>
 
-            <p className={`${textColor} font-Manrope leading-8 max-w-120 mx-auto font-normal mt-6`}>
+            <p
+              className={`${textColor} font-Manrope leading-8 max-w-140 font-normal mt-6 ${marginAuto[contentAlignment]}`}
+            >
               {description}
             </p>
 
             {showButtons && (
-              <div className="flex items-center justify-center gap-6 mt-6">
+              <div className={`flex ${buttonAlignment[contentAlignment]} gap-6 mt-6`}>
                 {primaryButton && (
                   <Button
                     label={primaryButton.label}

@@ -9,6 +9,8 @@ import comparisonBg from "./images/comparison-bg.webp";
 import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
 import ctaBg1 from "./images/cta-bg1.webp";
 import ctaBg2 from "./images/cta-bg2.webp";
+import ctaBg3 from "./images/cta-bg3.webp";
+import ctaBg4 from "./images/cta-bg4.webp";
 import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
 import aiAssistant from "./images/ai-assistant.webp";
 import intelligentMatching from "./images/intelligent-matching.webp";
@@ -64,6 +66,7 @@ import phone from "./icons/phone.svg";
 import email from "./icons/email.svg";
 import location from "./icons/location.svg";
 import footerShape from "./icons/footer-shape.svg";
+import arrowRightDark from "./icons/arrow-right-up-dark.svg";
 
 
 export const IMAGES = {
@@ -77,6 +80,8 @@ export const IMAGES = {
     dummyIndustry, // Dummmmmmmyyyyyy
     ctaBg1,
     ctaBg2,
+    ctaBg3,
+    ctaBg4,
     dummyClientPicture,
     aiAssistant,
     intelligentMatching,
@@ -133,4 +138,5 @@ export const ICONS = {
     email,
     location,
     footerShape,
+    arrowRightDark,
 };

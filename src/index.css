@@ -21,11 +21,13 @@
   --color-primary-25: #2A7EFF;
   --color-primary-30: #06a0ed1a;
   --color-primary-35: #98DDFF;
+  --color-primary-40: #E6F6FD;
 
   /* neutral */
 
   --color-neutral-10: #DBE2EB;
   --color-neutral-15: #ffffff0d;
+  --color-neutral-16: #030013;
   --color-neutral-20: #000;
   --color-neutral-30: #141319;
   --color-neutral-40: #FDFDFD;
@@ -53,6 +55,7 @@
    --shadow-industry-icon: 0 4px 11.3px 0 rgba(194, 194, 194, 0.20), 0 19px 11.1px 0 rgba(217, 217, 217, 0.25) inset;
    --shadow-accordion-card: 0 8px 30px 0 rgba(6, 160, 237, 0.15);
    --shadow-our-work-client-box: 0 4px 4px 0 rgba(255, 255, 255, 0.25) inset;
+   --shadow-industry-tab: 0 4px 8.3px 0 rgba(211, 211, 211, 0.25);
 
   /* Gradients */
   --gradient-navbar-button: linear-gradient(180deg, #06A0ED 21.5%, rgba(7, 160, 236, 0.60) 82.81%);

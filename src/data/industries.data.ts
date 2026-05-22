@@ -128,3 +128,5 @@ export const INDUSTRIES = [
     path: "/industries/travel-hospitality",
   },
 ];
+
+export const industryNames = ["All", "Fintech", "Healthcare", "SaaS", "E-commerce"];

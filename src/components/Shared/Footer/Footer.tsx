@@ -3,8 +3,10 @@ import { ICONS, IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import Button from "../../Reusable/Button/Button";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const pathname = useLocation().pathname;
   const socialMediaLinks = [
     {
       name: "LinkedIn",
@@ -106,7 +108,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-neutral-20 py-7.5 relative h-290 font-Manrope overflow-hidden">
+    <div className="bg-neutral-20 py-7.5 relative font-Manrope overflow-hidden">
       <img
         src={IMAGES.footerGradient}
         alt="hero-bg"
@@ -114,38 +116,39 @@ const Footer = () => {
       />
 
       {/* Content */}
-      <div className="absolute top-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 w-full z-10">
+      <div className="relative flex flex-col items-center gap-6 w-full z-10">
         <Container>
           {/* CTA */}
-          <div className="relative h-100 font-medium overflow-hidden font-Manrope rounded-2xl">
-            <img
-              src={IMAGES.ctaBg2}
-              alt=""
-              className="w-full h-full absolute inset-0 object-cover"
-            />
+          {pathname !== "/our-work" && (
+            <div className="relative h-100 font-medium overflow-hidden font-Manrope rounded-2xl">
+              <img
+                src={IMAGES.ctaBg2}
+                alt=""
+                className="w-full h-full absolute inset-0 object-cover"
+              />
 
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Container>
-                <div className="text-center flex flex-col items-center justify-center">
-                  <h2 className="text-white text-center text-[48px] font-semibold leading-12 max-w-230 mx-auto">
-                    Ready to Build a System That Actually Grows Your Business?
-                  </h2>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Container>
+                  <div className="text-center flex flex-col items-center justify-center">
+                    <h2 className="text-white text-center text-[48px] font-semibold leading-12 max-w-230 mx-auto">
+                      Ready to Build a System That Actually Grows Your Business?
+                    </h2>
 
-                  <p className="text-white font-Manrope leading-8 max-w-120 mx-auto font-normal mt-6">
-                    We don't just build websites — we create systems that
-                    generate leads, automate operations, and help you scale
-                    faster.
-                  </p>
+                    <p className="text-white font-Manrope leading-8 max-w-120 mx-auto font-normal mt-6">
+                      We don't just build websites — we create systems that
+                      generate leads, automate operations, and help you scale
+                      faster.
+                    </p>
 
-                  <div className="flex items-center justify-center gap-6 mt-6">
-                    <Button variant="secondary" label="Let's Get Started" />
-                    <Button variant="tertiary" label="See Our Services" />
+                    <div className="flex items-center justify-center gap-6 mt-6">
+                      <Button variant="secondary" label="Let's Get Started" />
+                      <Button variant="tertiary" label="See Our Services" />
+                    </div>
                   </div>
-                </div>
-              </Container>
+                </Container>
+              </div>
             </div>
-          </div>
-
+          )}
 
           <div className="flex flex-col xl:flex-row gap-15 xl:gap-0 justify-between mt-20">
             {/* Left column */}

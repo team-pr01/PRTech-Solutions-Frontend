@@ -15,12 +15,12 @@ const OurWorkHero = () => {
     // IMAGES.worldMarket,
   ];
   return (
-    <div className="bg-gradient-our-work-hero-bg relative h-308 font-Manrope">
-      <img src={IMAGES.ourWorkHeroBg} alt="hero-bg" className="w-full h-308" />
+    <div className="bg-gradient-our-work-hero-bg relative h-240 font-Manrope">
+      <img src={IMAGES.ourWorkHeroBg} alt="hero-bg" className="w-full h-full" />
 
       {/* Content */}
       <Container>
-        <div className="absolute top-61.5 left-1/2 -translate-x-1/2 text-center flex flex-col items-center w-full max-w-300 2xl:max-w-7xl w-full mx-auto px-5 2xl:px-0">
+        <div className="absolute top-61.5 left-1/2 -translate-x-1/2 text-center flex flex-col items-center max-w-300 2xl:max-w-7xl w-full mx-auto px-5 2xl:px-0">
           <div className="bg-white rounded-3xl pl-1 pr-4 py-1 font-semibold leading-6 flex items-center justify-center gap-2">
             <div className="bg-primary-10 rounded-3xl px-3 py-1 text-white">
               100%
