@@ -17,6 +17,17 @@ import smartWorkflowAutomation from "./images/smart-workflow-automation.webp";
 import customAiIntegration from "./images/custom-ai-integration.webp";
 import aiSolutionsCardBg from "./images/ai-solutions-card-bg.webp";
 import footerGradient from "./images/footer-gradient.webp";
+import ourWorkHeroBg from "./images/our-work-hero-bg.webp";
+// Clients
+import bcoEco from "./images/prtech-clients/BcoEco.webp";
+import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
+import brightTuitionCare from "./images/prtech-clients/bright-tuition-care.webp";
+import globalCryptoAlliance from "./images/prtech-clients/global-crypto-alliance.webp";
+import goodKing from "./images/prtech-clients/good-king.webp";
+import logicalMedia from "./images/prtech-clients/logical-media.webp";
+import tenStageMatrix from "./images/prtech-clients/tenstage-matrix.webp";
+import vedicWisdom from "./images/prtech-clients/vedic-wisdom.webp";
+import worldMarket from "./images/prtech-clients/world-market.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -74,7 +85,17 @@ export const IMAGES = {
     customAiIntegration,
     aiSolutionsCardBg,
     footerGradient,
-
+    ourWorkHeroBg,
+    // Clients
+    bcoEco,
+    attributionBooster,
+    brightTuitionCare,
+    globalCryptoAlliance,
+    goodKing,
+    logicalMedia,
+    tenStageMatrix,
+    vedicWisdom,
+    worldMarket,
 };
 
 export const ICONS = {

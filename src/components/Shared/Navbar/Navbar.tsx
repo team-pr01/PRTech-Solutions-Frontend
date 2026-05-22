@@ -19,7 +19,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <button className="bg-gradient-navbar-button shadow-button border border-primary-10 rounded-lg px-4 py-2 text-lg font-bold text-white">
+      <button className="bg-gradient-navbar-button shadow-button border border-primary-10 rounded-lg px-4 py-2 font-bold text-white">
         Say hi
       </button>
     </div>
