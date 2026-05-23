@@ -4,7 +4,7 @@ import { IMAGES } from "../../../assets";
 
 const Navbar = () => {
   return (
-    <div className="rounded-xl border border-neutral-10 bg-neutral-15 backdrop-blur-[45px] px-3 py-2 font-Manrope flex items-center justify-between gap-18 fixed top-6 left-1/2 -translate-x-1/2 w-fit h-fit z-50">
+    <div className="rounded-xl border border-neutral-10 bg-neutral-15 backdrop-blur-[45px] px-3 py-2 font-Manrope flex items-center justify-between gap-18 fixed top-6 left-1/2 -translate-x-1/2 w-fit h-fit z-20">
       <Link to="/">
         <img src={IMAGES.logo} alt="logo" className="w-28" />
       </Link>
