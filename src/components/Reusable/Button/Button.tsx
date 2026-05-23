@@ -1,18 +1,23 @@
 import { ICONS } from "../../../assets";
 
 const Button = ({
+  type = "button",
   variant = "primary",
   label,
   onClick,
+  className = "",
 }: {
+  type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary" | "tertiary" | "outlinePrimary";
   label: string;
   onClick?: () => void;
+  className?: string;
 }) => {
   return (
     <button
+      type={type}
       onClick={onClick}
-      className={`rounded-[30px] py-2 pr-2 pl-8 font-Manrope font-medium flex items-center gap-3 w-fit border h-fit ${
+      className={`rounded-[30px] py-2 pr-2 pl-8 font-Manrope font-medium flex items-center gap-3 w-fit border h-fit ${className} ${
         variant === "primary"
           ? "border-primary-15 bg-gradient-primary-button text-white"
           : variant === "secondary"

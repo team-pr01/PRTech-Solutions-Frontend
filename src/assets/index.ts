@@ -20,6 +20,7 @@ import customAiIntegration from "./images/custom-ai-integration.webp";
 import aiSolutionsCardBg from "./images/ai-solutions-card-bg.webp";
 import footerGradient from "./images/footer-gradient.webp";
 import ourWorkHeroBg from "./images/our-work-hero-bg.webp";
+import contactUsHeroBg from "./images/contact-us-hero-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -65,8 +66,14 @@ import travel from "./icons/industries/travel.svg";
 import phone from "./icons/phone.svg";
 import email from "./icons/email.svg";
 import location from "./icons/location.svg";
+import phoneDark from "./icons/phone-dark.svg";
+import emailDark from "./icons/email-dark.svg";
+import locationDark from "./icons/location-dark.svg";
 import footerShape from "./icons/footer-shape.svg";
 import arrowRightDark from "./icons/arrow-right-up-dark.svg";
+import calendar from "./icons/calendar.svg";
+import clock from "./icons/clock.svg";
+import polygon from "./icons/polygon.svg";
 
 
 export const IMAGES = {
@@ -91,6 +98,7 @@ export const IMAGES = {
     aiSolutionsCardBg,
     footerGradient,
     ourWorkHeroBg,
+    contactUsHeroBg,
     // Clients
     bcoEco,
     attributionBooster,
@@ -137,6 +145,12 @@ export const ICONS = {
     phone,
     email,
     location,
+    phoneDark,
+    emailDark,
+    locationDark,
     footerShape,
     arrowRightDark,
+    calendar,
+    clock,
+    polygon,
 };

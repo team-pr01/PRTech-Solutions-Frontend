@@ -27,7 +27,7 @@ export const NAVLINKS: NavLink[] = [
         href: '/our-work',
     },
     {
-        label: 'Contact',
-        href: '/contact',
+        label: 'Contact Us',
+        href: '/contact-us',
     },
 ] as const;

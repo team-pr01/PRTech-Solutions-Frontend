@@ -26,8 +26,8 @@ const OurWork = () => {
         backgroundImage={IMAGES.ctaBg3}
         className="bg-neutral-16"
       />
-        <Testimonials />
-        <OurExpertise/>
+      <Testimonials />
+      <OurExpertise />
       <CTA
         title="Have Something Custom in Mind, But Not Sure Where to Start?"
         description="Every project you’ve seen here started as an idea — often unclear, unstructured, or difficult to execute. We help turn those ideas into well-defined systems and build them the right way."

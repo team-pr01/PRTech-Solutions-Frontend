@@ -4,6 +4,7 @@ import ErrorComponent from "../components/ErrorComponent/ErrorComponent";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import OurWork from "../pages/OurWork/OurWork";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 
 export const router = createBrowserRouter([
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         path: "/our-work",
         element: <OurWork />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
         path: "*",

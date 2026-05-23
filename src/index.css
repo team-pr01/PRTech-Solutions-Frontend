@@ -37,6 +37,7 @@
   --color-neutral-70: #1B2A3C;
   --color-neutral-80: #727881;
   --color-neutral-85: #61686C;
+  --color-neutral-86: #58676E;
   --color-neutral-90: #e2e4e94d;
   --color-neutral-91: #D7D7D7;
   --color-neutral-92: #26265933;
@@ -68,6 +69,8 @@
   --gradient-faq-bg: conic-gradient(from 232deg at 104.42% 104.15%, #FFF 21.385518014431deg, #FFF 24.11387711763382deg, #BBC9FF 245.09671926498413deg, #BBC9FF 360deg);
   --gradient-our-work-hero-bg: radial-gradient(40.63% 35.95% at 50% -6.59%, #06A0ED 0%, rgba(27, 22, 62, 0.00) 100%), linear-gradient(180deg, #1B163E 0%, #000 100%);
   --gradient-our-work-hero-line1: linear-gradient(90deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.00) 100%);
+  --gradient-contact-us-form-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(5, 160, 237, 0.24) 100%);
+  --gradient-schedule-call-bg: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
 
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
@@ -110,6 +113,14 @@
 
 .bg-gradient-our-work-hero-line1 {
   background: var(--gradient-our-work-hero-line1);
+}
+
+.bg-gradient-contact-us-form-bg {
+  background: var(--gradient-contact-us-form-bg);
+}
+
+.bg-gradient-schedule-call-bg {
+  background: var(--gradient-schedule-call-bg);
 }
 
 button{
