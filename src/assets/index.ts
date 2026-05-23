@@ -74,6 +74,7 @@ import arrowRightDark from "./icons/arrow-right-up-dark.svg";
 import calendar from "./icons/calendar.svg";
 import clock from "./icons/clock.svg";
 import polygon from "./icons/polygon.svg";
+import quotation from "./icons/quotation.svg";
 
 
 export const IMAGES = {
@@ -153,4 +154,5 @@ export const ICONS = {
     calendar,
     clock,
     polygon,
+    quotation
 };
