@@ -26,7 +26,7 @@ const AboutUs = () => {
     },
   ];
   const chipClass =
-    "bg-primary-10 rounded-xl shadow-chip px-5 py-2 text-white font-Manrope font-medium w-fit";
+    "bg-primary-10 rounded-xl shadow-chip px-2 lg:px-5 py-2 text-xs 2xl:text-base text-white font-Manrope font-medium w-fit";
   return (
     <Container>
       <div className="py-12 2xl:py-24">
@@ -36,21 +36,21 @@ const AboutUs = () => {
 
         <div className="flex items-center justify-between">
           {/* Left Side */}
-          <div className="hidden lg:flex">
+          <div className="hidden md:flex">
             <div>
               <div className={`${chipClass} rotate-15`}>Web Design</div>
               <div className={`${chipClass} -rotate-30 mt-20`}>
                 UI/UX Design
               </div>
             </div>
-            <div>
+            <div className="hidden lg:block">
               <img src={ICONS.cursorWindow} alt="" className="size-7.5" />
               <img src={ICONS.cursorBlue} alt="" className="size-7.5 mt-16" />
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-neutral-30 text-center font-Manrope text-2xl 2xl:text-[40px] font-semibold leading-normal max-w-225 mx-auto mt-5">
+          <p className="text-neutral-30 text-center font-Manrope text-2xl 2xl:text-[40px] font-semibold leading-normal max-w-130 lg:max-w-160 2xl:max-w-225 mx-auto mt-5">
             We’re{" "}
             <span className="font-Playfair-Display italic font-medium text-primary-10">
               PRTeach Solutions
@@ -67,8 +67,8 @@ const AboutUs = () => {
           </p>
 
           {/* Right Side */}
-          <div className="hidden lg:flex mt-10">
-            <div>
+          <div className="hidden md:flex mt-10">
+            <div className="hidden lg:block">
               <img src={ICONS.penTool} alt="" className="size-7.5" />
               <img src={ICONS.cursorBlue} alt="" className="size-7.5 mt-10" />
             </div>
