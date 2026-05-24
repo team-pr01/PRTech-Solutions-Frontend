@@ -48,7 +48,7 @@ const Industries = () => {
   }, []);
 
   return (
-    <div className="py-25 font-Manrope bg-white">
+    <div className="py-12 xl:py-15 2xl:py-25 font-Manrope bg-white">
       <Container>
         <div>
           {/* Header */}
@@ -57,12 +57,12 @@ const Industries = () => {
               <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
                 <div className="size-1.5 rounded-full bg-primary-10"></div>
               </div>
-              <p className="text-neutral-70 font-medium uppercase tracking-wider">
+              <p className="text-neutral-70 subHeading">
                 INDUSTRIES
               </p>
             </div>
 
-            <h2 className="text-neutral-70 text-[60px] font-semibold leading-15 mt-2.5">
+            <h2 className="text-neutral-70 heading mt-2.5">
               Who{" "}
               <span className="font-Playfair-Display italic font-medium">
                 We
@@ -70,16 +70,16 @@ const Industries = () => {
               <span className="text-primary-10">Work With</span>{" "}
             </h2>
 
-            <p className="text-neutral-80 font-Manrope max-w-179 mx-auto font-normal mb-6 leading-relaxed mt-6 text-lg">
+            <p className="description text-neutral-80 max-w-179 mx-auto my-6">
               We partner with businesses that need more than just a website — they
               need systems that drive growth, automate operations, and scale
               efficiently.
             </p>
           </div>
 
-          <div className="mt-18 flex justify-between gap-12 relative">
+          <div className="mt-18 flex flex-col xl:flex-row justify-between gap-12 relative">
             {/* Left Side - Dynamic Image with Smooth Transition */}
-            <div className="w-[40%] sticky top-40 self-start h-125 rounded-2xl overflow-hidden">
+            <div className="w-full xl:w-[40%] sticky top-40 self-start h-125 rounded-2xl overflow-hidden">
               <motion.div
                 key={activeIndustry}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -101,7 +101,7 @@ const Industries = () => {
             {/* Right Side - Scrollable Industries */}
             <div 
               ref={containerRef}
-              className="w-[55%] h-150 overflow-y-auto pr-4 scrollbar-none pt-1"
+              className="w-full xl:w-[55%] h-150 overflow-y-auto pr-4 scrollbar-none pt-1"
             >
               <div className="flex flex-col gap-13">
                 {INDUSTRIES?.map((industry, idx) => (

@@ -123,7 +123,7 @@ const ComparisonTable = () => {
             key={item.id}
             className={`${item?.id === "01" ? "bg-gradient-comparison" : "bg-white"} p-4 2xl:p-7.5 rounded-2xl 2xl:rounded-[20px] border xl:border-2 border-white flex items-center justify-between`}
           >
-            <div className="flex items-center gap-6 text-left min-w-112">
+            <div className="flex items-center gap-6 text-left min-w-md">
               <div
                 className={`${item?.id === "01" ? "bg-white" : "bg-primary-30"} size-20 rounded-[10px] flex items-center justify-center p-2`}
               >

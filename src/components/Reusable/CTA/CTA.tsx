@@ -64,26 +64,31 @@ const CTA = ({
 
       <div className="absolute inset-0 flex items-center justify-center">
         <Container>
-          <div className={`flex flex-col ${alignmentClasses[contentAlignment]} justify-center`}>
+          <div
+            className={`flex flex-col ${alignmentClasses[contentAlignment]} justify-center`}
+          >
             <h2
-              className={`${textColor} text-[48px] font-semibold leading-12 max-w-230 ${marginAuto[contentAlignment]}`}
+              className={`${textColor} text-3xl md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 lg:leading-12 max-w-230 ${marginAuto[contentAlignment]}`}
             >
               {title}
             </h2>
 
             <p
-              className={`${textColor} font-Manrope leading-8 max-w-140 font-normal mt-6 ${marginAuto[contentAlignment]}`}
+              className={`${textColor} description max-w-140 mt-4 xl:mt-6 ${marginAuto[contentAlignment]}`}
             >
               {description}
             </p>
 
             {showButtons && (
-              <div className={`flex ${buttonAlignment[contentAlignment]} gap-6 mt-6`}>
+              <div
+                className={`flex flex-col w-full md:flex-row ${buttonAlignment[contentAlignment]} gap-6 mt-6`}
+              >
                 {primaryButton && (
                   <Button
                     label={primaryButton.label}
                     onClick={primaryButton.onClick}
                     variant={primaryButton.variant || "primary"}
+                    className="min-w-[75%] mx-auto md:w-fit"
                   />
                 )}
                 {secondaryButton && (
@@ -91,6 +96,7 @@ const CTA = ({
                     label={secondaryButton.label}
                     onClick={secondaryButton.onClick}
                     variant={secondaryButton.variant || "tertiary"}
+                    className="min-w-[75%] mx-auto md:w-fit"
                   />
                 )}
               </div>

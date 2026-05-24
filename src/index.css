@@ -245,6 +245,6 @@ button {
 
   /* Subheading Utility */
   .subHeading {
-    @apply font-medium uppercase text-sm xl:text-base;
+    @apply font-medium uppercase text-sm xl:text-base tracking-wider;
   }
 }
