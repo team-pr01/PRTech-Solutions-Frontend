@@ -58,7 +58,7 @@ const Accordion = ({
             className="flex gap-2 cursor-pointer items-center justify-between w-full"
             onClick={() => handleClick(index)}
           >
-            <h2 className="text-neutral-65 font-semibold text-xl leading-5.5">
+            <h2 className="text-neutral-65 font-semibold text-lg lg:text-xl leading-5.5">
               {according.title}
             </h2>
             <p>

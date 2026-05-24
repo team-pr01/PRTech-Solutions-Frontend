@@ -118,7 +118,7 @@ const Testimonials = () => {
       animate="center"
       exit="exit"
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-109 h-127.75 rounded-[40px] p-10 text-center flex flex-col items-center border select-none ${index % 2 === 0 ? "mt-20" : "mt-0"} ${bg} ${textColor} ${rotate}`}
+      className={`w-86 lg:w-100 xl:w-109 h-127.75 rounded-[30px] xl:rounded-[40px] p-5 lg:p-10 text-center flex flex-col items-center border select-none ${index % 2 === 0 ? "mt-20" : "mt-0"} ${bg} ${textColor} ${rotate}`}
     >
       <img
         src={IMAGES.dummyClientPicture}
@@ -133,18 +133,18 @@ const Testimonials = () => {
         {Array.from({ length: 5 }).map((_, i) => (
           <FaStar
             key={i}
-            className={`text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
+            className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
           />
         ))}
         <p className="text-lg ml-2">{data.rating}</p>
       </div>
 
-      <p className="text-lg mt-6 line-clamp-4">"{data.text}"</p>
+      <p className="text-base lg:text-lg mt-6 line-clamp-4">"{data.text}"</p>
     </motion.div>
   );
 
   return (
-    <div className="py-25 font-Manrope overflow-hidden">
+    <div className="py-12 xl:py-15 2xl:py-25 font-Manrope overflow-hidden">
       <Container>
         {/* Header */}
         <div className="text-center">
@@ -152,12 +152,12 @@ const Testimonials = () => {
             <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
               <div className="size-1.5 rounded-full bg-primary-10"></div>
             </div>
-            <p className="text-neutral-70 font-medium uppercase">
+            <p className="text-neutral-70 subHeading">
               TESTIMONIALS
             </p>
           </div>
 
-          <h2 className="text-neutral-70 text-[60px] font-semibold leading-15 mt-2.5">
+          <h2 className="text-neutral-70 heading mt-2.5">
             What Our{" "}
             <span className="font-Playfair-Display italic font-medium">
               Clients
@@ -165,14 +165,14 @@ const Testimonials = () => {
             are <span className="text-primary-10">Saying</span>{" "}
           </h2>
 
-          <p className="text-neutral-80 font-Manrope max-w-130 mx-auto font-normal mb-6 leading-normal mt-6">
+          <p className="description text-neutral-80 max-w-130 mx-auto mb-6 mt-4 2xl:mt-6">
             We help businesses grow with design, strategy, and genuine care but
             don't just take our word for it.
           </p>
         </div>
 
         {/* Cards - Fixed centering and overflow */}
-        <div className="mt-18 flex justify-center items-center px-2">
+        <div className="-mt-4 xl:mt-18 flex justify-center items-center px-2">
           <div className="flex justify-center items-center gap-14">
             <AnimatePresence mode="wait" custom={direction}>
               {cardConfigs.map((config, idx) => {
@@ -195,7 +195,7 @@ const Testimonials = () => {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center justify-center gap-20 mt-10">
+        <div className="flex items-center justify-center gap-20 mt-0 xl:mt-10">
           <button
             onClick={prevSlide}
             className="size-10 rounded-full bg-white border border-neutral-65 text-neutral-65 text-lg hover:bg-primary-10 hover:text-white hover:border-primary-10 transition duration-300 flex items-center justify-center cursor-pointer"

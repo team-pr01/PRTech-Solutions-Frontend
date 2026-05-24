@@ -45,19 +45,19 @@ const HomeFaq = () => {
     },
   ];
   return (
-    <div className="bg-gradient-faq-bg font-Manrope py-25">
+    <div className="bg-gradient-faq-bg font-Manrope py-12 md:py-18 2xl:py-25">
       <Container>
-        <div className="flex justify-between gap-20">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 xl:gap-14 2xl:gap-20">
           {/* Header */}
-          <div className="w-[40%] sticky top-40 self-start">
+          <div className="w-full lg:w-[40%] block lg:sticky top-40 self-start">
             <div className="flex items-center gap-2">
               <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
                 <div className="size-1.5 rounded-full bg-primary-10"></div>
               </div>
-              <p className="text-neutral-70 font-medium uppercase">FAQ</p>
+              <p className="text-neutral-70 subHeading">FAQ</p>
             </div>
 
-            <h2 className="text-neutral-70 text-[60px] font-semibold leading-15 mt-2.5 max-w-120">
+            <h2 className="text-neutral-70 heading mt-2.5 max-w-120">
               Frequently{" "}
               <span className="font-Playfair-Display italic font-medium">
                 Asked
@@ -65,7 +65,7 @@ const HomeFaq = () => {
               <span className="text-primary-10">Questions</span>{" "}
             </h2>
           </div>
-          <div className="w-[60%]">
+          <div className="w-full lgw-[60%]">
             <Accordion accordingData={accordingData} />
           </div>
         </div>

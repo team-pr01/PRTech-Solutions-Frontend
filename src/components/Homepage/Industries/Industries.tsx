@@ -79,7 +79,7 @@ const Industries = () => {
 
           <div className="mt-18 flex flex-col xl:flex-row justify-between gap-12 relative">
             {/* Left Side - Dynamic Image with Smooth Transition */}
-            <div className="w-full xl:w-[40%] sticky top-40 self-start h-125 rounded-2xl overflow-hidden">
+            <div className="w-full xl:w-[40%] block xl:sticky top-40 self-start h-125 rounded-2xl overflow-hidden">
               <motion.div
                 key={activeIndustry}
                 initial={{ opacity: 0, scale: 0.95 }}

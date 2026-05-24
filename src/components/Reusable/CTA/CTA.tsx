@@ -88,7 +88,7 @@ const CTA = ({
                     label={primaryButton.label}
                     onClick={primaryButton.onClick}
                     variant={primaryButton.variant || "primary"}
-                    className="min-w-[75%] mx-auto md:w-fit"
+                    className="w-full md:w-fit"
                   />
                 )}
                 {secondaryButton && (
@@ -96,7 +96,7 @@ const CTA = ({
                     label={secondaryButton.label}
                     onClick={secondaryButton.onClick}
                     variant={secondaryButton.variant || "tertiary"}
-                    className="min-w-[75%] mx-auto md:w-fit"
+                    className="w-full md:w-fit"
                   />
                 )}
               </div>

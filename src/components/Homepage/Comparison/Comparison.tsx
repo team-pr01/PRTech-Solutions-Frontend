@@ -5,7 +5,6 @@ import ComparisonTable from "./ComparisonTable";
 
 const Comparison = () => {
   return (
-    // ✅ Removed h-400 from here
     <div className="relative font-medium overflow-hidden font-Manrope">
       <img
         src={IMAGES.comparisonBg}
