@@ -78,19 +78,19 @@ const LatestProjects = () => {
   const currentProject = projectsData[activeIndex];
 
   return (
-    <div className="bg-gradient-latest-project-bg py-25 font-Manrope">
+    <div className="bg-gradient-latest-project-bg py-12 xl:py-15 2xl:py-25 font-Manrope">
       <Container>
         {/* Header */}
         <LatestProjectsHeader />
 
-        <div className="mt-12.5 flex justify-between gap-8">
+        <div className="mt-12.5 flex flex-col xl:flex-row justify-between gap-6 2xl:gap-8">
           {/* Industries tab */}
-          <div className="flex flex-col gap-4 w-[20%]">
+          <div className="flex flex-row xl:flex-col overflow-auto gap- w-full xl:w-[20%]">
             {industries.map((industry) => (
               <button
                 key={industry}
                 onClick={() => setActiveIndustryTab(industry)}
-                className={`py-2 px-5 text-lg font-medium text-left rounded-[70px] w-fit transition duration-300 ${
+                className={`py-2 px-5 text-sm 2xl:text-lg text-nowrap font-medium text-left rounded-3xl 2xl:rounded-[70px] w-fit transition duration-300 ${
                   activeIndustryTab === industry
                     ? "bg-primary-10 text-white"
                     : "text-neutral-85 hover:bg-primary-10/10 hover:text-primary-10"
@@ -101,9 +101,9 @@ const LatestProjects = () => {
             ))}
           </div>
 
-          <div className="flex gap-5 w-[80%]">
+          <div className="flex flex-col lg:flex-row gap-5 w-full xl:w-[80%]">
             {/* Middle part - Carousel */}
-            <div className="w-[60%]">
+            <div className="w-full lg:w-[60%]">
               <Swiper
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                 onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
@@ -127,7 +127,7 @@ const LatestProjects = () => {
             </div>
 
             {/* Right part */}
-            <div className="flex flex-col justify-between h-full w-[38%]">
+            <div className="flex flex-col justify-between h-full w-full lg:w-[38%]">
               <div>
                 <h3 className="text-neutral-70 font-semibold text-lg">
                   <Link
@@ -144,7 +144,7 @@ const LatestProjects = () => {
                   {currentProject?.tags.map((tag, idx) => (
                     <div
                       key={idx}
-                      className="px-3 py-2 bg-primary-30 rounded-lg text-primary-10 text-xs font-medium"
+                      className="px-3 py-2 bg-primary-30 rounded-lg text-primary-10 text-[10px] 2xl:text-xs font-medium"
                     >
                       {tag}
                     </div>
@@ -152,7 +152,7 @@ const LatestProjects = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-project-metrics-bg p-4 rounded-xl mt-10">
+              <div className="bg-gradient-project-metrics-bg p-4 rounded-xl mt-3 lg:mt-6 2xl:mt-10">
                 <h4 className="text-neutral-80 text-xs font-medium">
                   Key Metrics
                 </h4>
@@ -160,7 +160,7 @@ const LatestProjects = () => {
                   {currentProject?.metrics.map((metric, idx) => (
                     <p
                       key={idx}
-                      className="text-neutral-65 font-medium border-b border-primary-35 pb-3"
+                      className="text-neutral-65 font-medium border-b border-primary-35 pb-3 text-xs 2xl:text-sm"
                     >
                       {metric}
                     </p>

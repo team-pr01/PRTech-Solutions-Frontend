@@ -4,7 +4,7 @@ import AboutUs from "../../components/Homepage/AboutUs/AboutUs";
 import Hero from "../../components/Homepage/Hero/Hero";
 // import HomeFaq from "../../components/Homepage/HomeFaq/HomeFaq";
 // import Industries from "../../components/Homepage/Industries/Industries";
-// import LatestProjects from "../../components/Homepage/LatestProjects/LatestProjects";
+import LatestProjects from "../../components/Homepage/LatestProjects/LatestProjects";
 import Services from "../../components/Homepage/Services/Services";
 // import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
 // import CTA from "../../components/Reusable/CTA/CTA";
@@ -15,8 +15,8 @@ const Home = () => {
       <Hero />
       <AboutUs />
       <Services />
-      {/* <LatestProjects />
-      <Comparison />
+      <LatestProjects />
+      {/* <Comparison />
       <Industries />
       <CTA
         title="Ready to Build a System That Actually Grows Your Business?"
