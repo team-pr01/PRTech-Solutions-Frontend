@@ -8,14 +8,14 @@ import Button from "../../Reusable/Button/Button";
 const AllProjects = () => {
   const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
   return (
-    <div className="bg-gradient-latest-project-bg py-25 font-Manrope">
+    <div className="bg-gradient-latest-project-bg py-12 xl:py-15 2xl:py-25 font-Manrope">
       <Container>
         {/* Header */}
         <LatestProjectsHeader />
 
         <div className="mt-15 flex flex-col items-center">
           {/* Industries tab */}
-          <div className="flex items-center justify-center gap-4 px-4 py-2.5 rounded-[73px] shadow-industry-tab bg-white border border-primary-10">
+          <div className="flex items-center justify-center gap-4 px-4 py-2.5 rounded-4xl 2xl:rounded-[73px] shadow-industry-tab bg-white border border-primary-10 w-full md:w-fit overflow-x-auto text-nowrap">
             {industryNames.map((industry) => (
               <button
                 key={industry}
@@ -31,13 +31,13 @@ const AllProjects = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-x-7.5 gap-y-10 mt-17">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7.5 gap-y-10 mt-17">
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
           </div>
 
-          <div className="flex items-center justify-center mt-17">
+          <div className="flex items-center justify-center mt-6 xl:mt-12 2xl:mt-17">
             <Button label="View All Projects" />
           </div>
         </div>

@@ -68,7 +68,7 @@ const expertiseData = [
 
 const OurExpertise = () => {
   return (
-    <div className="py-25 bg-gradient-latest-project-bg font-Manrope">
+    <div className="py-12 xl:py-15 2xl:py-25 bg-gradient-latest-project-bg font-Manrope">
       <Container>
         {/* Header */}
         <div className="text-center">
@@ -76,12 +76,12 @@ const OurExpertise = () => {
             <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
               <div className="size-1.5 rounded-full bg-primary-10"></div>
             </div>
-            <p className="text-neutral-70 font-medium uppercase">
+            <p className="text-neutral-70 subHeading">
               Our Expertise
             </p>
           </div>
 
-          <h2 className="text-neutral-70 text-[60px] font-semibold leading-15 mt-2.5">
+          <h2 className="text-neutral-70 heading mt-2.5">
             Expertise Across{" "}
             <span className="text-primary-10">Web & Application</span>{" "}
             <span className="font-Playfair-Display italic font-medium">
@@ -89,18 +89,18 @@ const OurExpertise = () => {
             </span>
           </h2>
 
-          <p className="text-neutral-80 max-w-179 mx-auto font-normal leading-relaxed mt-6">
+          <p className="description text-neutral-80 max-w-179 mx-auto mt-4 2xl:mt-6">
             We work across the full product lifecycle — from early-stage
             planning to scalable, production-ready systems.
           </p>
         </div>
 
         {/* Expertise Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 mt-18">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-5 2xl:gap-7.5 mt-10 xl:mt-14 2xl:mt-18">
           {expertiseData.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl p-8 border border-neutral-91 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1"
+              className="bg-white rounded-2xl p-5 lg:p-8 border border-neutral-91 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1"
             >
               {/* Icon */}
               <div
@@ -123,7 +123,7 @@ const OurExpertise = () => {
         </div>
 
         {/* Optional: CTA at bottom */}
-        <div className="flex justify-center mt-14">
+        <div className="flex justify-center mt-5 xl:mt-8 2xl:mt-14">
           <Button label="Explore Our Solutions" />
         </div>
       </Container>

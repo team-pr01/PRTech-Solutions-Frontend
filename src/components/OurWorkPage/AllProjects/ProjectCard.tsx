@@ -4,10 +4,10 @@ const ProjectCard = () => {
   const tags = ["Fintech", "Healthcare", "SaaS", "E-commerce"];
   return (
     <div className=" font-Manrope">
-      <h2 className="text-neutral-70 text-2xl font-semibold">
+      <h2 className="text-neutral-70 text-lg xl:text-2xl font-semibold">
         Scaling a Tutor Marketplace 4× Faster with a Structured Hiring Platform
       </h2>
-      <div className="flex items-center gap-2 flex-wrap mt-6">
+      <div className="flex items-center gap-2 flex-wrap mt-4 lg:mt-6">
         {tags.map((tag, idx) => (
           <div
             key={idx}
@@ -24,7 +24,7 @@ const ProjectCard = () => {
         <div className="flex items-stretch gap-2 h-full">
           <div className="p-4 bg-white rounded-[20px] mt-2 flex-1">
             <h4 className="text-neutral-80 text-xs font-medium">Key Metrics</h4>
-            <p className="text-neutral-65 font-medium mt-2">
+            <p className="text-neutral-65 font-medium mt-2 text-xs">
               4× increase in registrations. Tutor matching now takes 2–3 days.
               Faster hiring with a structured pipeline.
             </p>
