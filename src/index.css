@@ -184,3 +184,16 @@ button{
 }
 
 
+
+
+@layer components {
+  /* Heading Utility */
+  .heading {
+    @apply font-Manrope text-3xl md:text-[40px] lg:text-[48px] 2xl:text-[60px] font-semibold leading-9 md:leading-12 lg:leading-14 2xl:leading-15;
+  }
+  
+  /* Description Utility */
+  .description {
+    @apply text-white font-Manrope text-xs md:text-sm 2xl:text-xl leading-6 md:leading-7 2xl:leading-8 font-normal;
+  }
+}

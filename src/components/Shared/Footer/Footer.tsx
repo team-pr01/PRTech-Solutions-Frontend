@@ -97,7 +97,7 @@ const Footer = () => {
 
   const licenseDetails = [
     {
-      text: "GSTIN : Dummay GSTIN12345",
+      text: "GSTIN : 27AAQCP8566M1ZB",
     },
     {
       text: "PAN Number : AAQCP8566M",

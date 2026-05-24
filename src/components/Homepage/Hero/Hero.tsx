@@ -29,7 +29,7 @@ const Hero = () => {
             className="justify-self-center"
           />
 
-          <h1 className="text-white text-center font-Manrope text-3xl md:text-[40px] lg:text-[48px] 2xl:text-[60px] font-semibold leading-9 md:leading-12 lg:leading-14 2xl:leading-15 max-w-262 mx-auto mt-5">
+          <h1 className="heading text-white text-center max-w-262 mx-auto mt-5">
             Custom{" "}
             <span className="font-Playfair-Display italic font-medium">
               Digital Systems
@@ -49,7 +49,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <p className="text-white font-Manrope text-xs md:text-sm 2xl:text-xl leading-6 md:leading-7 2xl:leading-8 max-w-180 2xl:max-w-205 mx-auto font-normal">
+            <p className="description max-w-180 2xl:max-w-205 mx-auto">
               We don't just develop websites or apps.
               We understand your users, your operations, and your growth gaps
               ,then build systems that actually drive leads, automate work, and
