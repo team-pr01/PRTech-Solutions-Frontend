@@ -1,6 +1,6 @@
 import AboutUs from "../../components/Homepage/AboutUs/AboutUs";
 // import AiPoweredSolutions from "../../components/Homepage/AiPoweredSolutions/AiPoweredSolutions";
-// import Comparison from "../../components/Homepage/Comparison/Comparison";
+import Comparison from "../../components/Homepage/Comparison/Comparison";
 import Hero from "../../components/Homepage/Hero/Hero";
 // import HomeFaq from "../../components/Homepage/HomeFaq/HomeFaq";
 // import Industries from "../../components/Homepage/Industries/Industries";
@@ -16,8 +16,8 @@ const Home = () => {
       <AboutUs />
       <Services />
       <LatestProjects />
-      {/* <Comparison />
-      <Industries />
+      <Comparison />
+      {/* <Industries />
       <CTA
         title="Ready to Build a System That Actually Grows Your Business?"
         description="We don't just build websites — we create systems that generate leads, automate operations, and help you scale faster."

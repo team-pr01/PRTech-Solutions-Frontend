@@ -108,7 +108,7 @@ const Services = () => {
               <div className="size-4 rounded-full border-2 border-white flex items-center justify-center">
                 <div className="size-1.5 rounded-full bg-white"></div>
               </div>
-              <p className="text-white font-medium uppercase text-sm xl:text-base">Services</p>
+              <p className="text-white subHeading">Services</p>
             </div>
 
             <h2 className="heading text-white text-center max-w-262 mx-auto mt-2.5">

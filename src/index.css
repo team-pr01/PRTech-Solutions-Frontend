@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -15,62 +15,112 @@
 
   /* Primary */
 
-  --color-primary-10: #06A0ED;
-  --color-primary-15: #6D86F9;
-  --color-primary-20: #C9D2FB;
-  --color-primary-25: #2A7EFF;
+  --color-primary-10: #06a0ed;
+  --color-primary-15: #6d86f9;
+  --color-primary-20: #c9d2fb;
+  --color-primary-25: #2a7eff;
   --color-primary-30: #06a0ed1a;
-  --color-primary-35: #98DDFF;
-  --color-primary-40: #E6F6FD;
+  --color-primary-35: #98ddff;
+  --color-primary-40: #e6f6fd;
 
   /* neutral */
 
-  --color-neutral-10: #DBE2EB;
+  --color-neutral-10: #dbe2eb;
   --color-neutral-15: #ffffff0d;
   --color-neutral-16: #030013;
   --color-neutral-20: #000;
   --color-neutral-30: #141319;
-  --color-neutral-40: #FDFDFD;
+  --color-neutral-40: #fdfdfd;
   --color-neutral-50: #575758;
   --color-neutral-60: #ffffff29;
-  --color-neutral-65: #0D1431;
-  --color-neutral-70: #1B2A3C;
+  --color-neutral-65: #0d1431;
+  --color-neutral-70: #1b2a3c;
   --color-neutral-80: #727881;
-  --color-neutral-85: #61686C;
-  --color-neutral-86: #58676E;
+  --color-neutral-85: #61686c;
+  --color-neutral-86: #58676e;
   --color-neutral-90: #e2e4e94d;
-  --color-neutral-91: #D7D7D7;
+  --color-neutral-91: #d7d7d7;
   --color-neutral-92: #26265933;
-  --color-neutral-93: #B7B7B7;
-  --color-neutral-94: #7777BA;
+  --color-neutral-93: #b7b7b7;
+  --color-neutral-94: #7777ba;
   --color-neutral-95: #92918f3d;
-  --color-neutral-96: #F8F8F8;
+  --color-neutral-96: #f8f8f8;
   --color-neutral-97: #ffffff14;
   --color-neutral-98: #ededed66;
   --color-neutral-99: #ffffffcc;
 
   /* Shadows */
-   --shadow-button: 0 4px 8px 0 rgba(57, 78, 102, 0.25), 0 0 0 1px #687D96;
-   --shadow-chip: 0 4px 10.2px 0 rgba(40, 77, 246, 0.20);
-   --shadow-stats-heading: 0 4px 5px rgba(132, 132, 132, 0.25);
-   --shadow-industry-icon: 0 4px 11.3px 0 rgba(194, 194, 194, 0.20), 0 19px 11.1px 0 rgba(217, 217, 217, 0.25) inset;
-   --shadow-accordion-card: 0 8px 30px 0 rgba(6, 160, 237, 0.15);
-   --shadow-our-work-client-box: 0 4px 4px 0 rgba(255, 255, 255, 0.25) inset;
-   --shadow-industry-tab: 0 4px 8.3px 0 rgba(211, 211, 211, 0.25);
+  --shadow-button: 0 4px 8px 0 rgba(57, 78, 102, 0.25), 0 0 0 1px #687d96;
+  --shadow-chip: 0 4px 10.2px 0 rgba(40, 77, 246, 0.2);
+  --shadow-stats-heading: 0 4px 5px rgba(132, 132, 132, 0.25);
+  --shadow-industry-icon:
+    0 4px 11.3px 0 rgba(194, 194, 194, 0.2),
+    0 19px 11.1px 0 rgba(217, 217, 217, 0.25) inset;
+  --shadow-accordion-card: 0 8px 30px 0 rgba(6, 160, 237, 0.15);
+  --shadow-our-work-client-box: 0 4px 4px 0 rgba(255, 255, 255, 0.25) inset;
+  --shadow-industry-tab: 0 4px 8.3px 0 rgba(211, 211, 211, 0.25);
 
   /* Gradients */
-  --gradient-navbar-button: linear-gradient(180deg, #06A0ED 21.5%, rgba(7, 160, 236, 0.60) 82.81%);
-  --gradient-primary-button: linear-gradient(180deg, #06A0ED 21.5%, rgba(0, 128, 255, 0.60) 82.81%), #06A0ED;
-  --gradient-service-card-icon-bg: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
-  --gradient-latest-project-bg: radial-gradient(53.74% 62.68% at -6.15% -4.83%, rgba(71, 151, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #FFF 0%, #FFF 60%, #EAF8FF 90%, #FFF 100%);
-  --gradient-project-metrics-bg: linear-gradient(142deg, #FFF 38.48%, #AFE5FF 124.99%);
-  --gradient-comparison: linear-gradient(180deg, #06A0ED 0%, rgba(0, 128, 255, 0.80) 100%);
-  --gradient-industry-line: linear-gradient(180deg, #06A0ED 0%, rgba(171, 171, 171, 0.07) 100%);
-  --gradient-faq-bg: conic-gradient(from 232deg at 104.42% 104.15%, #FFF 21.385518014431deg, #FFF 24.11387711763382deg, #BBC9FF 245.09671926498413deg, #BBC9FF 360deg);
-  --gradient-our-work-hero-bg: radial-gradient(40.63% 35.95% at 50% -6.59%, #06A0ED 0%, rgba(27, 22, 62, 0.00) 100%), linear-gradient(180deg, #1B163E 0%, #000 100%);
-  --gradient-our-work-hero-line1: linear-gradient(90deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.00) 100%);
-  --gradient-contact-us-form-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(5, 160, 237, 0.24) 100%);
-  --gradient-schedule-call-bg: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
+  --gradient-navbar-button: linear-gradient(
+    180deg,
+    #06a0ed 21.5%,
+    rgba(7, 160, 236, 0.6) 82.81%
+  );
+  --gradient-primary-button:
+    linear-gradient(180deg, #06a0ed 21.5%, rgba(0, 128, 255, 0.6) 82.81%),
+    #06a0ed;
+  --gradient-service-card-icon-bg:
+    linear-gradient(180deg, #038cf8 -10.67%, rgba(13, 20, 49, 0) 89.94%),
+    #0d1431;
+  --gradient-latest-project-bg:
+    radial-gradient(
+      53.74% 62.68% at -6.15% -4.83%,
+      rgba(71, 151, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(180deg, #fff 0%, #fff 60%, #eaf8ff 90%, #fff 100%);
+  --gradient-project-metrics-bg: linear-gradient(
+    142deg,
+    #fff 38.48%,
+    #afe5ff 124.99%
+  );
+  --gradient-comparison: linear-gradient(
+    180deg,
+    #06a0ed 0%,
+    rgba(0, 128, 255, 0.8) 100%
+  );
+  --gradient-industry-line: linear-gradient(
+    180deg,
+    #06a0ed 0%,
+    rgba(171, 171, 171, 0.07) 100%
+  );
+  --gradient-faq-bg: conic-gradient(
+    from 232deg at 104.42% 104.15%,
+    #fff 21.385518014431deg,
+    #fff 24.11387711763382deg,
+    #bbc9ff 245.09671926498413deg,
+    #bbc9ff 360deg
+  );
+  --gradient-our-work-hero-bg:
+    radial-gradient(
+      40.63% 35.95% at 50% -6.59%,
+      #06a0ed 0%,
+      rgba(27, 22, 62, 0) 100%
+    ),
+    linear-gradient(180deg, #1b163e 0%, #000 100%);
+  --gradient-our-work-hero-line1: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --gradient-contact-us-form-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(5, 160, 237, 0.24) 100%
+  );
+  --gradient-schedule-call-bg:
+    linear-gradient(180deg, #038cf8 -10.67%, rgba(13, 20, 49, 0) 89.94%),
+    #0d1431;
 
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
@@ -123,10 +173,9 @@
   background: var(--gradient-schedule-call-bg);
 }
 
-button{
+button {
   cursor: pointer;
 }
-
 
 /* index.css or globals.css */
 
@@ -183,17 +232,19 @@ button{
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
 @layer components {
   /* Heading Utility */
   .heading {
     @apply font-Manrope text-3xl md:text-[40px] lg:text-[48px] 2xl:text-[60px] font-semibold leading-9 md:leading-12 lg:leading-14 2xl:leading-15;
   }
-  
+
   /* Description Utility */
   .description {
     @apply text-white font-Manrope text-xs md:text-sm 2xl:text-xl leading-6 md:leading-7 2xl:leading-8 font-normal;
+  }
+
+  /* Subheading Utility */
+  .subHeading {
+    @apply font-medium uppercase text-sm xl:text-base;
   }
 }
