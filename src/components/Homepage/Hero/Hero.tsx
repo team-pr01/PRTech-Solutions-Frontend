@@ -1,4 +1,3 @@
-// Hero.tsx
 import { ICONS, IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
@@ -18,19 +17,19 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative h-308">
-      <img src={IMAGES.heroBg} alt="hero-bg" className="w-full h-308" />
+    <div className="relative h-240 2xl:h-270">
+      <img src={IMAGES.heroBg} alt="hero-bg" className="w-full h-full" />
 
       {/* Content */}
       <Container>
-        <div className="absolute top-61.5 left-1/2 -translate-x-1/2 text-center flex flex-col items-center gap-6 w-full">
+        <div className="absolute top-45 md:top-50 lg:top-55 2xl:top-61.5 left-1/2 -translate-x-1/2 text-center flex flex-col items-center w-full">
           <img
             src={ICONS.heroRatings}
             alt="hero-bg"
             className="justify-self-center"
           />
 
-          <h1 className="text-white text-center font-Manrope text-[60px] font-semibold leading-15 max-w-262 mx-auto mt-5">
+          <h1 className="text-white text-center font-Manrope text-3xl md:text-[40px] lg:text-[48px] 2xl:text-[60px] font-semibold leading-9 md:leading-12 lg:leading-14 2xl:leading-15 max-w-262 mx-auto mt-5">
             Custom{" "}
             <span className="font-Playfair-Display italic font-medium">
               Digital Systems
@@ -38,8 +37,8 @@ const Hero = () => {
             Built Around Your Business, Not Templates
           </h1>
 
-          <div className="font-Inter font-medium flex justify-between w-full max-w-280 mx-auto">
-            <div className="w-fit relative mt-3">
+          <div className="font-Inter font-medium flex justify-between w-full max-w-280 mx-auto mt-4 2xl:mt-6">
+            <div className="hidden w-fit md:relative mt-3">
               <img
                 src={ICONS.cursorTop}
                 alt=""
@@ -50,14 +49,14 @@ const Hero = () => {
               </div>
             </div>
 
-            <p className="text-white font-Manrope text-xl leading-8 max-w-205 mx-auto font-normal">
-              We don't just develop websites or apps. <br />
+            <p className="text-white font-Manrope text-xs md:text-sm 2xl:text-xl leading-6 md:leading-7 2xl:leading-8 max-w-180 2xl:max-w-205 mx-auto font-normal">
+              We don't just develop websites or apps.
               We understand your users, your operations, and your growth gaps
               ,then build systems that actually drive leads, automate work, and
               scale your business.
             </p>
 
-            <div className="w-fit relative mt-19">
+            <div className="w-fit hidden md:relative mt-19">
               <img
                 src={ICONS.cursorTop}
                 alt=""
@@ -69,9 +68,9 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6 lg:mt-8 2xl:mt-10">
             <Button label="Get Your Project Feasibility Review" />
-            <Button variant="tertiary" label="Explore Systems We've Built" />
+            <Button variant="tertiary" label="Explore Systems We've Built" className="w-full md:w-fit" />
           </div>
         </div>
       </Container>
@@ -81,21 +80,12 @@ const Hero = () => {
         <div className="marquee-track">
           <div className="marquee-content">
             {featuredProjects.map((project, index) => (
-              <div
-                key={index}
-                className="relative w-100 h-70 shrink-0 rounded-2xl overflow-hidden group cursor-pointer"
-              >
                 <img
+                key={index}
                   src={project}
                   alt={`Featured Project ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="relative w-100 h-70 rounded-2xl object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-sm font-medium">Featured Project</p>
-                  <p className="text-xs opacity-80">View Details →</p>
-                </div>
-              </div>
             ))}
           </div>
         </div>

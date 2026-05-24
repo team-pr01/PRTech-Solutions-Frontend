@@ -29,14 +29,14 @@ const AboutUs = () => {
     "bg-primary-10 rounded-xl shadow-chip px-5 py-2 text-white font-Manrope font-medium w-fit";
   return (
     <Container>
-      <div className="py-24">
-        <p className="font-Poppins text-[32px] text-primary-10 text-center">
+      <div className="py-12 2xl:py-24">
+        <p className="font-Poppins text-2xl 2xl:text-[32px] text-primary-10 text-center">
           (hello)
         </p>
 
         <div className="flex items-center justify-between">
           {/* Left Side */}
-          <div className="flex">
+          <div className="hidden lg:flex">
             <div>
               <div className={`${chipClass} rotate-15`}>Web Design</div>
               <div className={`${chipClass} -rotate-30 mt-20`}>
@@ -50,7 +50,7 @@ const AboutUs = () => {
           </div>
 
           {/* Description */}
-          <p className="text-neutral-30 text-center font-Manrope text-[40px] font-semibold leading-normal max-w-225 mx-auto mt-5">
+          <p className="text-neutral-30 text-center font-Manrope text-2xl 2xl:text-[40px] font-semibold leading-normal max-w-225 mx-auto mt-5">
             We’re{" "}
             <span className="font-Playfair-Display italic font-medium text-primary-10">
               PRTeach Solutions
@@ -67,7 +67,7 @@ const AboutUs = () => {
           </p>
 
           {/* Right Side */}
-          <div className="flex mt-10">
+          <div className="hidden lg:flex mt-10">
             <div>
               <img src={ICONS.penTool} alt="" className="size-7.5" />
               <img src={ICONS.cursorBlue} alt="" className="size-7.5 mt-10" />
@@ -80,7 +80,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-7.5 mt-15">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-7.5 mt-10 md:mt-15">
           {stats.map((stat, index) => (
             <StatCard key={index} stat={stat} />
           ))}

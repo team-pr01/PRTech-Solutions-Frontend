@@ -75,6 +75,7 @@ import calendar from "./icons/calendar.svg";
 import clock from "./icons/clock.svg";
 import polygon from "./icons/polygon.svg";
 import quotation from "./icons/quotation.svg";
+import hamburgerMenu from "./icons/hamburger-menu.svg";
 
 
 export const IMAGES = {
@@ -154,5 +155,6 @@ export const ICONS = {
     calendar,
     clock,
     polygon,
-    quotation
+    quotation,
+    hamburgerMenu
 };

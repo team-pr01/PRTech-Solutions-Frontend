@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { NAVLINKS } from "./navlinks";
-import { IMAGES } from "../../../assets";
+import { ICONS, IMAGES } from "../../../assets";
 
 const Navbar = () => {
   return (
-    <div className="rounded-xl border border-neutral-10 bg-neutral-15 backdrop-blur-[45px] px-3 py-2 font-Manrope flex items-center justify-between gap-18 fixed top-6 left-1/2 -translate-x-1/2 w-fit h-fit z-20">
+    <div className="rounded-xl border border-neutral-10 bg-neutral-15 backdrop-blur-[45px] px-3 py-2 font-Manrope flex items-center justify-between gap-18 absolute top-6 left-1/2 -translate-x-1/2 max-w-[320px] lg:max-w-[900px] w-full h-fit z-20">
       <Link to="/">
         <img src={IMAGES.logo} alt="logo" className="w-28" />
       </Link>
 
       <div>
-        <ul className="flex items-center gap-6 font-semibold text-white">
+        <ul className="hidden lg:flex items-center gap-6 font-semibold text-white">
           {NAVLINKS.map((link, index) => (
             <Link key={index} to={link.href} className="">
               {link.label}
@@ -19,8 +19,12 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <button className="bg-gradient-navbar-button shadow-button border border-primary-10 rounded-lg px-4 py-2 font-bold text-white">
+      <button className="bg-gradient-navbar-button shadow-button border border-primary-10 rounded-lg px-4 py-2 font-bold text-white hidden lg:block">
         Say hi
+      </button>
+
+      <button className="lg:hidden">
+        <img src={ICONS.hamburgerMenu} alt="" className="size-7" />
       </button>
     </div>
   );

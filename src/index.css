@@ -169,7 +169,7 @@ button{
 /* Responsive speed adjustment */
 @media (max-width: 768px) {
   .marquee-content {
-    animation-duration: 20s;
+    animation-duration: 50s;
   }
 }
 

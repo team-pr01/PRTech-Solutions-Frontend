@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <Hero />
       <AboutUs />
-      <Services />
+      {/* <Services />
       <LatestProjects />
       <Comparison />
       <Industries />
@@ -34,7 +34,7 @@ const Home = () => {
       />
       <Testimonials />
       <AiPoweredSolutions />
-      <HomeFaq />
+      <HomeFaq /> */}
     </div>
   );
 };
