@@ -55,7 +55,7 @@ const AllTestimonial = () => {
   const allTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <div className="py-25 font-Manrope bg-white">
+    <div className="py-12 xl:py-15 2xl:py-25 font-Manrope bg-white">
       <Container>
         <div>
           {/* Header */}
@@ -64,12 +64,10 @@ const AllTestimonial = () => {
               <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
                 <div className="size-1.5 rounded-full bg-primary-10"></div>
               </div>
-              <p className="text-neutral-70 font-medium uppercase tracking-wider">
-                TESTIMONIALS
-              </p>
+              <p className="text-neutral-70 subHeading">TESTIMONIALS</p>
             </div>
 
-            <h2 className="text-neutral-70 text-[60px] font-semibold leading-15 mt-2.5">
+            <h2 className="text-neutral-70 heading mt-2.5">
               What{" "}
               <span className="font-Playfair-Display italic font-medium">
                 Our Clients
@@ -77,7 +75,7 @@ const AllTestimonial = () => {
               are <span className="text-primary-10">Saying</span>
             </h2>
 
-            <p className="text-neutral-80 font-Manrope max-w-179 mx-auto font-normal mb-6 leading-relaxed mt-6 text-lg">
+            <p className="description text-neutral-80 max-w-179 mx-auto mb-6 mt-4 2xl:mt-6">
               We help businesses grow with design, strategy, and genuine care
               but don't just take our word for it.
             </p>
@@ -86,8 +84,8 @@ const AllTestimonial = () => {
       </Container>
 
       {/* Row 1 - Right to Left */}
-      <div className="mt-18 relative overflow-hidden">
-        <div className="flex gap-6 animate-marquee-right">
+      <div className="mt-12 lg:mt-18 relative overflow-hidden">
+        <div className="flex gap-0 lg:gap-6 animate-marquee-right">
           {allTestimonials.map((testimonial, index) => (
             <TextTestimonialCard key={index} testimonial={testimonial} />
           ))}
@@ -96,7 +94,7 @@ const AllTestimonial = () => {
 
       {/* Row 2 - Left to Right */}
       <div className="mt-6 relative overflow-hidden">
-        <div className="flex gap-6 animate-marquee-left">
+        <div className="flex gap-0 lg:gap-6 animate-marquee-left">
           {allTestimonials
             .slice()
             .reverse()

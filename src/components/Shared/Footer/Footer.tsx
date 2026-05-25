@@ -130,19 +130,27 @@ const Footer = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <Container>
                   <div className="text-center flex flex-col items-center justify-center">
-                    <h2 className="text-white text-center text-[48px] font-semibold leading-12 max-w-230 mx-auto">
+                    <h2 className="text-white text-center text-[28px] md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 max-w-230 mx-auto">
                       Ready to Build a System That Actually Grows Your Business?
                     </h2>
 
-                    <p className="text-white font-Manrope leading-8 max-w-120 mx-auto font-normal mt-6">
+                    <p className="description text-white max-w-120 mx-auto mt-4 2xl:mt-6">
                       We don't just build websites — we create systems that
                       generate leads, automate operations, and help you scale
                       faster.
                     </p>
 
-                    <div className="flex items-center justify-center gap-6 mt-6">
-                      <Button variant="secondary" label="Let's Get Started" />
-                      <Button variant="tertiary" label="See Our Services" />
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6">
+                      <Button
+                        variant="secondary"
+                        label="Let's Get Started"
+                        className="w-full md:w-fit"
+                      />
+                      <Button
+                        variant="tertiary"
+                        label="See Our Services"
+                        className="w-full md:w-fit"
+                      />
                     </div>
                   </div>
                 </Container>
@@ -150,15 +158,15 @@ const Footer = () => {
             </div>
           )}
 
-          <div className="flex flex-col xl:flex-row gap-15 xl:gap-0 justify-between mt-20">
+          <div className="flex flex-col xl:flex-row gap-10 lg:gap-15 2xl:gap-0 justify-between mt-15 lg:mt-20 w-full">
             {/* Left column */}
-            <div>
-              <p className="text-white max-w-95">
+            <div className="max-w-95">
+              <p className="text-white text-center md:text-start">
                 We build custom web, app, and AI-powered systems that help
                 businesses generate leads, automate operations, and scale
                 efficiently.
               </p>
-              <div className="flex gap-4 mt-10">
+              <div className="flex justify-center md:justify-start gap-4 mt-5 lg:mt-10">
                 {socialMediaLinks.map((link) => (
                   <a
                     key={link.name}
@@ -173,80 +181,84 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Important Links Column */}
-            <div>
-              <h1 className="text-white font-bold leading-normal">
-                Important Links
-              </h1>
-              <div className="mt-6 flex flex-col gap-4">
-                {importantLinks?.map((item) => (
-                  <a
-                    key={item?.label}
-                    href={item?.path}
-                    className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
-                  >
-                    {item?.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Services Links Column */}
-            <div>
-              <h1 className="text-white font-bold leading-normal">Services</h1>
-              <div className="mt-6 flex flex-col gap-4">
-                {services?.map((item) => (
-                  <a
-                    key={item?.label}
-                    href={item?.path}
-                    className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
-                  >
-                    {item?.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Contact Info Column */}
-            <div>
-              <h1 className="text-white font-bold leading-normal">
-                Contact Us
-              </h1>
-              <div className="mt-8 flex flex-col gap-4">
-                {contactDetails?.map((item, index) =>
-                  item?.href ? (
+            <div className="flex flex-col md:flex-row gap-10 lg:gap-15 2xl:gap-0 justify-between 2xl:w-[60%]">
+              {/* Important Links Column */}
+              <div>
+                <h1 className="text-white font-bold leading-normal">
+                  Important Links
+                </h1>
+                <div className="mt-6 lg:mt-6 flex flex-col gap-4">
+                  {importantLinks?.map((item) => (
                     <a
-                      key={index}
-                      href={item?.href}
-                      className={`text-neutral-96 text-[15px] w-fit hover:underline flex gap-4 ${
-                        index === 0 ? "items-start" : "items-center"
-                      }`}
+                      key={item?.label}
+                      href={item?.path}
+                      className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
                     >
-                      <img src={item?.icon} alt="" className="size-6" />
-                      {item?.text}
+                      {item?.label}
                     </a>
-                  ) : (
-                    <div
-                      key={index}
-                      className={`text-neutral-96 text-[15px] flex gap-4 ${
-                        index === 0 ? "items-start" : "items-center"
-                      }`}
+                  ))}
+                </div>
+              </div>
+
+              {/* Services Links Column */}
+              <div>
+                <h1 className="text-white font-bold leading-normal">
+                  Services
+                </h1>
+                <div className="mt-6 lg:mt-6 flex flex-col gap-4">
+                  {services?.map((item) => (
+                    <a
+                      key={item?.label}
+                      href={item?.path}
+                      className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
                     >
-                      <img src={item?.icon} alt="" className="size-6" />
-                      {item?.text}
-                    </div>
-                  ),
-                )}
+                      {item?.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Contact Info Column */}
+              <div>
+                <h1 className="text-white font-bold leading-normal">
+                  Contact Us
+                </h1>
+                <div className="mt-6 lg:mt-6 flex flex-col gap-4">
+                  {contactDetails?.map((item, index) =>
+                    item?.href ? (
+                      <a
+                        key={index}
+                        href={item?.href}
+                        className={`text-neutral-96 text-[15px] w-fit hover:underline flex gap-4 ${
+                          index === 0 ? "items-start" : "items-center"
+                        }`}
+                      >
+                        <img src={item?.icon} alt="" className="size-6" />
+                        {item?.text}
+                      </a>
+                    ) : (
+                      <div
+                        key={index}
+                        className={`text-neutral-96 text-[15px] flex gap-4 ${
+                          index === 0 ? "items-start" : "items-center"
+                        }`}
+                      >
+                        <img src={item?.icon} alt="" className="size-6" />
+                        {item?.text}
+                      </div>
+                    ),
+                  )}
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-14 mt-14">
-            <img src={IMAGES.logo} alt="" />
+          <div className="flex flex-col-reverse xl:flex-row justify-between gap-10 lg:gap-14 mt-14">
+            <img src={IMAGES.logo} alt="" className="w-full md:w-1/2 mx-auto" />
             {/* Contact Info Column */}
             <div>
               <h1 className="text-white font-bold leading-normal">License</h1>
-              <div className="mt-8 flex flex-col gap-4">
+              <div className="mt-6 lg:mt-6 flex flex-col gap-4">
                 {licenseDetails?.map((item, index) => (
                   <div
                     key={index}
@@ -257,12 +269,12 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <img src={ICONS.footerShape} alt="" />
+            <img src={ICONS.footerShape} alt="" className="hidden xl:block" />
           </div>
 
           <hr className="border border-neutral-98 mt-14 mb-8" />
 
-          <div className="flex justify-between">
+          <div className="flex flex-col-reverse lg:flex-row justify-center items-center lg:justify-between gap-3 lg:gap-0">
             <p className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit">
               © 2026 PRTeach. All rights reserved.
             </p>

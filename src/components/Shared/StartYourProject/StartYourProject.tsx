@@ -8,7 +8,7 @@ const StartYourProject = () => {
       <Container>
         <div className="absolute top-1/2 -translate-y-1/2 md:-translate-y-1/2 z-10">
           <h2
-            className={`text-white text-3xl md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 lg:leading-12 max-w-100`}
+            className={`text-white text-3xl md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 max-w-100`}
           >
             Have <span className="text-primary-10">Something</span> Similar in
             Mind?
