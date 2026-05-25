@@ -8,7 +8,7 @@ import Button from "../../Reusable/Button/Button";
 const AllProjects = () => {
   const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
   return (
-    <div className="bg-gradient-latest-project-bg py-12 xl:py-15 2xl:py-25 font-Manrope">
+    <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
       <Container>
         {/* Header */}
         <LatestProjectsHeader />

@@ -144,7 +144,7 @@ const Testimonials = () => {
   );
 
   return (
-    <div className="py-12 xl:py-15 2xl:py-25 font-Manrope overflow-hidden">
+    <div className="sectionPadding font-Manrope overflow-hidden">
       <Container>
         {/* Header */}
         <div className="text-center">

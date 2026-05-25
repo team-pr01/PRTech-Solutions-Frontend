@@ -48,7 +48,7 @@ const Industries = () => {
   }, []);
 
   return (
-    <div className="py-12 xl:py-15 2xl:py-25 font-Manrope bg-white">
+    <div className="sectionPadding font-Manrope bg-white">
       <Container>
         <div>
           {/* Header */}

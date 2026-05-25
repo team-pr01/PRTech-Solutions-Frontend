@@ -78,7 +78,7 @@ const LatestProjects = () => {
   const currentProject = projectsData[activeIndex];
 
   return (
-    <div className="bg-gradient-latest-project-bg py-12 xl:py-15 2xl:py-25 font-Manrope">
+    <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
       <Container>
         {/* Header */}
         <LatestProjectsHeader />

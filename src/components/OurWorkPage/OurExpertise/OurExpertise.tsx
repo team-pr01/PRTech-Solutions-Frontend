@@ -68,7 +68,7 @@ const expertiseData = [
 
 const OurExpertise = () => {
   return (
-    <div className="py-12 xl:py-15 2xl:py-25 bg-gradient-latest-project-bg font-Manrope">
+    <div className="sectionPadding bg-gradient-latest-project-bg font-Manrope">
       <Container>
         {/* Header */}
         <div className="text-center">
