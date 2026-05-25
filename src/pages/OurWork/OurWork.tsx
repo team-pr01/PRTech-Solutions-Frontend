@@ -4,28 +4,14 @@ import AllProjects from "../../components/OurWorkPage/AllProjects/AllProjects";
 import OurExpertise from "../../components/OurWorkPage/OurExpertise/OurExpertise";
 import OurWorkHero from "../../components/OurWorkPage/OurWorkHero/OurWorkHero";
 import CTA from "../../components/Reusable/CTA/CTA";
+import StartYourProject from "../../components/Shared/StartYourProject/StartYourProject";
 
 const OurWork = () => {
   return (
     <div>
       <OurWorkHero />
       <AllProjects />
-      <CTA
-        title="Have Something Similar in Mind?"
-        description="Every project starts with understanding your business, not just requirements. Let’s figure out what the right system looks like for you."
-        primaryButton={{
-          label: "Get Your Strategy Plan",
-          onClick: () => console.log("Get Started clicked"),
-          variant: "primary",
-        }}
-        secondaryButton={{
-          label: "Discuss Your Project",
-          onClick: () => console.log("See Services clicked"),
-          variant: "tertiary",
-        }}
-        backgroundImage={IMAGES.ctaBg3}
-        className="bg-neutral-16"
-      />
+      <StartYourProject/>
       <Testimonials />
       <OurExpertise />
       <CTA

@@ -21,6 +21,7 @@ import aiSolutionsCardBg from "./images/ai-solutions-card-bg.webp";
 import footerGradient from "./images/footer-gradient.webp";
 import ourWorkHeroBg from "./images/our-work-hero-bg.webp";
 import contactUsHeroBg from "./images/contact-us-hero-bg.webp";
+import startYourProject from "./images/start-your-project-img.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -101,6 +102,7 @@ export const IMAGES = {
     footerGradient,
     ourWorkHeroBg,
     contactUsHeroBg,
+    startYourProject,
     // Clients
     bcoEco,
     attributionBooster,
