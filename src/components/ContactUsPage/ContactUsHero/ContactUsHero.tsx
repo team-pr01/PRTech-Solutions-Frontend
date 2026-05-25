@@ -16,11 +16,11 @@ const ContactUsHero = () => {
       {/* Content */}
       <div className="relative flex flex-col items-center gap-6 w-full z-10 mt-40">
         <Container>
-          <div className="bg-white w-fit mx-auto px-4 py-3 text-neutral-65 font-semibold flex items-center justify-center gap-2 rounded-3xl">
+          <div className="bg-white w-fit mx-auto px-4 py-3 text-xs md:text-sm text-neutral-65 font-semibold flex items-center justify-center gap-2 rounded-3xl">
             <img src={ICONS.polygon} alt="" />
             Get In Touch <img src={ICONS.polygon} alt="" />
           </div>
-          <h1 className="text-white text-center font-Manrope text-[60px] font-semibold leading-15 max-w-230 mx-auto mt-4">
+          <h1 className="text-white text-center heading max-w-230 mx-auto mt-4">
             Let's{" "}
             <span className="font-Playfair-Display italic font-medium">
               Build Something
@@ -28,7 +28,7 @@ const ContactUsHero = () => {
             That Actually Works
           </h1>
 
-          <p className="text-white font-Manrope text-center text-xl leading-8 max-w-205 mx-auto font-normal mt-6">
+          <p className="description text-white text-center max-w-205 mx-auto mt-4 2xl:mt-6">
             Whether you have a clear idea or just know something needs to
             improve ,we'll help you figure out the right system for your
             business.
@@ -37,7 +37,7 @@ const ContactUsHero = () => {
           {/* Contact Details Cards Grid */}
           <ContactInformation />
 
-          <div className="flex gap-10 mt-25">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 mt-16 lg:mt-25">
             <ContactUsForm />
 
             <ScheduleCall />

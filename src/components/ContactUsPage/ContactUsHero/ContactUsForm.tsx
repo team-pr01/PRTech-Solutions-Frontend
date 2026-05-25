@@ -17,8 +17,8 @@ const ContactUsForm = () => {
     formState: { errors },
   } = useForm<TFormData>();
   return (
-    <div className="p-10 bg-gradient-contact-us-form-bg backdrop-blur-xl border border-white rounded-[40px] w-[60%]">
-      <h2 className="text-white text-center font-Manrope text-[36px] font-semibold">
+    <div className="p-5 lg:p-10 bg-gradient-contact-us-form-bg backdrop-blur-xl border border-white rounded-[20px] lg:rounded-[40px] w-full lg:w-[60%]">
+      <h2 className="text-white text-center font-Manrope text-[26px] md:text-[36px] font-semibold">
         Tell Us About Your{" "}
         <span className="font-Playfair-Display italic font-medium text-primary-10">
           Requirement

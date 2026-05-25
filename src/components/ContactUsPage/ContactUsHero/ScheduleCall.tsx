@@ -24,11 +24,11 @@ const ScheduleCall = () => {
   } = useForm<TFormData>();
   return (
     <>
-      <div className="p-10 bg-white border border-white rounded-[40px] h-fit w-[40%]">
-        <h2 className="text-neutral-65 font-Manrope text-[36px] font-semibold">
+      <div className="p-5 lg:p-10 bg-white border border-white rounded-[20px] lg:rounded-[40px] h-fit w-full lg:w-[40%]">
+        <h2 className="text-neutral-65 font-Manrope text-[26px] md:text-[36px] font-semibold">
           Prefer to talk directly?
         </h2>
-        <p className="text-neutral-86 font-normal mt-3">
+        <p className="text-neutral-86 font-normal mt-2 md:mt-3">
           You can also schedule a call at your convenience.
         </p>
 
