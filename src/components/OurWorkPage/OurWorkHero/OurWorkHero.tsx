@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
 import Container from "../../Reusable/Container/Container";
+import { handleScrollToTestimonial } from "../../../helpers/handleScrollToTestimonialSection";
 
 const OurWorkHero = () => {
   const clients = [
@@ -26,7 +28,7 @@ const OurWorkHero = () => {
               100%
             </div>
             <span className="text-neutral-65">Clients Satisfaction</span>
-            <button className="text-primary-10 underline">See Reviews ↓</button>
+            <button onClick={handleScrollToTestimonial} className="text-primary-10 underline">See Reviews ↓</button>
           </div>
           <h1 className="text-white text-center heading max-w-230 mx-auto mt-4">
             Our{" "}
@@ -43,8 +45,19 @@ const OurWorkHero = () => {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8 w-full">
-            <Button label="Get Your Strategy Plan" className="w-full md:w-fit" />
-            <Button variant="secondary" label="Discuss Your Project" className="w-full md:w-fit" />
+            <Link to="/contact-us">
+              <Button
+                label="Get Your Strategy Plan"
+                className="w-full md:w-fit"
+              />
+            </Link>
+            <Link to="/contact-us">
+              <Button
+                variant="secondary"
+                label="Discuss Your Project"
+                className="w-full md:w-fit"
+              />
+            </Link>
           </div>
 
           <div className="hidden xl:flex items-center justify-center gap-2 mt-25">
@@ -65,7 +78,7 @@ const OurWorkHero = () => {
                   Trusted by Leading Brands
                 </p>
               </div>
-              <Button variant="tertiary" label="Add your company" />
+              <Link to="/contact-us"><Button variant="tertiary" label="Add your company" /></Link>
             </div>
 
             {/* Project- Marquee */}

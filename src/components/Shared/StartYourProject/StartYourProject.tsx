@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
 import Container from "../../Reusable/Container/Container";
@@ -20,16 +21,20 @@ const StartYourProject = () => {
           </p>
 
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 mt-6 pr-5">
-            <Button
-              variant="secondary"
-              label="Get Your Plan"
-              className="w-full md:w-fit"
-            />
-            <Button
-              variant="tertiary"
-              label="Discuss Project"
-              className="w-full md:w-fit"
-            />
+            <Link to="/contact-us">
+              <Button
+                variant="secondary"
+                label="Get Your Plan"
+                className="w-full md:w-fit"
+              />
+            </Link>
+            <Link to="/contact-us">
+              <Button
+                variant="tertiary"
+                label="Discuss Project"
+                className="w-full md:w-fit"
+              />
+            </Link>
           </div>
         </div>
 

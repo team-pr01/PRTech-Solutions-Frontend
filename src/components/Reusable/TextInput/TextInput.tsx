@@ -52,7 +52,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           defaultValue={defaultValue}
           ref={ref}
           disabled={isDisabled}
-          className={`w-full px-4 py-3,5 rounded-lg  border leading-4.5 focus:outline-none focus:border-primary-10 transition duration-300 ${isDisabled ? "cursor-not-allowed bg-white/80" : "bg-white"} ${
+          className={`w-full px-4 py-3.5 rounded-lg  border leading-4.5 focus:outline-none focus:border-primary-10 transition duration-300 ${isDisabled ? "cursor-not-allowed bg-white/80" : "bg-white"} ${
             error ? "border-red-500" : "border-white"
           }`}
           {...rest}

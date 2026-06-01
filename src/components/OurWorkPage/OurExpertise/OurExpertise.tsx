@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
+import { Link } from "react-router-dom";
 
 const expertiseData = [
   {
@@ -76,9 +77,7 @@ const OurExpertise = () => {
             <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
               <div className="size-1.5 rounded-full bg-primary-10"></div>
             </div>
-            <p className="text-neutral-70 subHeading">
-              Our Expertise
-            </p>
+            <p className="text-neutral-70 subHeading">Our Expertise</p>
           </div>
 
           <h2 className="text-neutral-70 heading mt-2.5">
@@ -124,7 +123,9 @@ const OurExpertise = () => {
 
         {/* Optional: CTA at bottom */}
         <div className="flex justify-center mt-5 xl:mt-8 2xl:mt-14">
-          <Button label="Explore Our Solutions" />
+          <Link to="/contact-us">
+            <Button label="Build Yours" />
+          </Link>
         </div>
       </Container>
     </div>

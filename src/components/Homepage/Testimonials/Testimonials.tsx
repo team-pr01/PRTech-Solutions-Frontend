@@ -144,7 +144,7 @@ const Testimonials = () => {
   );
 
   return (
-    <div className="sectionPadding font-Manrope overflow-hidden">
+    <div id="testimonials" className="sectionPadding font-Manrope overflow-hidden">
       <Container>
         {/* Header */}
         <div className="text-center">

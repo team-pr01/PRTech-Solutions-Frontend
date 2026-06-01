@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import TextInput from "../../Reusable/TextInput/TextInput";
 import Textarea from "../../Reusable/TextArea/TextArea";
 import Button from "../../Reusable/Button/Button";
+import TextInput from "../../Reusable/TextInput/TextInput";
 
 type TFormData = {
   name: string;
