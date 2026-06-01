@@ -19,14 +19,22 @@ const Navbar = () => {
           className={`hidden lg:flex items-center gap-6 font-semibold ${pathname !== "/coming-soon" ? "text-white" : "text-neutral-65"}`}
         >
           {NAVLINKS.map((link, index) => (
-            <Link key={index} to={link.href} className="">
+            <Link
+              key={index}
+              onClick={link?.onClick}
+              to={link?.href as string}
+              className=""
+            >
               {link.label}
             </Link>
           ))}
         </ul>
       </div>
 
-      <Link to={"/contact-us"} className="bg-gradient-navbar-button shadow-button border border-primary-10 rounded-lg px-4 py-2 font-bold text-white hidden lg:block">
+      <Link
+        to={"/contact-us"}
+        className="bg-gradient-navbar-button shadow-button border border-primary-10 rounded-lg px-4 py-2 font-bold text-white hidden lg:block"
+      >
         Say hi
       </Link>
 

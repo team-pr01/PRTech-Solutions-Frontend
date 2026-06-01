@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { handleScrollToServices } from "../../../helpers/handleScrollToServicesSection";
+
 export interface NavLink {
     label: string;
-    href: string;
+    href?: string;
+    onClick?: any;
     icon?: React.ReactNode;
     children?: NavLink[];
 }
@@ -10,17 +14,17 @@ export const NAVLINKS: NavLink[] = [
         label: 'Home',
         href: '/',
     },
-    {
-        label: 'About',
-        href: '/about',
-    },
+    // {
+    //     label: 'About',
+    //     href: '/about',
+    // },
     {
         label: 'Services',
-        href: '/services',
+        onClick: handleScrollToServices,
     },
     {
         label: 'Industries',
-        href: '/industries',
+        href: '/coming-soon',
     },
     {
         label: 'Work',
