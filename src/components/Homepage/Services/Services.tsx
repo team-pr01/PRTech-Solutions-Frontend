@@ -98,7 +98,7 @@ const Services = () => {
   const targetXOffset = -(virtualIndex * (cardWidth + gap)) + (typeof window !== 'undefined' ? window.innerWidth / 2 - cardWidth / 2 : 0);
 
   return (
-    <div className="relative min-h-screen font-medium overflow-x-auto bg-neutral-20">
+    <div id="services" className="relative min-h-screen font-medium overflow-x-auto bg-neutral-20">
       <img src={IMAGES.serviceBg} alt="hero-bg" className="w-full h-full absolute inset-0 object-cover" />
 
       <div className="relative z-10 py-12 md:py-18 2xl:py-25">

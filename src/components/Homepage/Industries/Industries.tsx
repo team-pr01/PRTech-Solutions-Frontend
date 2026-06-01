@@ -155,7 +155,7 @@ const Industries = () => {
                         ))}
                       </div>
 
-                      <Link to={industry?.path}>
+                      <Link to={"/contact-us"}>
                         <Button variant="outlinePrimary" label="Learn More" />
                       </Link>
                     </div>

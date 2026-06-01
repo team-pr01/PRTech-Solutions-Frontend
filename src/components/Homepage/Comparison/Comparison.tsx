@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
 import Container from "../../Reusable/Container/Container";
 import ComparisonTable from "./ComparisonTable";
+import { handleScrollToServices } from "../../../helpers/handleScrollToServicesSection";
 
 const Comparison = () => {
   return (
@@ -40,11 +42,14 @@ const Comparison = () => {
           <ComparisonTable />
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 2xl:mt-10">
+            <Link to={"/contact-us"}>
+              <Button
+                label="Let's Get Started"
+                className="w-full md:w-fit py-2"
+              />
+            </Link>
             <Button
-              label="Let's Get Started"
-              className="w-full md:w-fit py-2"
-            />
-            <Button
+              onClick={handleScrollToServices}
               variant="tertiary"
               label="See Our Services"
               className="w-full md:w-fit py-2"

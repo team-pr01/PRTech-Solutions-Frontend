@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
 import Container from "../../Reusable/Container/Container";
@@ -34,16 +35,14 @@ const AiPoweredSolutions = () => {
       {/* Content */}
       <div className="relative z-10 py-12 md:py-18 2xl:py-25 flex flex-col items-center gap-6 w-full">
         <Container>
-            {/* Header */}
+          {/* Header */}
           <div className="flex flex-col xl:flex-row gap-6 xl:gap-0 justify-between">
             <div>
               <div className="flex items-center gap-2">
                 <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
                   <div className="size-1.5 rounded-full bg-primary-10"></div>
                 </div>
-                <p className="text-white subHeading">
-                  AI POWERED SOLUTION
-                </p>
+                <p className="text-white subHeading">AI POWERED SOLUTION</p>
               </div>
 
               <h2 className="text-white heading mt-2.5 max-w-200">
@@ -59,7 +58,9 @@ const AiPoweredSolutions = () => {
                 compliance, combined with expert hands-on support throughout.
               </p>
             </div>
-            <Button label="Let's started" />
+            <Link to="/contact-us">
+              <Button label="Let's started" />
+            </Link>
           </div>
 
           <div className="mt-10 xl:mt-17 w-full overflow-hidden relative">
@@ -153,7 +154,9 @@ const AiPoweredSolutions = () => {
             </div>
 
             <div className="flex items-center justify-center mt-10">
-              <Button variant="tertiary" label="Get Your AI Strategy Plan" />
+              <Link to="/contact-us">
+                <Button variant="tertiary" label="Get Your AI Strategy Plan" />
+              </Link>
             </div>
           </div>
         </Container>

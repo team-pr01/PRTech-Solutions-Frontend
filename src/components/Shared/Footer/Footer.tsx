@@ -3,7 +3,8 @@ import { ICONS, IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import Button from "../../Reusable/Button/Button";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { handleScrollToServices } from "../../../helpers/handleScrollToServicesSection";
 
 const Footer = () => {
   const pathname = useLocation().pathname;
@@ -15,23 +16,23 @@ const Footer = () => {
     },
     {
       name: "Facebook",
-      url: "https://www.facebook.com/prtechsolutions",
+      url: "https://www.facebook.com/prtechsolutions01",
       icon: <FaFacebookSquare />,
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/prtechsolutions",
+      url: "https://www.instagram.com/prtech_solutions",
       icon: <PiInstagramLogoFill />,
     },
   ];
   const importantLinks = [
-    {
-      label: "About Us",
-      path: "/about-us",
-    },
+    // {
+    //   label: "About Us",
+    //   path: "/about-us",
+    // },
     {
       label: "Services",
-      path: "/services",
+      onClick: handleScrollToServices,
     },
     {
       label: "Our Work",
@@ -43,33 +44,27 @@ const Footer = () => {
     },
     {
       label: "Blogs",
-      path: "/blogs",
+      path: "/coming-soon",
     },
   ];
   const services = [
     {
       label: "Web Development",
-      path: "/about-us",
     },
     {
       label: "Mobile App Development",
-      path: "/terms-and-conditions",
     },
     {
       label: "UI/UX Design",
-      path: "/privacy-policy",
     },
     {
       label: "AI Development",
-      path: "/privacy-policy",
     },
     {
       label: "SaaS Development",
-      path: "/refund-cancellation-policy",
     },
     {
       label: "AI Automation",
-      path: "/services",
     },
   ];
 
@@ -141,12 +136,14 @@ const Footer = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6">
+                      <Link to="/contact-us">
                       <Button
                         variant="secondary"
                         label="Let's Get Started"
                         className="w-full md:w-fit"
-                      />
+                      /></Link>
                       <Button
+                      onClick={handleScrollToServices}
                         variant="tertiary"
                         label="See Our Services"
                         className="w-full md:w-fit"
@@ -192,7 +189,8 @@ const Footer = () => {
                     <a
                       key={item?.label}
                       href={item?.path}
-                      className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
+                      onClick={item?.onClick && item?.onClick}
+                      className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit cursor-pointer"
                     >
                       {item?.label}
                     </a>
@@ -209,7 +207,7 @@ const Footer = () => {
                   {services?.map((item) => (
                     <a
                       key={item?.label}
-                      href={item?.path}
+                      // href={item?.path}
                       className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
                     >
                       {item?.label}
@@ -280,13 +278,13 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href={"/terms-and-conditions"}
+                href={"/coming-soon"}
                 className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
               >
                 Terms and Conditions
               </a>
               <a
-                href={"/privacy-policy"}
+                href={"/coming-soon"}
                 className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
               >
                 Privacy Policy

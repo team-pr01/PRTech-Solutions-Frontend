@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import OurWork from "../pages/OurWork/OurWork";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import ComingSoon from "../components/Homepage/ComingSoon/ComingSoon";
 
 
 export const router = createBrowserRouter([
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/coming-soon",
+        element: <ComingSoon />,
       },
       {
         path: "*",

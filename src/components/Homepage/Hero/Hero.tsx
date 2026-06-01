@@ -1,6 +1,7 @@
 import { ICONS, IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const featuredProjects = [
@@ -50,10 +51,9 @@ const Hero = () => {
             </div>
 
             <p className="description max-w-180 2xl:max-w-205 mx-auto">
-              We don't just develop websites or apps.
-              We understand your users, your operations, and your growth gaps
-              ,then build systems that actually drive leads, automate work, and
-              scale your business.
+              We don't just develop websites or apps. We understand your users,
+              your operations, and your growth gaps ,then build systems that
+              actually drive leads, automate work, and scale your business.
             </p>
 
             <div className="w-fit hidden md:relative mt-19">
@@ -69,8 +69,15 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6 lg:mt-8 2xl:mt-10">
-            <Button label="Get Your Project Feasibility Review" />
-            <Button variant="tertiary" label="Explore Systems We've Built" className="w-full md:w-fit" />
+            <Link to="/contact-us">
+              <Button label="Get Your Project Feasibility Review" />
+            </Link>
+           <Link to="/our-work">
+            <Button
+              variant="tertiary"
+              label="Explore Systems We've Built"
+              className="w-full md:w-fit"
+            /></Link>
           </div>
         </div>
       </Container>
@@ -80,12 +87,12 @@ const Hero = () => {
         <div className="marquee-track">
           <div className="marquee-content">
             {featuredProjects.map((project, index) => (
-                <img
+              <img
                 key={index}
-                  src={project}
-                  alt={`Featured Project ${index + 1}`}
-                  className="relative w-100 h-70 rounded-2xl object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                src={project}
+                alt={`Featured Project ${index + 1}`}
+                className="relative w-100 h-70 rounded-2xl object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             ))}
           </div>
         </div>

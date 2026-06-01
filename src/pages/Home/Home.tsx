@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AboutUs from "../../components/Homepage/AboutUs/AboutUs";
 import AiPoweredSolutions from "../../components/Homepage/AiPoweredSolutions/AiPoweredSolutions";
 import Comparison from "../../components/Homepage/Comparison/Comparison";
@@ -8,8 +9,10 @@ import LatestProjects from "../../components/Homepage/LatestProjects/LatestProje
 import Services from "../../components/Homepage/Services/Services";
 import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
 import CTA from "../../components/Reusable/CTA/CTA";
+import { handleScrollToServices } from "../../helpers/handleScrollToServicesSection";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Hero />
@@ -23,12 +26,12 @@ const Home = () => {
         description="We don't just build websites — we create systems that generate leads, automate operations, and help you scale faster."
         primaryButton={{
           label: "Let's Get Started",
-          onClick: () => console.log("Get Started clicked"),
+          onClick: () => navigate("/contact-us"),
           variant: "secondary",
         }}
         secondaryButton={{
           label: "See Our Services",
-          onClick: () => console.log("See Services clicked"),
+          onClick: handleScrollToServices,
           variant: "tertiary",
         }}
       />

@@ -6,22 +6,22 @@ const AboutUs = () => {
   const stats = [
     {
       label: "Projects Delivered",
-      value: 10,
+      value: 100,
       valuePrefix: "+",
     },
     {
       label: "Business Growth",
-      value: 80,
+      value: 90,
       valuePrefix: "%",
     },
     {
       label: "Happy Clients",
-      value: 600,
+      value: 100,
       valuePrefix: "+",
     },
     {
       label: "Experience",
-      value: 4,
+      value: 5,
       valuePrefix: "+",
     },
   ];
