@@ -5,12 +5,12 @@ import StatCard from "./StatCard";
 const AboutUs = () => {
   const stats = [
     {
-      label: "Projects Delivered",
-      value: 100,
+      label: "Custom Systems Delivered",
+      value: 45,
       valuePrefix: "+",
     },
     {
-      label: "Business Growth",
+      label: "Client Retention",
       value: 90,
       valuePrefix: "%",
     },

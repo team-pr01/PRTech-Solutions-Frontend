@@ -13,7 +13,7 @@ const StatCard: React.FC<TStatCardProps> = ({ stat }) => {
         {stat?.value}
         <span className="text-primary-10">{stat?.valuePrefix}</span>
       </h2>
-      <p className="mt-6 text-neutral-50 text-base 2xl:text-2xl font-medium">
+      <p className="mt-6 text-neutral-50 text-base 2xl:text-xl font-medium">
         {stat?.label}
       </p>
     </div>
