@@ -3,7 +3,7 @@ import { ICONS, IMAGES } from "../assets";
 export const INDUSTRIES = [
   {
     icon: ICONS.ecommerce,
-    image: IMAGES.dummyIndustry,
+    image: IMAGES.ecommerceIndustry,
     title: "E-commerce & D2C Brands",
     description:
       "Build high-converting online stores with automated sales funnels, inventory systems, and seamless checkout experiences.",
@@ -17,7 +17,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.healthcare,
-    image: IMAGES.aiAssistant,
+    image: IMAGES.healthcareIndustry,
     title: "Healthcare & Clinics",
     description:
       "Smart booking systems, patient management tools, and automated appointment workflows to streamline operations.",
@@ -31,7 +31,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.edtech,
-    image: IMAGES.comparisonBg,
+    image: IMAGES.edtechIndustry,
     title: "Education & EdTech",
     description:
       "Learning platforms, student dashboards, and automation systems to manage courses, users, and engagement.",
@@ -45,7 +45,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.fitness,
-    image: IMAGES.dummyProject,
+    image: IMAGES.fitnessIndustry,
     title: "Fitness & Wellness",
     description:
       "Custom fitness platforms, membership systems, and wellness apps designed to improve user engagement.",
@@ -59,7 +59,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.realEstate,
-    image: IMAGES.ctaBg1,
+    image: IMAGES.realEstateIndustry,
     title: "Real Estate & Construction",
     description:
       "Property listing systems, CRM integrations, and business automation tools for real estate operations.",
@@ -73,7 +73,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.fintech,
-    image: IMAGES.ctaBg2,
+    image: IMAGES.fintechIndustry,
     title: "Finance & FinTech",
     description:
       "Secure and compliant systems for financial operations, analytics, payment workflows, and user data.",
@@ -87,7 +87,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.saas,
-    image: IMAGES.intelligentMatching,
+    image: IMAGES.saasIndustry,
     title: "Startups & SaaS Companies",
     description:
       "MVP development, scalable architecture, and rapid product iteration for modern SaaS businesses.",
@@ -101,7 +101,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.manufacturing,
-    image: IMAGES.customAiIntegration,
+    image: IMAGES.manufacturingIndustry,
     title: "Manufacturing & Industrial IoT (IIoT)",
     description:
       "Automation systems, monitoring dashboards, and operational efficiency tools for industrial businesses.",
@@ -115,7 +115,7 @@ export const INDUSTRIES = [
   },
   {
     icon: ICONS.travel,
-    image: IMAGES.heroBg,
+    image: IMAGES.travelIndustry,
     title: "Travel & Hospitality",
     description:
       "Booking systems, user-friendly interfaces, and performance-focused platforms for travel businesses.",

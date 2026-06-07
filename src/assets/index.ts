@@ -42,6 +42,16 @@ import uiUxDesignService from "./images/services/ui-ux-design.webp";
 import seo from "./images/services/seo.webp";
 import graphicsAndBrandIdentityDesign from "./images/services/graphics-and-brand-identity-design.webp";
 import crmAndErp from "./images/services/crm-and-erp.webp";
+// Industries
+import ecommerceIndustry from "./images/industries/ecommerce.webp";
+import edtechIndustry from "./images/industries/edtech.webp";
+import fintechIndustry from "./images/industries/fintech.webp";
+import travelIndustry from "./images/industries/travel.webp";
+import healthcareIndustry from "./images/industries/healthcare.webp";
+import fitnessIndustry from "./images/industries/gym.webp";
+import realEstateIndustry from "./images/industries/real-state.webp";
+import manufacturingIndustry from "./images/industries/manufacturing.webp";
+import saasIndustry from "./images/industries/saas.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -136,7 +146,17 @@ export const IMAGES = {
     uiUxDesignService,
     seo,
     graphicsAndBrandIdentityDesign,
-    crmAndErp
+    crmAndErp,
+    // Industries
+    ecommerceIndustry,
+    edtechIndustry,
+    fintechIndustry,
+    fitnessIndustry,
+    healthcareIndustry,
+    manufacturingIndustry,
+    realEstateIndustry,
+    saasIndustry,
+    travelIndustry
 };
 
 export const ICONS = {
