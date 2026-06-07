@@ -32,6 +32,16 @@ import logicalMedia from "./images/prtech-clients/logical-media.webp";
 import tenStageMatrix from "./images/prtech-clients/tenstage-matrix.webp";
 import vedicWisdom from "./images/prtech-clients/vedic-wisdom.webp";
 import worldMarket from "./images/prtech-clients/world-market.webp";
+//Services
+import businessAutomation from "./images/services/business-automation.webp";
+import cloud from "./images/services/cloud.webp";
+import maintenanceAndSupport from "./images/services/maintenance-and-support.webp";
+import softwareDevelopment from "./images/services/software-development.webp";
+import technicalConsultationService from "./images/services/technical-consultation.webp";
+import uiUxDesignService from "./images/services/ui-ux-design.webp";
+import seo from "./images/services/seo.webp";
+import graphicsAndBrandIdentityDesign from "./images/services/graphics-and-brand-identity-design.webp";
+import crmAndErp from "./images/services/crm-and-erp.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -48,6 +58,9 @@ import deployment from "./icons/deployment.svg";
 import maintenance from "./icons/maintenance.svg";
 import aiAutomation from "./icons/ai-automation.svg";
 import technicalConsultation from "./icons/technical-consultation.svg";
+import crm from "./icons/crm.svg";
+import seoService from "./icons/seo.svg";
+import graphicsDesign from "./icons/graphics-design.svg";
 import tickMarkWhite from "./icons/tick-mark-white.svg";
 import tickMarkGreen from "./icons/tick-mark-green.svg";
 import crossRed from "./icons/cross-red.svg";
@@ -77,6 +90,7 @@ import clock from "./icons/clock.svg";
 import polygon from "./icons/polygon.svg";
 import quotation from "./icons/quotation.svg";
 import hamburgerMenu from "./icons/hamburger-menu.svg";
+
 
 
 export const IMAGES = {
@@ -113,6 +127,16 @@ export const IMAGES = {
     tenStageMatrix,
     vedicWisdom,
     worldMarket,
+    // Services
+    businessAutomation,
+    cloud,
+    maintenanceAndSupport,
+    softwareDevelopment,
+    technicalConsultationService,
+    uiUxDesignService,
+    seo,
+    graphicsAndBrandIdentityDesign,
+    crmAndErp
 };
 
 export const ICONS = {
@@ -130,6 +154,9 @@ export const ICONS = {
     maintenance,
     aiAutomation,
     technicalConsultation,
+    crm,
+    seoService,
+    graphicsDesign,
     tickMarkWhite,
     tickMarkGreen,
     crossRed,

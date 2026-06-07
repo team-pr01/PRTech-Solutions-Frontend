@@ -10,8 +10,9 @@ const Services = () => {
       id: "01",
       title: "Custom Product & Application Development",
       icon: ICONS.productDevelopment,
-      imgSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-      description: "We design and build web and mobile applications tailored to your business — focusing on scalability, performance, and real-world usability.",
+      imgSrc: IMAGES.softwareDevelopment,
+      description:
+        "We design and build web and mobile applications tailored to your business — focusing on scalability, performance, and real-world usability.",
       cta: "Explore Development",
       path: "/services/development",
     },
@@ -19,8 +20,9 @@ const Services = () => {
       id: "02",
       title: "UI/UX & Conversion-Focused Design",
       icon: ICONS.uiUxDesign,
-      imgSrc: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80",
-      description: "We create user experiences that are intuitive, engaging, and built to guide users toward action — not just look visually appealing.",
+      imgSrc: IMAGES.uiUxDesignService,
+      description:
+        "We create user experiences that are intuitive, engaging, and built to guide users toward action — not just look visually appealing.",
       cta: "Explore Design",
       path: "/services/design",
     },
@@ -28,8 +30,9 @@ const Services = () => {
       id: "03",
       title: "Cloud, DevOps & System Infrastructure",
       icon: ICONS.deployment,
-      imgSrc: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
-      description: "We set up and optimize the technical foundation of your product to ensure it runs fast, securely, and can scale without issues.",
+      imgSrc: IMAGES.cloud,
+      description:
+        "We set up and optimize the technical foundation of your product to ensure it runs fast, securely, and can scale without issues.",
       cta: "Explore Infrastructure",
       path: "/services/infrastructure",
     },
@@ -37,8 +40,9 @@ const Services = () => {
       id: "04",
       title: "Ongoing Maintenance & Performance Optimization",
       icon: ICONS.maintenance,
-      imgSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-      description: "We continuously monitor, improve, and support your system to ensure it performs reliably as your business grows.",
+      imgSrc: IMAGES.maintenanceAndSupport,
+      description:
+        "We continuously monitor, improve, and support your system to ensure it performs reliably as your business grows.",
       cta: "Explore Support",
       path: "/services/support",
     },
@@ -46,8 +50,9 @@ const Services = () => {
       id: "05",
       title: "Business Automation & AI Systems",
       icon: ICONS.aiAutomation,
-      imgSrc: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80",
-      description: "We build systems that automate operations, manage workflows, and integrate AI to reduce manual effort and improve efficiency.",
+      imgSrc: IMAGES.businessAutomation,
+      description:
+        "We build systems that automate operations, manage workflows, and integrate AI to reduce manual effort and improve efficiency.",
       cta: "Explore Automation",
       path: "/services/automation",
     },
@@ -55,20 +60,57 @@ const Services = () => {
       id: "06",
       title: "Strategy & Technical Consultation",
       icon: ICONS.technicalConsultation,
-      imgSrc: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=600&q=80",
-      description: "Before building anything, we analyze your business, identify gaps, and recommend the right technical approach to achieve your goals.",
+      imgSrc: IMAGES.technicalConsultationService,
+      description:
+        "Before building anything, we analyze your business, identify gaps, and recommend the right technical approach to achieve your goals.",
       cta: "Get Consultation",
       path: "/services/consultation",
     },
+    {
+      id: "07",
+      title: "Graphic Design & Brand Identity",
+      icon: ICONS.graphicsDesign,
+      imgSrc: IMAGES.graphicsAndBrandIdentityDesign,
+      description:
+        "We craft memorable brand identities — from logos and color systems to marketing collateral — that communicate your value and create lasting impressions across every touchpoint.",
+      cta: "Explore Branding",
+      path: "/services/graphic-design",
+    },
+    {
+      id: "08",
+      title: "Search Engine Optimization (SEO)",
+      icon: ICONS.seoService,
+      imgSrc: IMAGES.seo,
+      description:
+        "We optimize your website's structure, content, and technical foundation to rank higher on search engines — driving organic traffic and qualified leads without ongoing ad spend.",
+      cta: "Explore SEO",
+      path: "/services/seo",
+    },
+    {
+      id: "09",
+      title: "CRM & ERP Solutions",
+      icon: ICONS.crm,
+      imgSrc: IMAGES.crmAndErp,
+      description:
+        "We implement and customize powerful CRM and ERP platforms that centralize your customer data, automate workflows, and give you real-time visibility into your entire business operations.",
+      cta: "Explore Solutions",
+      path: "/services/crm-erp",
+    },
   ];
 
-  const duplicatedServices = [...services, ...services, ...services, ...services, ...services];
+  const duplicatedServices = [
+    ...services,
+    ...services,
+    ...services,
+    ...services,
+    ...services,
+  ];
   const initialVirtualIndex = services.length * 2;
   const [virtualIndex, setVirtualIndex] = useState(initialVirtualIndex);
 
   // Get card width based on screen size
   const getCardWidth = () => {
-    if (typeof window === 'undefined') return 280;
+    if (typeof window === "undefined") return 280;
     if (window.innerWidth < 640) return 280;
     if (window.innerWidth < 768) return 300;
     if (window.innerWidth < 1024) return 320;
@@ -84,8 +126,8 @@ const Services = () => {
     const handleResize = () => {
       setCardWidth(getCardWidth());
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -95,11 +137,20 @@ const Services = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const targetXOffset = -(virtualIndex * (cardWidth + gap)) + (typeof window !== 'undefined' ? window.innerWidth / 2 - cardWidth / 2 : 0);
+  const targetXOffset =
+    -(virtualIndex * (cardWidth + gap)) +
+    (typeof window !== "undefined" ? window.innerWidth / 2 - cardWidth / 2 : 0);
 
   return (
-    <div id="services" className="relative min-h-screen font-medium overflow-x-auto bg-neutral-20">
-      <img src={IMAGES.serviceBg} alt="hero-bg" className="w-full h-full absolute inset-0 object-cover" />
+    <div
+      id="services"
+      className="relative min-h-screen font-medium overflow-x-auto bg-neutral-20"
+    >
+      <img
+        src={IMAGES.serviceBg}
+        alt="hero-bg"
+        className="w-full h-full absolute inset-0 object-cover"
+      />
 
       <div className="relative z-10 py-12 md:py-18 2xl:py-25">
         <Container>
@@ -121,7 +172,8 @@ const Services = () => {
 
             <p className="description max-w-205 mx-auto mt-4 2xl:mt-6">
               We don't offer fixed service bundles. <br />
-              Every solution is designed based on your business model, users, and growth goals.
+              Every solution is designed based on your business model, users,
+              and growth goals.
             </p>
           </div>
         </Container>
