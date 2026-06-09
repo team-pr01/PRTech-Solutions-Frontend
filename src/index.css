@@ -123,6 +123,7 @@
     #0d1431;
 
   --bg-gradient-start-project: radial-gradient(48.76% 66.2% at 0% -4.1%, rgba(17, 120, 255, 0.40) 0%, rgba(3, 0, 19, 0.00) 100%), #030013;
+  --bg-gradient-about-us-strip: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
 
 
   --breakpoint-xs: 375px;
@@ -184,6 +185,10 @@
 
 .bg-gradient-start-project {
   background: var(--bg-gradient-start-project);
+}
+
+.bg-gradient-about-us-strip {
+  background: var(--bg-gradient-about-us-strip);
 }
 
 button {

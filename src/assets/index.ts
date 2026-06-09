@@ -21,6 +21,7 @@ import aiSolutionsCardBg from "./images/ai-solutions-card-bg.webp";
 import footerGradient from "./images/footer-gradient.webp";
 import ourWorkHeroBg from "./images/our-work-hero-bg.webp";
 import contactUsHeroBg from "./images/contact-us-hero-bg.webp";
+import aboutUsHeroBg from "./images/about-us-hero-bg.webp";
 import startYourProject from "./images/start-your-project-img.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
@@ -100,6 +101,7 @@ import clock from "./icons/clock.svg";
 import polygon from "./icons/polygon.svg";
 import quotation from "./icons/quotation.svg";
 import hamburgerMenu from "./icons/hamburger-menu.svg";
+import handshake from "./icons/handshake.svg";
 
 
 
@@ -126,6 +128,7 @@ export const IMAGES = {
     footerGradient,
     ourWorkHeroBg,
     contactUsHeroBg,
+    aboutUsHeroBg,
     startYourProject,
     // Clients
     bcoEco,
@@ -205,5 +208,6 @@ export const ICONS = {
     clock,
     polygon,
     quotation,
-    hamburgerMenu
+    hamburgerMenu,
+    handshake
 };

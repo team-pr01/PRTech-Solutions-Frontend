@@ -6,6 +6,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import OurWork from "../pages/OurWork/OurWork";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import ComingSoon from "../components/Homepage/ComingSoon/ComingSoon";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
       },
       {
         path: "/our-work",
