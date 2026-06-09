@@ -102,6 +102,11 @@ import polygon from "./icons/polygon.svg";
 import quotation from "./icons/quotation.svg";
 import hamburgerMenu from "./icons/hamburger-menu.svg";
 import handshake from "./icons/handshake.svg";
+import project from "./icons/project.svg";
+import clients from "./icons/clients.svg";
+import experience from "./icons/experience.svg";
+import onTimeDelivery from "./icons/on-time-delivery.svg";
+import performanceBoost from "./icons/performance-boost.svg";
 
 
 
@@ -209,5 +214,10 @@ export const ICONS = {
     polygon,
     quotation,
     hamburgerMenu,
-    handshake
+    handshake,
+    project,
+    clients,
+    experience,
+    onTimeDelivery,
+    performanceBoost
 };
