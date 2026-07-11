@@ -30,7 +30,7 @@ const BlogsHero = () => {
                 Building Digital Products That Scale With Your Business
               </h1>
 
-              <p className="text-white mt-4 2xl:mt-4 mb-8">
+              <p className="text-white mt-4 mb-8">
                 Discover practical guides, industry trends, development tips, AI
                 insights, and business strategies to help you stay informed,
                 make better decisions, and grow with the latest technology.

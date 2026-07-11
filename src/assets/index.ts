@@ -26,6 +26,7 @@ import contactUsHeroBg from "./images/contact-us-hero-bg.webp";
 import aboutUsHeroBg from "./images/about-us-hero-bg.webp";
 import startYourProject from "./images/start-your-project-img.webp";
 import blogsHeroImg from "./images/blogs-hero-img.webp";
+import trendingBlog from "./images/trending-blog.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -141,6 +142,7 @@ export const IMAGES = {
     aboutUsHeroBg,
     startYourProject,
     blogsHeroImg,
+    trendingBlog,
     // Clients
     bcoEco,
     attributionBooster,
