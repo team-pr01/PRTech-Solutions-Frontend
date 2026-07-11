@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Container from "../../Reusable/Container/Container";
+import BlogCard from "../BlogCard/BlogCard";
 
 const AllBlogs = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -7,7 +8,31 @@ const AllBlogs = () => {
   return (
     <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
       <Container>
-        <div className="flex items-center justify-center overflow-auto gap-5 w-full mx-auto">
+        {/* Header */}
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2">
+            <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
+              <div className="size-1.5 rounded-full bg-primary-10"></div>
+            </div>
+            <p className="text-neutral-70 subHeading">Blogs</p>
+          </div>
+
+          <h2 className="text-neutral-70 heading mt-2.5">
+            Our{" "}
+            <span className="font-Playfair-Display italic font-medium">
+              Latest
+            </span>{" "}
+            <span className="text-primary-10">Blogs</span>
+          </h2>
+
+          <p className="description text-neutral-80 max-w-179 mx-auto my-6">
+            Explore expert insights, practical guides, and the latest trends in
+            web development, AI, software solutions, and digital innovation to
+            help you stay ahead in the ever-evolving tech landscape.
+          </p>
+        </div>
+
+        <div className="flex items-center justify-center overflow-auto gap-5 w-full mx-auto mt-6">
           {categories?.map((category) => (
             <button
               key={category}
@@ -21,6 +46,15 @@ const AllBlogs = () => {
               {category}
             </button>
           ))}
+        </div>
+
+        <div className="grid grid-cols-3 gap-6 mt-8">
+          <BlogCard />
+          <BlogCard />
+          <BlogCard />
+          <BlogCard />
+          <BlogCard />
+          <BlogCard />
         </div>
       </Container>
     </div>
