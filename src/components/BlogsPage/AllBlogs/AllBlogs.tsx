@@ -1,9 +1,15 @@
 import { useState } from "react";
 import Container from "../../Reusable/Container/Container";
 import BlogCard from "../BlogCard/BlogCard";
+import { useGetAllBlogsQuery } from "../../../redux/Features/Blog/blogApi";
+import type { TBlog } from "../../../types/blog.type";
 
 const AllBlogs = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const { data } = useGetAllBlogsQuery({ category: selectedCategory });
+  console.log(data);
+  const blogs = data?.data?.data || [];
+  const meta = data?.data?.meta || [];
   const categories = ["All", "Fintech", "Healthcare", "SaaS", "E-commerce"];
   return (
     <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
@@ -49,12 +55,9 @@ const AllBlogs = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-6 mt-8">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          {blogs?.map((blog: TBlog) => (
+            <BlogCard key={blog?._id} blog={blog} />
+          ))}
         </div>
       </Container>
     </div>
