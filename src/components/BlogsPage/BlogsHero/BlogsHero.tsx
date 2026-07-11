@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
+import { FiUsers, FiBookOpen, FiTrendingUp } from "react-icons/fi";
 
 const BlogsHero = () => {
   return (
@@ -15,31 +16,57 @@ const BlogsHero = () => {
             <div className="rounded-2xl w-1/2 relative">
               <img src={IMAGES.dummyBlogs} alt="" className="rounded-2xl" />
               <div className="bg-neutral-10 text-neutral-50 font-medium text-center text-xs px-3 py-2 rounded-lg absolute top-2 left-2">
-                Featured Article
+                Explore Our Blog
               </div>
             </div>
 
             <div className="w-1/2">
               <div className="flex items-center gap-2">
                 <div className="bg-primary-10 text-white font-medium text-center text-xs px-2.5 py-1.5 rounded-3xl">
-                  Product Strategy
+                  Insights & Stories
                 </div>
-                <p className="text-white text-sm">8 min read</p>
               </div>
               <h1 className="text-white text-3xl md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 lg:leading-14 mt-4">
-                Building Digital Products That Scale With Your Business
+                Stay Informed, Stay Ahead
               </h1>
 
-              <p className="text-white mt-4 mb-8">
+              <p className="text-white mt-4 mb-6">
                 Discover practical guides, industry trends, development tips, AI
                 insights, and business strategies to help you stay informed,
                 make better decisions, and grow with the latest technology.
               </p>
 
-              <Link to="/blog/1">
+              {/* Stats */}
+              <div className="flex items-center gap-6 mb-8">
+                <div className="flex items-center gap-2">
+                  <FiBookOpen className="text-primary-10 text-lg" />
+                  <div>
+                    <p className="text-white font-semibold text-lg">50+</p>
+                    <p className="text-white/60 text-xs">Articles</p>
+                  </div>
+                </div>
+                <div className="w-px h-10 bg-white/20"></div>
+                <div className="flex items-center gap-2">
+                  <FiUsers className="text-primary-10 text-lg" />
+                  <div>
+                    <p className="text-white font-semibold text-lg">9K+</p>
+                    <p className="text-white/60 text-xs">Readers</p>
+                  </div>
+                </div>
+                <div className="w-px h-10 bg-white/20"></div>
+                <div className="flex items-center gap-2">
+                  <FiTrendingUp className="text-primary-10 text-lg" />
+                  <div>
+                    <p className="text-white font-semibold text-lg">20K</p>
+                    <p className="text-white/60 text-xs">Impressions</p>
+                  </div>
+                </div>
+              </div>
+
+              <Link to="/blog">
                 <Button
                   variant="secondary"
-                  label="Read Article"
+                  label="Explore All Blogs"
                   className="w-full md:w-fit"
                 />
               </Link>
