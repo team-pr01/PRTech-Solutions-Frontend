@@ -27,7 +27,7 @@ const BlogCard = () => {
         </p>
 
         <Link
-          to="/contact-us"
+          to="/blog/1"
           className="flex items-center gap-1 text-sm font-medium"
         >
           Read More

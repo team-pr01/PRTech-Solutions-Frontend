@@ -8,7 +8,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import ComingSoon from "../components/Homepage/ComingSoon/ComingSoon";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Blogs from "../pages/Blogs/Blogs";
-
+import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/blog/:id",
+        element: <BlogDetails />,
       },
       {
         path: "*",

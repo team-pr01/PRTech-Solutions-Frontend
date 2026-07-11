@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ICONS } from "../../../assets";
 import { handleScrollToServices } from "../../../helpers/handleScrollToServicesSection";
 
 export interface NavLink {
@@ -7,6 +6,7 @@ export interface NavLink {
     href?: string;
     onClick?: any;
     icon?: React.ReactNode;
+    hasMenu?: boolean;
     children?: NavLink[];
 }
 
@@ -21,12 +21,12 @@ export const NAVLINKS: NavLink[] = [
     },
     {
         label: 'Services',
-        icon : ICONS.arrowDown,
+        hasMenu : true,
         onClick: handleScrollToServices,
     },
     {
         label: 'Industries',
-        icon : ICONS.arrowDown,
+        hasMenu : true,
         href: '/coming-soon',
     },
     {

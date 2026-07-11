@@ -36,7 +36,7 @@ const BlogsHero = () => {
                 make better decisions, and grow with the latest technology.
               </p>
 
-              <Link to="/contact-us">
+              <Link to="/blog/1">
                 <Button
                   variant="secondary"
                   label="Read Article"

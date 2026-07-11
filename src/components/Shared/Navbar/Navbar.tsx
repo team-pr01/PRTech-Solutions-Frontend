@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { NAVLINKS } from "./navlinks";
 import { ICONS, IMAGES } from "../../../assets";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navbar = () => {
   const pathname = useLocation().pathname;
@@ -8,7 +9,11 @@ const Navbar = () => {
     <div className="rounded-xl py-2 font-Manrope flex items-center justify-between gap-18 absolute top-6 left-1/2 -translate-x-1/2 max-w-300 2xl:max-w-7xl w-full mx-auto px-4 2xl:px-0 h-fit z-20">
       <Link to="/">
         <img
-          src={pathname !== "/coming-soon" ? IMAGES.logo : IMAGES.logoBlack}
+          src={
+            pathname === "/coming-soon" || pathname.startsWith("/blog/")
+              ? IMAGES.logoBlack
+              : IMAGES.logo
+          }
           alt="logo"
           className="w-32"
         />
@@ -16,7 +21,7 @@ const Navbar = () => {
 
       <div>
         <ul
-          className={`hidden lg:flex items-center gap-6 font-semibold ${pathname !== "/coming-soon" ? "text-white" : "text-neutral-65"}`}
+          className={`hidden lg:flex items-center gap-6 font-semibold ${pathname === "/coming-soon" || pathname.startsWith("/blog/") ? "text-neutral-50" : "text-white"}`}
         >
           {NAVLINKS.map((link, index) => (
             <Link
@@ -26,7 +31,9 @@ const Navbar = () => {
               className="flex items-center gap-1"
             >
               {link.label}
-              {link?.icon && <img src={link?.icon as string} alt="" className="mt-1" />}
+              {link?.hasMenu && (
+                <MdKeyboardArrowDown className={`${pathname === "/coming-soon" || pathname.startsWith("/blog/") ? "text-neutral-50" : "text-white"}`} />
+              )}
             </Link>
           ))}
         </ul>
