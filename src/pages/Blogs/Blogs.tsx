@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useNavigate } from "react-router-dom";
 import { IMAGES } from "../../assets";
 import FeaturedCaseStudies from "../../components/AboutUsPage/FeaturedCaseStudies/FeaturedCaseStudies";
@@ -7,23 +8,55 @@ import TrendingBlogs from "../../components/BlogsPage/TrendingBlogs/TrendingBlog
 import CTA from "../../components/Reusable/CTA/CTA";
 import SubscribeNewsletter from "../../components/Shared/SubscribeNewsletter/SubscribeNewsletter";
 import { useGetAllBlogsQuery } from "../../redux/Features/Blog/blogApi";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { TBlog } from "../../types/blog.type";
 
 const Blogs = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const { data } = useGetAllBlogsQuery({ category: selectedCategory });
+  const [allBlogs, setAllBlogs] = useState<TBlog[]>([]);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const { data, isLoading,  isFetching } = useGetAllBlogsQuery({ category: selectedCategory });
   const featuredBlogs = data?.data?.data?.filter(
     (blog: TBlog) => blog.isFeatured,
   );
+
+  // Reset blogs when category changes
+  useEffect(() => {
+    setAllBlogs([]);
+    setPage(1);
+    setHasMore(true);
+  }, [selectedCategory]);
+
+  // Update blogs when data changes
+  useEffect(() => {
+    if (data?.data?.data) {
+      const incoming = data.data.data as TBlog[];
+      if (page === 1) {
+        setAllBlogs(incoming);
+      } else {
+        setAllBlogs((prev: TBlog[]) => [...prev, ...incoming]);
+      }
+      setHasMore(data.data.meta?.hasMore || false);
+    }
+  }, [data, page]);
+
+  // Load more function
+  const fetchMore = useCallback(() => {
+    if (!isFetching && hasMore) {
+      setPage((prev) => prev + 1);
+    }
+  }, [isFetching, hasMore]);
   return (
     <div>
-      <BlogsHero featuredBlogs={featuredBlogs} />
-      <TrendingBlogs />
+      <BlogsHero />
+      <TrendingBlogs featuredBlogs={featuredBlogs} />
       <AllBlogs
-        blogs={data?.data?.data || []}
+        blogs={allBlogs || []}
         meta={data?.data?.meta}
+        fetchMore={fetchMore}
+        isLoading={isLoading || isFetching}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />

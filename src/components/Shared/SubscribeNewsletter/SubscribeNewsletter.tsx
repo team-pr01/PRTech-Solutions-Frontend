@@ -13,7 +13,7 @@ const SubscribeNewsletter = () => {
         className="w-full h-full absolute"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center text-center">
         <Container>
           <div className={`flex flex-col items-center justify-center`}>
             <h2

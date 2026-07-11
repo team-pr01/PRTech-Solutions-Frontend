@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -12,7 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Project data
-const projectsData = [
+export const projectsData = [
   {
     id: 1,
     name: "Bright Tuition Care",

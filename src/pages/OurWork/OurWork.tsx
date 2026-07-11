@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { IMAGES } from "../../assets";
-import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
+// import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
 import AllProjects from "../../components/OurWorkPage/AllProjects/AllProjects";
 import OurExpertise from "../../components/OurWorkPage/OurExpertise/OurExpertise";
 import OurWorkHero from "../../components/OurWorkPage/OurWorkHero/OurWorkHero";
@@ -14,7 +14,7 @@ const OurWork = () => {
       <OurWorkHero />
       <AllProjects />
       <StartYourProject/>
-      <Testimonials />
+      {/* <Testimonials /> */}
       <OurExpertise />
       <CTA
         title="Have Something Custom in Mind, But Not Sure Where to Start?"

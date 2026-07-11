@@ -28,7 +28,12 @@ const OurWorkHero = () => {
               100%
             </div>
             <span className="text-neutral-65">Clients Satisfaction</span>
-            <button onClick={handleScrollToTestimonial} className="text-primary-10 underline">See Reviews ↓</button>
+            <button
+              onClick={handleScrollToTestimonial}
+              className="text-primary-10 underline"
+            >
+              See Reviews ↓
+            </button>
           </div>
           <h1 className="text-white text-center heading max-w-230 mx-auto mt-4">
             Our{" "}
@@ -78,7 +83,9 @@ const OurWorkHero = () => {
                   Trusted by Leading Brands
                 </p>
               </div>
-              <Link to="/contact-us"><Button variant="tertiary" label="Add your company" /></Link>
+              <Link to="/contact-us">
+                <Button variant="tertiary" label="Add your company" />
+              </Link>
             </div>
 
             {/* Project- Marquee */}

@@ -1,8 +1,9 @@
 import { IMAGES } from "../../../assets";
+import type { TBlog } from "../../../types/blog.type";
 import Container from "../../Reusable/Container/Container";
 import TrendingBlogCard from "./TrendingBlogCard/TrendingBlogCard";
 
-const TrendingBlogs = () => {
+const TrendingBlogs = ({featuredBlogs} : {featuredBlogs:TBlog[]}) => {
   return (
     <div className="sectionPadding font-Manrope">
       <Container>
@@ -20,14 +21,9 @@ const TrendingBlogs = () => {
           </div>
 
           <div className="w-[60%] flex flex-col gap-6">
-            <TrendingBlogCard />
-            <TrendingBlogCard />
-            <TrendingBlogCard />
-            <TrendingBlogCard />
-            <TrendingBlogCard />
-            <TrendingBlogCard />
-            <TrendingBlogCard />
-            <TrendingBlogCard />
+            {featuredBlogs?.map((blog) => (
+              <TrendingBlogCard key={blog?._id} blog={blog} />
+            ))}
           </div>
         </div>
       </Container>

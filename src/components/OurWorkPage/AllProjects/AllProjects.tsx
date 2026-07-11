@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { industryNames } from "../../../data/industries.data";
 import LatestProjectsHeader from "../../Homepage/LatestProjects/LatestProjectsHeader";
 import Container from "../../Reusable/Container/Container";
 import ProjectCard from "./ProjectCard";
 import Button from "../../Reusable/Button/Button";
+import { projectsData } from "../../Homepage/LatestProjects/LatestProjects";
 
 const AllProjects = () => {
-  const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
+  // const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
   return (
     <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
       <Container>
@@ -15,7 +14,7 @@ const AllProjects = () => {
 
         <div className="mt-15 flex flex-col items-center">
           {/* Industries tab */}
-          <div className="flex items-center justify-center gap-4 px-4 py-2.5 rounded-4xl 2xl:rounded-[73px] shadow-industry-tab bg-white border border-primary-10 w-full md:w-fit overflow-x-auto text-nowrap">
+          {/* <div className="flex items-center justify-center gap-4 px-4 py-2.5 rounded-4xl 2xl:rounded-[73px] shadow-industry-tab bg-white border border-primary-10 w-full md:w-fit overflow-x-auto text-nowrap">
             {industryNames.map((industry) => (
               <button
                 key={industry}
@@ -29,12 +28,12 @@ const AllProjects = () => {
                 {industry}
               </button>
             ))}
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7.5 gap-y-10 mt-17">
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+            {projectsData?.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
           </div>
 
           <div className="flex items-center justify-center mt-6 xl:mt-12 2xl:mt-17">
