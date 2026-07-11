@@ -90,7 +90,7 @@ const LatestProjects = () => {
               <button
                 key={industry}
                 onClick={() => setActiveIndustryTab(industry)}
-                className={`py-2 px-5 text-sm 2xl:text-lg text-nowrap font-medium text-left rounded-3xl 2xl:rounded-[70px] w-fit transition duration-300 ${
+                className={`py-2 px-5 text-sm 2xl:text-base text-nowrap font-medium text-left rounded-3xl 2xl:rounded-[70px] w-fit transition duration-300 ${
                   activeIndustryTab === industry
                     ? "bg-primary-10 text-white"
                     : "text-neutral-85 hover:bg-primary-10/10 hover:text-primary-10"

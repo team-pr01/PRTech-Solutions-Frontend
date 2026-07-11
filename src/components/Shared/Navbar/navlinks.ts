@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ICONS } from "../../../assets";
 import { handleScrollToServices } from "../../../helpers/handleScrollToServicesSection";
 
 export interface NavLink {
@@ -14,16 +15,18 @@ export const NAVLINKS: NavLink[] = [
         label: 'Home',
         href: '/',
     },
-    // {
-    //     label: 'About',
-    //     href: '/about',
-    // },
+    {
+        label: 'About',
+        href: '/about',
+    },
     {
         label: 'Services',
+        icon : ICONS.arrowDown,
         onClick: handleScrollToServices,
     },
     {
         label: 'Industries',
+        icon : ICONS.arrowDown,
         href: '/coming-soon',
     },
     {

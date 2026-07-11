@@ -4,13 +4,15 @@ import logoBlack from "./images/PRTech-Solutions-Logo-Black.webp";
 import heroBg from "./images/hero-bg.webp";
 import project01 from "./images/project01.png";         // Dummmmmmmyyyyyy
 import dummyProject from "./images/dummy-project.webp"; // Dummmmmmmyyyyyy
+import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
+import dummyBlogs from "./images/dummy-blogs.png"; // Dummmmmmmyyyyyy
 import serviceBg from "./images/service-bg.webp";
 import comparisonBg from "./images/comparison-bg.webp";
-import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
 import ctaBg1 from "./images/cta-bg1.webp";
 import ctaBg2 from "./images/cta-bg2.webp";
 import ctaBg3 from "./images/cta-bg3.webp";
 import ctaBg4 from "./images/cta-bg4.webp";
+import ctaBg5 from "./images/cta-bg5.webp";
 import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
 import aiAssistant from "./images/ai-assistant.webp";
 import intelligentMatching from "./images/intelligent-matching.webp";
@@ -23,6 +25,7 @@ import ourWorkHeroBg from "./images/our-work-hero-bg.webp";
 import contactUsHeroBg from "./images/contact-us-hero-bg.webp";
 import aboutUsHeroBg from "./images/about-us-hero-bg.webp";
 import startYourProject from "./images/start-your-project-img.webp";
+import blogsHeroImg from "./images/blogs-hero-img.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -116,14 +119,16 @@ export const IMAGES = {
     heroBg,
     project01,    // Dummmmmmmyyyyyy
     dummyProject, // Dummmmmmmyyyyyy
+    dummyIndustry, // Dummmmmmmyyyyyy
+    dummyClientPicture, // Dummmmmmmyyyyyy
+    dummyBlogs, // Dummmmmmmyyyyyy
     serviceBg,
     comparisonBg,
-    dummyIndustry, // Dummmmmmmyyyyyy
     ctaBg1,
     ctaBg2,
     ctaBg3,
     ctaBg4,
-    dummyClientPicture,
+    ctaBg5,
     aiAssistant,
     intelligentMatching,
     contentAware,
@@ -135,6 +140,7 @@ export const IMAGES = {
     contactUsHeroBg,
     aboutUsHeroBg,
     startYourProject,
+    blogsHeroImg,
     // Clients
     bcoEco,
     attributionBooster,

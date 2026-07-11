@@ -7,6 +7,7 @@ import OurWork from "../pages/OurWork/OurWork";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import ComingSoon from "../components/Homepage/ComingSoon/ComingSoon";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import Blogs from "../pages/Blogs/Blogs";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/coming-soon",
         element: <ComingSoon />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
       {
         path: "*",

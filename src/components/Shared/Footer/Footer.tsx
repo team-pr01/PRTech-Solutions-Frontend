@@ -44,7 +44,7 @@ const Footer = () => {
     },
     {
       label: "Blogs",
-      path: "/coming-soon",
+      path: "/blogs",
     },
   ];
   const services = [
@@ -137,13 +137,14 @@ const Footer = () => {
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6">
                       <Link to="/contact-us">
+                        <Button
+                          variant="secondary"
+                          label="Let's Get Started"
+                          className="w-full md:w-fit"
+                        />
+                      </Link>
                       <Button
-                        variant="secondary"
-                        label="Let's Get Started"
-                        className="w-full md:w-fit"
-                      /></Link>
-                      <Button
-                      onClick={handleScrollToServices}
+                        onClick={handleScrollToServices}
                         variant="tertiary"
                         label="See Our Services"
                         className="w-full md:w-fit"

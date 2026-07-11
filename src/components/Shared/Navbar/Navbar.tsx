@@ -5,12 +5,12 @@ import { ICONS, IMAGES } from "../../../assets";
 const Navbar = () => {
   const pathname = useLocation().pathname;
   return (
-    <div className="rounded-xl border border-neutral-10 bg-neutral-15 backdrop-blur-[45px] px-3 py-2 font-Manrope flex items-center justify-between gap-18 absolute top-6 left-1/2 -translate-x-1/2 max-w-[320px] lg:max-w-225 w-full h-fit z-20">
+    <div className="rounded-xl py-2 font-Manrope flex items-center justify-between gap-18 absolute top-6 left-1/2 -translate-x-1/2 max-w-300 2xl:max-w-7xl w-full mx-auto px-4 2xl:px-0 h-fit z-20">
       <Link to="/">
         <img
           src={pathname !== "/coming-soon" ? IMAGES.logo : IMAGES.logoBlack}
           alt="logo"
-          className="w-28"
+          className="w-32"
         />
       </Link>
 
@@ -23,9 +23,10 @@ const Navbar = () => {
               key={index}
               onClick={link?.onClick}
               to={link?.href as string}
-              className=""
+              className="flex items-center gap-1"
             >
               {link.label}
+              {link?.icon && <img src={link?.icon as string} alt="" className="mt-1" />}
             </Link>
           ))}
         </ul>

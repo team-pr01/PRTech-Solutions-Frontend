@@ -74,7 +74,7 @@ const CTA = ({
             </h2>
 
             <p
-              className={`${textColor} description max-w-140 mt-4 xl:mt-6 ${marginAuto[contentAlignment]}`}
+              className={`${textColor} description max-w-150 mt-4 xl:mt-6 ${marginAuto[contentAlignment]}`}
             >
               {description}
             </p>
