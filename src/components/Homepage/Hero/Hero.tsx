@@ -5,16 +5,14 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   const featuredProjects = [
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
-    IMAGES.project01,
+    IMAGES.vedicWisdomWebsite,
+    IMAGES.brightTuitionCareWebsite,
+    IMAGES.attributionBoosterWebsite,
+    IMAGES.globalCryptoAllianceWebsite,
+    IMAGES.vedicWisdomApp,
+    IMAGES.brightTuitionCareApp,
+    IMAGES.tenStageMatrixWebsite,
+    IMAGES.logicalMediaWebsite,
   ];
 
   return (
@@ -72,12 +70,13 @@ const Hero = () => {
             <Link to="/contact-us">
               <Button label="Get Your Project Feasibility Review" />
             </Link>
-           <Link to="/our-work">
-            <Button
-              variant="tertiary"
-              label="Explore Systems We've Built"
-              className="w-full md:w-fit"
-            /></Link>
+            <Link to="/our-work">
+              <Button
+                variant="tertiary"
+                label="Explore Systems We've Built"
+                className="w-full md:w-fit"
+              />
+            </Link>
           </div>
         </div>
       </Container>

@@ -57,6 +57,17 @@ import fitnessIndustry from "./images/industries/gym.webp";
 import realEstateIndustry from "./images/industries/real-state.webp";
 import manufacturingIndustry from "./images/industries/manufacturing.webp";
 import saasIndustry from "./images/industries/saas.webp";
+// Projects
+// Websites
+import attributionBoosterWebsite from "./images/projects/websites/Attribution_Booster.webp";
+import brightTuitionCareWebsite from "./images/projects/websites/Bright_Tuition_Care_Website.webp";
+import globalCryptoAllianceWebsite from "./images/projects/websites/Global_Crypto-Allinace.webp";
+import logicalMediaWebsite from "./images/projects/websites/Logical_MEdia.webp";
+import tenStageMatrixWebsite from "./images/projects/websites/Ten_Stage_Metrix.webp";
+import vedicWisdomWebsite from "./images/projects/websites/Vedic_Wisdom_Website.webp";
+// Apps
+import vedicWisdomApp from "./images/projects/apps/Bright_Tuition_Care_App.webp";
+import brightTuitionCareApp from "./images/projects/apps/Vedic_Wisdom_App.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -172,7 +183,20 @@ export const IMAGES = {
     manufacturingIndustry,
     realEstateIndustry,
     saasIndustry,
-    travelIndustry
+    travelIndustry,
+    // Projects
+    // Websites
+    attributionBoosterWebsite,
+    brightTuitionCareWebsite,
+    globalCryptoAllianceWebsite,
+    logicalMediaWebsite,
+    tenStageMatrixWebsite,
+    vedicWisdomWebsite,
+    // Apps
+    vedicWisdomApp,
+    brightTuitionCareApp
+
+    
 };
 
 export const ICONS = {
