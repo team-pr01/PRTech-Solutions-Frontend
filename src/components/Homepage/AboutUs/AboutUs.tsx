@@ -30,9 +30,6 @@ const AboutUs = () => {
   return (
     <Container>
       <div className="py-12 2xl:py-24">
-        <p className="font-Poppins text-2xl 2xl:text-[32px] text-primary-10 text-center">
-          (hello)
-        </p>
 
         <div className="flex items-center justify-between">
           {/* Left Side */}

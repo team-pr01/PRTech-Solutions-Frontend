@@ -11,12 +11,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// Sample project data
+// Project data
 const projectsData = [
   {
     id: 1,
     name: "Bright Tuition Care",
-    link: "https://brighttuitioncare.com/",
+    link: "https://brighttuitioncare.com",
     title:
       "Scaling a Tutor Marketplace 4× Faster with a Structured Hiring Platform",
     tags: [
@@ -32,49 +32,164 @@ const projectsData = [
       "10k+ active tutors",
       "98% customer satisfaction",
     ],
-    image: IMAGES.dummyProject,
+    image: IMAGES.brightTuitionCareWebsite,
   },
   {
     id: 2,
-    name: "HealthCare Plus",
-    link: "/",
-    title: "AI-Powered Patient Management System Reducing Wait Times by 70%",
+    name: "Vedic Wisdom",
+    link: "https://vedicwisdom.com",
+    title:
+      "Spiritual Content & Features Platform Connecting Users to Ancient Vedic Knowledge",
     tags: [
-      "Healthcare",
-      "AI Integration",
-      "Patient Portal",
-      "Analytics Dashboard",
+      "Spiritual Platform",
+      "Content Management",
+      "Community Features",
+      "Religious Education",
+      "Mobile App",
     ],
     metrics: [
-      "70% reduction in wait times",
-      "50k+ patients managed",
-      "30% cost reduction",
-      "24/7 automated support",
+      "500k+ spiritual content pieces",
+      "1M+ active users",
+      "200+ expert contributors",
+      "45+ countries reached",
     ],
-    image: IMAGES.dummyProject,
+    image: IMAGES.vedicWisdomWebsite,
   },
   {
     id: 3,
-    name: "FinTech Wallet",
-    link: "/",
-    title: "Digital Payment Platform Processing $100M+ in Transactions",
-    tags: ["Fintech", "Payment Gateway", "Security", "Mobile App"],
-    metrics: [
-      "$100M+ transactions processed",
-      "500k+ active users",
-      "99.99% uptime",
-      "40% faster payments",
+    name: "Attribution Booster",
+    link: "https://attributionbooster.com",
+    title:
+      "Google Ads Agency Platform Streamlining Campaign Management for Growing Startups",
+    tags: [
+      "AdTech",
+      "Google Ads",
+      "Agency Platform",
+      "Campaign Analytics",
+      "Startup Growth",
     ],
-    image: IMAGES.dummyProject,
+    metrics: [
+      "200+ active campaigns",
+      "3.5× average ROAS",
+      "80+ clients onboarded",
+      "45% faster setup time",
+    ],
+    image: IMAGES.attributionBoosterWebsite,
+  },
+  {
+    id: 4,
+    name: "Global Crypto Alliance",
+    link: "https://c3global.io",
+    title:
+      "Comprehensive Cryptocurrency Hub for Trading, Education & Community Engagement",
+    tags: [
+      "Cryptocurrency",
+      "Blockchain",
+      "Trading Platform",
+      "Educational Content",
+      "Community",
+    ],
+    metrics: [
+      "$500M+ trading volume",
+      "100k+ community members",
+      "50+ supported cryptocurrencies",
+      "92% user retention rate",
+    ],
+    image: IMAGES.globalCryptoAllianceWebsite,
+  },
+  {
+    id: 5,
+    name: "Ten Stage Matrix",
+    link: "https://tenstagematrix.com",
+    title:
+      "Referral-Based MLM System with Advanced Matrix Structure & Real-Time Tracking",
+    tags: [
+      "MLM Platform",
+      "Referral System",
+      "Matrix Structure",
+      "Real-Time Analytics",
+      "Commission Tracking",
+    ],
+    metrics: [
+      "10-level referral matrix",
+      "15k+ active distributors",
+      "85% commission accuracy",
+      "40% faster payouts",
+    ],
+    image: IMAGES.tenStageMatrixWebsite,
+  },
+  {
+    id: 6,
+    name: "Logical Media",
+    link: "https://logicalmedia.in",
+    title:
+      "Digital Services Hub Revolutionizing Ad Traffic & Social Media Marketing for Indian Startups",
+    tags: [
+      "Digital Marketing",
+      "Ad Traffic",
+      "Social Media",
+      "Startup Solutions",
+      "Analytics",
+    ],
+    metrics: [
+      "500+ campaigns delivered",
+      "120+ client success stories",
+      "300% average traffic growth",
+      "4.8/5 client satisfaction",
+    ],
+    image: IMAGES.logicalMediaWebsite,
+  },
+  // App versions
+  {
+    id: 7,
+    name: "Vedic Wisdom App",
+    link: "/",
+    title:
+      "Mobile App Bringing Ancient Vedic Wisdom & Spiritual Content to Your Fingertips",
+    tags: [
+      "Mobile App",
+      "Spiritual Content",
+      "Daily Wisdom",
+      "Community",
+      "Meditation",
+    ],
+    metrics: [
+      "1M+ app downloads",
+      "4.8/5 app store rating",
+      "200k+ daily active users",
+      "75% user retention",
+    ],
+    image: IMAGES.vedicWisdomApp,
+  },
+  {
+    id: 8,
+    name: "Bright Tuition Care App",
+    link: "/",
+    title:
+      "On-the-Go Learning Platform Connecting Students & Tutors Seamlessly",
+    tags: [
+      "EdTech App",
+      "Mobile Learning",
+      "Tutor Connection",
+      "Live Classes",
+      "Interactive Features",
+    ],
+    metrics: [
+      "500k+ app downloads",
+      "4.9/5 app store rating",
+      "15k+ tutors onboarded",
+      "85% session completion rate",
+    ],
+    image: IMAGES.brightTuitionCareApp,
   },
 ];
 
 const LatestProjects = () => {
-  const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
+  // const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
-  const industries = ["All", "Fintech", "Healthcare", "SaaS", "E-commerce"];
+  // const industries = ["All", "Fintech", "Healthcare", "SaaS", "E-commerce"];
   const currentProject = projectsData[activeIndex];
 
   return (
@@ -85,7 +200,7 @@ const LatestProjects = () => {
 
         <div className="mt-12.5 flex flex-col xl:flex-row justify-between gap-6 2xl:gap-8">
           {/* Industries tab */}
-          <div className="flex flex-row xl:flex-col overflow-auto gap- w-full xl:w-[20%]">
+          {/* <div className="flex flex-row xl:flex-col overflow-auto gap- w-full xl:w-[20%]">
             {industries.map((industry) => (
               <button
                 key={industry}
@@ -99,9 +214,9 @@ const LatestProjects = () => {
                 {industry}
               </button>
             ))}
-          </div>
+          </div> */}
 
-          <div className="flex flex-col lg:flex-row gap-5 w-full xl:w-[80%]">
+          <div className="flex flex-col lg:flex-row gap-5 w-full">
             {/* Middle part - Carousel */}
             <div className="w-full lg:w-[60%]">
               <Swiper
@@ -127,7 +242,7 @@ const LatestProjects = () => {
             </div>
 
             {/* Right part */}
-            <div className="flex flex-col justify-between h-full w-full lg:w-[38%]">
+            <div className="flex flex-col justify-between h-fit w-full lg:w-[40%]">
               <div>
                 <h3 className="text-neutral-70 font-semibold text-lg">
                   <Link

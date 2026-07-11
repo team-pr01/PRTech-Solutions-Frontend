@@ -66,8 +66,8 @@ import logicalMediaWebsite from "./images/projects/websites/Logical_MEdia.webp";
 import tenStageMatrixWebsite from "./images/projects/websites/Ten_Stage_Metrix.webp";
 import vedicWisdomWebsite from "./images/projects/websites/Vedic_Wisdom_Website.webp";
 // Apps
-import vedicWisdomApp from "./images/projects/apps/Bright_Tuition_Care_App.webp";
-import brightTuitionCareApp from "./images/projects/apps/Vedic_Wisdom_App.webp";
+import vedicWisdomApp from "./images/projects/apps/Vedic_Wisdom_App.webp";
+import brightTuitionCareApp from "./images/projects/apps/Bright_Tuition_Care_App.webp";
 
 // ICONS
 import heroRatings from "./icons/hero-rating.svg";
@@ -196,7 +196,7 @@ export const IMAGES = {
     vedicWisdomApp,
     brightTuitionCareApp
 
-    
+
 };
 
 export const ICONS = {

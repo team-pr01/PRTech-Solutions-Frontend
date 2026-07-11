@@ -7,7 +7,7 @@ import HomeFaq from "../../components/Homepage/HomeFaq/HomeFaq";
 import Industries from "../../components/Homepage/Industries/Industries";
 import LatestProjects from "../../components/Homepage/LatestProjects/LatestProjects";
 import Services from "../../components/Homepage/Services/Services";
-import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
+// import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
 import CTA from "../../components/Reusable/CTA/CTA";
 import { handleScrollToServices } from "../../helpers/handleScrollToServicesSection";
 
@@ -35,7 +35,7 @@ const Home = () => {
           variant: "tertiary",
         }}
       />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <AiPoweredSolutions />
       <HomeFaq />
     </div>
