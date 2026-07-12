@@ -76,7 +76,7 @@ const Calendar = ({
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl w-full lg:w-[40%] h-fit">
+    <div className="bg-white p-6 rounded-2xl w-full h-fit">
       <h3 className="text-neutral-65 text-xl font-bold text-center">
         Select a Date
       </h3>
