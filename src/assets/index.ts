@@ -13,6 +13,7 @@ import ctaBg2 from "./images/cta-bg2.webp";
 import ctaBg3 from "./images/cta-bg3.webp";
 import ctaBg4 from "./images/cta-bg4.webp";
 import ctaBg5 from "./images/cta-bg5.webp";
+import ctaBg6 from "./images/cta-bg6.webp";
 import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
 import aiAssistant from "./images/ai-assistant.webp";
 import intelligentMatching from "./images/intelligent-matching.webp";
@@ -144,6 +145,7 @@ export const IMAGES = {
     ctaBg3,
     ctaBg4,
     ctaBg5,
+    ctaBg6,
     aiAssistant,
     intelligentMatching,
     contentAware,
