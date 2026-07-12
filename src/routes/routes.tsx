@@ -9,6 +9,7 @@ import ComingSoon from "../components/Homepage/ComingSoon/ComingSoon";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Blogs from "../pages/Blogs/Blogs";
 import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
+import CaseStudies from "../pages/CaseStudies/CaseStudies";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "/blog/:slug",
         element: <BlogDetails />,
+      },
+      {
+        path: "/case-studies",
+        element: <CaseStudies />,
       },
       {
         path: "*",

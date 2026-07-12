@@ -27,7 +27,7 @@ const AboutUsHero = () => {
               <img src={ICONS.handshake} alt="" />
             </div>
             <span className="text-neutral-65">
-              rusted by{" "}
+              Trusted by{" "}
               <span className="text-primary-10 font-Playfair-Display">
                 Growing
               </span>{" "}

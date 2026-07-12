@@ -21,17 +21,21 @@ export const NAVLINKS: NavLink[] = [
     },
     {
         label: 'Services',
-        hasMenu : true,
+        hasMenu: true,
         onClick: handleScrollToServices,
     },
     {
         label: 'Industries',
-        hasMenu : true,
+        hasMenu: true,
         href: '/coming-soon',
     },
     {
         label: 'Work',
         href: '/our-work',
+    },
+    {
+        label: 'Case Studies',
+        href: '/case-studies',
     },
     {
         label: 'Contact Us',
