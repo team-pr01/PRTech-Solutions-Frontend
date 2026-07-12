@@ -1,3 +1,4 @@
+// ScheduleCall.tsx
 import { useState } from "react";
 import { ICONS } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
@@ -5,6 +6,7 @@ import Modal from "../../Reusable/Modal/Modal";
 import TextInput from "../../Reusable/TextInput/TextInput";
 import Textarea from "../../Reusable/TextArea/TextArea";
 import { useForm } from "react-hook-form";
+import Calendar from "./Calendar";
 
 type TFormData = {
   name: string;
@@ -17,11 +19,26 @@ const ScheduleCall = () => {
   const [isScheduleCallModalOpen, setIsScheduleCallModalOpen] =
     useState<boolean>(false);
 
+  // Selected date state - kept in ScheduleCall component
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState<number | null>(null);
+
   const {
     register,
     // handleSubmit,
     formState: { errors },
   } = useForm<TFormData>();
+
+  // Handle date selection
+  const handleDateSelect = (day: number) => {
+    setSelectedDate(selectedDate === day ? null : day);
+  };
+
+  // Handle month change
+  const handleMonthChange = (date: Date) => {
+    setCurrentDate(date);
+  };
+
   return (
     <>
       <div className="p-5 lg:p-10 bg-white border border-white rounded-[20px] lg:rounded-[40px] h-fit w-full lg:w-[40%]">
@@ -58,15 +75,17 @@ const ScheduleCall = () => {
         isModalOpen={isScheduleCallModalOpen}
         setIsModalOpen={setIsScheduleCallModalOpen}
       >
-        <div className="relative bg-gradient-schedule-call-bg p-6 backdrop-blur-[45px] rounded-2xl font-Manrope flex gap-8 h-full">
-          {/* calendar */}
-          <div className="bg-white p-5 w-[40%] rounded-2xl">
-            <h3 className="text-neutral-65 text-xl font-bold text-center">
-              Select a Time
-            </h3>
-          </div>
+        <div className="relative bg-gradient-schedule-call-bg p-6 backdrop-blur-[45px] rounded-2xl font-Manrope flex flex-col lg:flex-row gap-8 h-full max-h-[90vh] overflow-y-auto">
+          {/* Calendar Component */}
+          <Calendar
+            selectedDate={selectedDate}
+            onDateSelect={handleDateSelect}
+            currentDate={currentDate}
+            onMonthChange={handleMonthChange}
+          />
 
-          <div className="w-[60%] h-full">
+          {/* Form Section */}
+          <div className="w-full lg:w-[60%]">
             <h2 className="text-white text-center font-Manrope text-2xl font-semibold">
               Schedule a Call
             </h2>
@@ -78,6 +97,7 @@ const ScheduleCall = () => {
                 {...register("name", {
                   required: "Name is required",
                 })}
+                error={errors.name}
               />
 
               <TextInput
@@ -91,6 +111,7 @@ const ScheduleCall = () => {
                     message: "Invalid email address",
                   },
                 })}
+                error={errors.email}
               />
 
               <TextInput
@@ -100,9 +121,9 @@ const ScheduleCall = () => {
                 {...register("phoneNumber", {
                   required: "Phone number is required",
                 })}
+                error={errors.phoneNumber}
               />
 
-              {/* Message */}
               <Textarea
                 label="What are you looking to build?"
                 placeholder="Describe your vision, goals, or technical challenges..."
@@ -113,10 +134,21 @@ const ScheduleCall = () => {
 
               <Button
                 type="submit"
-                label="Submit"
+                label="Schedule Call"
                 className="w-full flex items-center justify-center"
               />
             </form>
+
+            {/* Show selected date in form */}
+            {selectedDate && (
+              <div className="mt-4 p-3 bg-white/10 rounded-lg text-center">
+                <p className="text-white/80 text-sm">
+                  Selected Date:{" "}
+                  {currentDate.toLocaleString("default", { month: "long" })}{" "}
+                  {selectedDate}, {currentDate.getFullYear()}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </Modal>

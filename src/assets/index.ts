@@ -122,6 +122,7 @@ import clients from "./icons/clients.svg";
 import experience from "./icons/experience.svg";
 import onTimeDelivery from "./icons/on-time-delivery.svg";
 import performanceBoost from "./icons/performance-boost.svg";
+import tick from "./icons/tick.svg";
 
 
 
@@ -251,5 +252,6 @@ export const ICONS = {
     clients,
     experience,
     onTimeDelivery,
-    performanceBoost
+    performanceBoost,
+    tick
 };
