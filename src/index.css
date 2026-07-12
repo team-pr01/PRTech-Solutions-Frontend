@@ -37,6 +37,7 @@
   --color-neutral-65: #0d1431;
   --color-neutral-70: #1b2a3c;
   --color-neutral-80: #727881;
+  --color-neutral-81: #ffffff1a;
   --color-neutral-85: #61686c;
   --color-neutral-86: #58676e;
   --color-neutral-87: #66666629;
@@ -126,6 +127,8 @@
 
   --bg-gradient-start-project: radial-gradient(48.76% 66.2% at 0% -4.1%, rgba(17, 120, 255, 0.40) 0%, rgba(3, 0, 19, 0.00) 100%), #030013;
   --bg-gradient-about-us-strip: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
+  --bg-gradient-case-studies: radial-gradient(53.74% 62.68% at -6.15% -4.83%, rgba(71, 151, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), conic-gradient(from 232deg at 104.42% 104.15%, #F7FFFF 21.385518014431deg, #F7FFFF 24.11387711763382deg, #C5DCFF 245.09671926498413deg, #D7DFFF 360deg);
+  --bg-gradient-case-study-img: linear-gradient(180deg, rgba(71, 71, 71, 0.00) 0%, rgba(0, 0, 0, 0.36) 100%);
 
 
   --breakpoint-xs: 375px;
@@ -191,6 +194,14 @@
 
 .bg-gradient-about-us-strip {
   background: var(--bg-gradient-about-us-strip);
+}
+
+.bg-gradient-case-studies {
+  background: var(--bg-gradient-case-studies);
+}
+
+.bg-gradient-case-study-img {
+  background: var(--bg-gradient-case-study-img);
 }
 
 button {
