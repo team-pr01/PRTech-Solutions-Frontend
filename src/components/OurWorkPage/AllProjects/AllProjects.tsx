@@ -1,7 +1,6 @@
 import LatestProjectsHeader from "../../Homepage/LatestProjects/LatestProjectsHeader";
 import Container from "../../Reusable/Container/Container";
 import ProjectCard from "./ProjectCard";
-import Button from "../../Reusable/Button/Button";
 import { projectsData } from "../../Homepage/LatestProjects/LatestProjects";
 
 const AllProjects = () => {
@@ -34,10 +33,6 @@ const AllProjects = () => {
             {projectsData?.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
-          </div>
-
-          <div className="flex items-center justify-center mt-6 xl:mt-12 2xl:mt-17">
-            <Button label="View All Projects" />
           </div>
         </div>
       </Container>

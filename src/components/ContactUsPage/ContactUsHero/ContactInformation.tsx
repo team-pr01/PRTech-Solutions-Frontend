@@ -19,10 +19,10 @@ const ContactInformation = () => {
           text: "+91 93599 63665 (IND)",
           href: "tel:+919359963665",
         },
-        {
-          text: "+880 1572-915890 (BD)",
-          href: "tel:+8801572915890",
-        },
+        // {
+        //   text: "+880 1572-915890 (BD)",
+        //   href: "tel:+8801572915890",
+        // },
       ],
     },
     {
@@ -30,7 +30,7 @@ const ContactInformation = () => {
       icon: ICONS.locationDark,
       details: [
         {
-          text: "1234 Mumbai, Maharashtra 400001, India, 1234 Mumbai, Maharashtra 400001, India",
+          text: "1234 Mumbai, Maharashtra 400001",
         },
       ],
     },
@@ -42,10 +42,10 @@ const ContactInformation = () => {
           text: "hello@prtech-solutions.com",
           href: "mailto:hello@prtech-solutions.com",
         },
-        {
-          text: "support@prtech-solutions.com",
-          href: "mailto:support@prtech-solutions.com",
-        },
+        // {
+        //   text: "support@prtech-solutions.com",
+        //   href: "mailto:support@prtech-solutions.com",
+        // },
       ],
     },
   ];

@@ -141,10 +141,11 @@ const ScheduleCall = () => {
       <Modal
         isModalOpen={isScheduleCallModalOpen}
         setIsModalOpen={handleModalClose}
+        width = "w-[90%] sm:w-[60%] lg:w-[90%] 2xl:w-[50%]"
       >
-        <div className="relative bg-gradient-schedule-call-bg p-6 lg:p-10 backdrop-blur-[45px] rounded-2xl font-Manrope flex flex-col lg:flex-row gap-10 h-full max-h-[95vh] overflow-y-auto">
+        <div className="relative bg-gradient-schedule-call-bg p-6 lg:p-10 backdrop-blur-[45px] rounded-2xl font-Manrope flex flex-col xl:flex-row gap-10 h-full max-h-[95vh] overflow-y-auto">
           {/* LEFT SECTION: CALENDAR OR TIME SLOTS */}
-          <div className="w-full lg:w-[45%] flex flex-col">
+          <div className="w-full xl:w-[45%] flex flex-col">
             {!selectedDate ? (
               <div className="animate-in fade-in zoom-in duration-300 w-full">
                 <Calendar
@@ -200,7 +201,7 @@ const ScheduleCall = () => {
           </div>
 
           {/* RIGHT SECTION: FORM */}
-          <div className="w-full lg:w-[55%] flex flex-col">
+          <div className="w-full xl:w-[55%] flex flex-col">
             <h2 className="text-white font-Manrope text-2xl font-bold mb-2">
               Tell us about yourself
             </h2>

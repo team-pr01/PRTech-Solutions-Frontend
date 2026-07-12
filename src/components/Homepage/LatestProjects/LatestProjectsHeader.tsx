@@ -29,8 +29,8 @@ const LatestProjectsHeader = () => {
           workflows to building scalable platforms and integrating intelligent
           systems.
         </p>
-        <Link to={"/our-work"}>
-          <Button label="View All Projects" />
+        <Link to={"/contact-us"}>
+          <Button label="Make Yours" />
         </Link>
       </div>
     </div>
