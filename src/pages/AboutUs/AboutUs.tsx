@@ -21,6 +21,7 @@ const AboutUs = () => {
           variant: "secondary",
         }}
       />
+      
       <FeaturedCaseStudies />
     </div>
   );
