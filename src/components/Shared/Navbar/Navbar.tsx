@@ -21,7 +21,7 @@ const Navbar = () => {
 
       <div>
         <ul
-          className={`hidden lg:flex items-center gap-6 font-semibold ${pathname === "/coming-soon" || pathname.startsWith("/blog/") ? "text-neutral-50" : "text-white"}`}
+          className={`hidden lg:flex items-center gap-6 font-semibold ${pathname === "/coming-soon" || pathname === "/privacy-policy" || pathname.startsWith("/blog/") ? "text-neutral-50" : "text-white"}`}
         >
           {NAVLINKS.map((link, index) => (
             <Link
@@ -32,7 +32,7 @@ const Navbar = () => {
             >
               {link.label}
               {link?.hasMenu && (
-                <MdKeyboardArrowDown className={`${pathname === "/coming-soon" || pathname.startsWith("/blog/") ? "text-neutral-50" : "text-white"}`} />
+                <MdKeyboardArrowDown className={`${pathname === "/coming-soon" || pathname === "/privacy-policy" || pathname.startsWith("/blog/") ? "text-neutral-50" : "text-white"}`} />
               )}
             </Link>
           ))}

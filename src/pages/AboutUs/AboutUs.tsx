@@ -4,6 +4,7 @@ import AboutUsHero from "../../components/AboutUsPage/AboutUsHero/AboutUsHero";
 import FeaturedCaseStudies from "../../components/AboutUsPage/FeaturedCaseStudies/FeaturedCaseStudies";
 import OurAchievements from "../../components/AboutUsPage/OurAchievements/OurAchievements";
 import CTA from "../../components/Reusable/CTA/CTA";
+import WhyWorkWithUs from "../../components/AboutUsPage/WhyWorkWithUs/WhyWorkWithUs";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -21,8 +22,9 @@ const AboutUs = () => {
           variant: "secondary",
         }}
       />
-      
+
       <FeaturedCaseStudies />
+      <WhyWorkWithUs />
     </div>
   );
 };

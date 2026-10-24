@@ -23,6 +23,7 @@
   --color-primary-35: #98ddff;
   --color-primary-40: #e6f6fd;
   --color-primary-45: #CEF;
+  --color-primary-50: #78d7ff33;
 
   /* neutral */
 
@@ -38,9 +39,13 @@
   --color-neutral-70: #1b2a3c;
   --color-neutral-80: #727881;
   --color-neutral-81: #ffffff1a;
+  --color-neutral-82: #2d48b233;
+  --color-neutral-83: #ffffff33;
   --color-neutral-85: #61686c;
   --color-neutral-86: #58676e;
   --color-neutral-87: #66666629;
+  --color-neutral-88: #ffffff66;
+  --color-neutral-89: #1c498c33;
   --color-neutral-90: #e2e4e94d;
   --color-neutral-91: #d7d7d7;
   --color-neutral-92: #26265933;
@@ -129,6 +134,8 @@
   --bg-gradient-about-us-strip: linear-gradient(180deg, #038CF8 -10.67%, rgba(13, 20, 49, 0.00) 89.94%), #0D1431;
   --bg-gradient-case-studies: radial-gradient(53.74% 62.68% at -6.15% -4.83%, rgba(71, 151, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), conic-gradient(from 232deg at 104.42% 104.15%, #F7FFFF 21.385518014431deg, #F7FFFF 24.11387711763382deg, #C5DCFF 245.09671926498413deg, #D7DFFF 360deg);
   --bg-gradient-case-study-img: linear-gradient(180deg, rgba(71, 71, 71, 0.00) 0%, rgba(0, 0, 0, 0.36) 100%);
+  --bg-gradient-why-work-with-us-tab: radial-gradient(22.15% 152.31% at 100% 0%, #020B16 0%, rgba(2, 11, 22, 0.00) 100%), radial-gradient(18.14% 131.78% at 0% 0%, #020B16 0%, rgba(2, 11, 22, 0.00) 100%), linear-gradient(180deg, rgba(2, 11, 22, 0.00) 20%, rgba(74, 167, 255, 0.40) 100%);
+  --bg-gradient-why-work-with-us-section-divider: linear-gradient(90deg, rgba(116, 209, 255, 0.00) 0%, rgba(116, 209, 255, 0.40) 30%, rgba(116, 209, 255, 0.40) 70%, rgba(116, 209, 255, 0.00) 100%);
 
 
   --breakpoint-xs: 375px;
@@ -202,6 +209,14 @@
 
 .bg-gradient-case-study-img {
   background: var(--bg-gradient-case-study-img);
+}
+
+.bg-gradient-why-work-with-us-tab {
+  background: var(--bg-gradient-why-work-with-us-tab);
+}
+
+.bg-gradient-why-work-with-us-section-divider {
+  background: var(--bg-gradient-why-work-with-us-section-divider);
 }
 
 button {

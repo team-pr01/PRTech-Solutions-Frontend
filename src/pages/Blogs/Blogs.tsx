@@ -51,7 +51,7 @@ const Blogs = () => {
   return (
     <div>
       <BlogsHero />
-      <TrendingBlogs featuredBlogs={featuredBlogs} />
+      
       <AllBlogs
         blogs={allBlogs || []}
         meta={data?.data?.meta}
@@ -70,6 +70,7 @@ const Blogs = () => {
           variant: "secondary",
         }}
       />
+      <TrendingBlogs featuredBlogs={featuredBlogs} />
       <FeaturedCaseStudies />
       <SubscribeNewsletter />
     </div>

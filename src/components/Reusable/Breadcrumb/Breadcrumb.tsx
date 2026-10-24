@@ -1,6 +1,4 @@
-// components/Reusable/Breadcrumb/Breadcrumb.tsx
 import { Link } from "react-router-dom";
-import { IoHomeOutline } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
 
 interface BreadcrumbItem {
@@ -26,9 +24,8 @@ const Breadcrumb = ({
     <nav className={`flex items-center text-sm font-GeneralSans ${className}`}>
       <Link
         to="/"
-        className="flex items-center gap-1 text-gray-500 hover:text-primary-5 transition-colors"
+        className="text-gray-500 hover:text-primary-5 transition-colors"
       >
-        <IoHomeOutline className="w-4 h-4" />
         {homeLabel}
       </Link>
 

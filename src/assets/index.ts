@@ -29,6 +29,7 @@ import startYourProject from "./images/start-your-project-img.webp";
 import blogsHeroImg from "./images/blogs-hero-img.webp";
 import trendingBlog from "./images/trending-blog.webp";
 import caseStudiesHeroImg from "./images/case-studies-hero-img.webp";
+import whyWorkWithUsBg from "./images/why-work-with-us-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -126,6 +127,9 @@ import onTimeDelivery from "./icons/on-time-delivery.svg";
 import performanceBoost from "./icons/performance-boost.svg";
 import tick from "./icons/tick.svg";
 import folder from "./icons/folder.svg";
+import quality from "./icons/quality.svg";
+import standardsApproach from "./icons/standards-approach.svg";
+import toolPractices from "./icons/tool-practices.svg";
 
 
 
@@ -160,6 +164,7 @@ export const IMAGES = {
     blogsHeroImg,
     trendingBlog,
     caseStudiesHeroImg,
+    whyWorkWithUsBg,
     // Clients
     bcoEco,
     attributionBooster,
@@ -260,4 +265,7 @@ export const ICONS = {
     performanceBoost,
     tick,
     folder,
+    quality,
+    standardsApproach,
+    toolPractices
 };

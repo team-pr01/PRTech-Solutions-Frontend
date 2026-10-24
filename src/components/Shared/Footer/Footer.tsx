@@ -279,13 +279,13 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href={"/coming-soon"}
+                href={"/terms-and-conditions"}
                 className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
               >
                 Terms and Conditions
               </a>
               <a
-                href={"/coming-soon"}
+                href={"/privacy-policy"}
                 className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit"
               >
                 Privacy Policy

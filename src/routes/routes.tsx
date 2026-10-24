@@ -10,6 +10,8 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import Blogs from "../pages/Blogs/Blogs";
 import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 import CaseStudies from "../pages/CaseStudies/CaseStudies";
+import TermsAndConditions from "../pages/Legal/TermsAndConditions/TermsAndConditions";
+import PrivacyPolicy from "../pages/Legal/PrivacyPolicy/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ export const router = createBrowserRouter([
       {
         path: "/case-studies",
         element: <CaseStudies />,
+      },
+      {
+        path: "/terms-and-conditions",
+        element: <TermsAndConditions />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
       {
         path: "*",
