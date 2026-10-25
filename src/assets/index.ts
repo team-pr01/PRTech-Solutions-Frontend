@@ -6,6 +6,7 @@ import project01 from "./images/project01.png";         // Dummmmmmmyyyyyy
 import dummyProject from "./images/dummy-project.webp"; // Dummmmmmmyyyyyy
 import dummyIndustry from "./images/dummy-industry.webp"; // Dummmmmmmyyyyyy
 import dummyBlogs from "./images/dummy-blogs.png"; // Dummmmmmmyyyyyy
+import dummyPlaybook from "./images/dummy-playbook.png"; //// Dummmmmmmyyyyyy
 import serviceBg from "./images/service-bg.webp";
 import comparisonBg from "./images/comparison-bg.webp";
 import ctaBg1 from "./images/cta-bg1.webp";
@@ -133,6 +134,7 @@ import standardsApproach from "./icons/standards-approach.svg";
 import toolPractices from "./icons/tool-practices.svg";
 import gift from "./icons/gift.svg";
 import download from "./icons/download.svg";
+import downloadBlue from "./icons/download-blue.svg";
 import lock from "./icons/lock.svg";
 
 
@@ -146,6 +148,7 @@ export const IMAGES = {
     dummyIndustry, // Dummmmmmmyyyyyy
     dummyClientPicture, // Dummmmmmmyyyyyy
     dummyBlogs, // Dummmmmmmyyyyyy
+    dummyPlaybook,
     serviceBg,
     comparisonBg,
     ctaBg1,
@@ -275,5 +278,6 @@ export const ICONS = {
     toolPractices,
     gift, 
     download,
+    downloadBlue,
     lock
 };

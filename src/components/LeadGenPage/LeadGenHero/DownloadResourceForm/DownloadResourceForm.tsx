@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import Button from "../../Reusable/Button/Button";
-import TextInput from "../../Reusable/TextInput/TextInput";
-import { ICONS } from "../../../assets";
 import { FiCheck } from "react-icons/fi";
+import TextInput from "../../../Reusable/TextInput/TextInput";
+import Button from "../../../Reusable/Button/Button";
+import { ICONS } from "../../../../assets";
 
 type TFormData = {
   name: string;
@@ -138,7 +138,7 @@ const DownloadResourceForm = () => {
         />
       </form>
 
-      <div className="bg-neutral-71 p-4 flex items-center gap-4 rounded-2xl mt-8">
+      <div className="bg-primary-55 p-4 flex items-center gap-4 rounded-2xl mt-8">
         <img src={ICONS.lock} alt="" />
         <span className="text-white font-Manrope font-semibold text-sm">
           We respect your privacy. No spam, ever.
