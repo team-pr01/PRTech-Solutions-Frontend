@@ -136,6 +136,7 @@ import toolPractices from "./icons/tool-practices.svg";
 import gift from "./icons/gift.svg";
 import download from "./icons/download.svg";
 import downloadBlue from "./icons/download-blue.svg";
+import downloadGray from "./icons/download-gray.svg";
 import lock from "./icons/lock.svg";
 
 
@@ -281,5 +282,6 @@ export const ICONS = {
     gift, 
     download,
     downloadBlue,
+    downloadGray,
     lock
 };
