@@ -15,6 +15,7 @@ import ctaBg3 from "./images/cta-bg3.webp";
 import ctaBg4 from "./images/cta-bg4.webp";
 import ctaBg5 from "./images/cta-bg5.webp";
 import ctaBg6 from "./images/cta-bg6.webp";
+import ctaBg7 from "./images/cta-bg7.webp";
 import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
 import aiAssistant from "./images/ai-assistant.webp";
 import intelligentMatching from "./images/intelligent-matching.webp";
@@ -33,6 +34,7 @@ import caseStudiesHeroImg from "./images/case-studies-hero-img.webp";
 import whyWorkWithUsBg from "./images/why-work-with-us-bg.webp";
 import leadGenHeroBg from "./images/lead-gen-hero-bg.webp";
 import scalingChallenge from "./images/scaling-challenge-bg.webp";
+import howItWorksBg from "./images/how-it-works-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -159,6 +161,7 @@ export const IMAGES = {
     ctaBg4,
     ctaBg5,
     ctaBg6,
+    ctaBg7,
     aiAssistant,
     intelligentMatching,
     contentAware,
@@ -176,6 +179,8 @@ export const IMAGES = {
     whyWorkWithUsBg,
     leadGenHeroBg,
     scalingChallenge,
+    howItWorksBg,
+    
     // Clients
     bcoEco,
     attributionBooster,
