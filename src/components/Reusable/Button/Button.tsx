@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ICONS } from "../../../assets";
 
 const Button = ({
@@ -7,6 +8,7 @@ const Button = ({
   onClick,
   className = "",
   isLoading = false,
+  icon,
 }: {
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary" | "tertiary" | "outlinePrimary";
@@ -14,6 +16,7 @@ const Button = ({
   onClick?: () => void;
   className?: string;
   isLoading?: boolean;
+  icon?: any;
 }) => {
   return (
     <button
@@ -73,6 +76,7 @@ const Button = ({
       >
         <img
           src={
+            icon ? icon :
             variant === "primary"
               ? ICONS.arrowRightUpBlue
               : ICONS.arrowRightUpWhite

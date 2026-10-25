@@ -79,7 +79,7 @@ const AboutUsHero = () => {
         <div className="marquee-track">
           <div className="marquee-content">
             {clients.map((client, index) => (
-              <div className="w-[348px] h-[100px] bg-gray-600 bg-blur-[20px] rounded-[20px] flex items-center justify-center">
+              <div className="w-87 h-25 bg-white border border-neutral-50 bg-blur-[20px] rounded-[20px] flex items-center justify-center">
                 <img
                   key={index}
                   src={client}

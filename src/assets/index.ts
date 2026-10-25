@@ -30,6 +30,7 @@ import blogsHeroImg from "./images/blogs-hero-img.webp";
 import trendingBlog from "./images/trending-blog.webp";
 import caseStudiesHeroImg from "./images/case-studies-hero-img.webp";
 import whyWorkWithUsBg from "./images/why-work-with-us-bg.webp";
+import leadGenHeroBg from "./images/lead-gen-hero-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -130,6 +131,9 @@ import folder from "./icons/folder.svg";
 import quality from "./icons/quality.svg";
 import standardsApproach from "./icons/standards-approach.svg";
 import toolPractices from "./icons/tool-practices.svg";
+import gift from "./icons/gift.svg";
+import download from "./icons/download.svg";
+import lock from "./icons/lock.svg";
 
 
 
@@ -165,6 +169,7 @@ export const IMAGES = {
     trendingBlog,
     caseStudiesHeroImg,
     whyWorkWithUsBg,
+    leadGenHeroBg,
     // Clients
     bcoEco,
     attributionBooster,
@@ -267,5 +272,8 @@ export const ICONS = {
     folder,
     quality,
     standardsApproach,
-    toolPractices
+    toolPractices,
+    gift, 
+    download,
+    lock
 };

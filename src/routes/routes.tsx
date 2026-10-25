@@ -12,6 +12,7 @@ import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 import CaseStudies from "../pages/CaseStudies/CaseStudies";
 import TermsAndConditions from "../pages/Legal/TermsAndConditions/TermsAndConditions";
 import PrivacyPolicy from "../pages/Legal/PrivacyPolicy/PrivacyPolicy";
+import LeadGen from "../pages/LeadGen/LeadGen";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/lead-gen/:industry",
+        element: <LeadGen />,
       },
       {
         path: "*",
