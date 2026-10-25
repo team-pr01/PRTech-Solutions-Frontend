@@ -32,6 +32,7 @@ import trendingBlog from "./images/trending-blog.webp";
 import caseStudiesHeroImg from "./images/case-studies-hero-img.webp";
 import whyWorkWithUsBg from "./images/why-work-with-us-bg.webp";
 import leadGenHeroBg from "./images/lead-gen-hero-bg.webp";
+import scalingChallenge from "./images/scaling-challenge-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -173,6 +174,7 @@ export const IMAGES = {
     caseStudiesHeroImg,
     whyWorkWithUsBg,
     leadGenHeroBg,
+    scalingChallenge,
     // Clients
     bcoEco,
     attributionBooster,
