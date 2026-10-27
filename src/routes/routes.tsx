@@ -13,6 +13,7 @@ import CaseStudies from "../pages/CaseStudies/CaseStudies";
 import TermsAndConditions from "../pages/Legal/TermsAndConditions/TermsAndConditions";
 import PrivacyPolicy from "../pages/Legal/PrivacyPolicy/PrivacyPolicy";
 import LeadGen from "../pages/LeadGen/LeadGen";
+import CaseStudyDetails from "../pages/CaseStudyDetails/CaseStudyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "/case-studies",
         element: <CaseStudies />,
+      },
+      {
+        path: "/case-study/:slug",
+        element: <CaseStudyDetails />,
       },
       {
         path: "/terms-and-conditions",
