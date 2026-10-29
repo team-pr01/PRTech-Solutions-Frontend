@@ -14,7 +14,6 @@
   /* Colors */
 
   /* Primary */
-
   --color-primary-10: #06a0ed;
   --color-primary-15: #6d86f9;
   --color-primary-20: #c9d2fb;
@@ -27,7 +26,6 @@
   --color-primary-55: #06a0ed33;
 
   /* neutral */
-
   --color-neutral-10: #dbe2eb;
   --color-neutral-15: #ffffff0d;
   --color-neutral-16: #030013;
@@ -62,6 +60,11 @@
   --color-neutral-97: #ffffff14;
   --color-neutral-98: #ededed66;
   --color-neutral-99: #ffffffcc;
+
+  /* Warning */
+  --color-warning-10: #C04646;
+  --color-warning-15: #ED5555;
+  --color-warning-20: #FFF5F5;
 
   /* Shadows */
   --shadow-button: 0 4px 8px 0 rgba(57, 78, 102, 0.25), 0 0 0 1px #687d96;

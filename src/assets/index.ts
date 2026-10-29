@@ -36,6 +36,7 @@ import leadGenHeroBg from "./images/lead-gen-hero-bg.webp";
 import scalingChallenge from "./images/scaling-challenge-bg.webp";
 import howItWorksBg from "./images/how-it-works-bg.webp";
 import caseStudyDetailsHeroBg from "./images/case-study-details-hero-bg.webp";
+import btcProblem from "./images/case-studies/btc-problem.png";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -182,6 +183,7 @@ export const IMAGES = {
     scalingChallenge,
     howItWorksBg,
     caseStudyDetailsHeroBg,
+    btcProblem,
     
     // Clients
     bcoEco,
