@@ -150,6 +150,7 @@
   --bg-gradient-why-work-with-us-tab: radial-gradient(22.15% 152.31% at 100% 0%, #020B16 0%, rgba(2, 11, 22, 0.00) 100%), radial-gradient(18.14% 131.78% at 0% 0%, #020B16 0%, rgba(2, 11, 22, 0.00) 100%), linear-gradient(180deg, rgba(2, 11, 22, 0.00) 20%, rgba(74, 167, 255, 0.40) 100%);
   --bg-gradient-why-work-with-us-section-divider: linear-gradient(90deg, rgba(116, 209, 255, 0.00) 0%, rgba(116, 209, 255, 0.40) 30%, rgba(116, 209, 255, 0.40) 70%, rgba(116, 209, 255, 0.00) 100%);
   --bg-gradient-our-approach: conic-gradient(from 232deg at 104.42% 104.15%, #E8ECFF 0deg, #FFF 21.385518014431deg, #FFF 24.11387711763382deg, #D5DEFF 245.09671926498413deg, #E8ECFF 360deg);
+  --bg-gradient-key-solution-card: linear-gradient(180deg, rgba(131, 156, 255, 0.12) 0%, rgba(13, 20, 49, 0.00) 80%), #0D1431;
 
 
   --breakpoint-xs: 375px;
@@ -235,6 +236,10 @@
 
 .bg-gradient-our-approach {
   background: var(--bg-gradient-our-approach);
+}
+
+.bg-gradient-key-solution-card {
+  background: var(--bg-gradient-key-solution-card);
 }
 
 button {

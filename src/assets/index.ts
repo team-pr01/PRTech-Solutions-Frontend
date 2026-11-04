@@ -39,6 +39,7 @@ import caseStudyDetailsHeroBg from "./images/case-study-details-hero-bg.webp";
 import btcProblem from "./images/case-studies/btc-problem.png";
 import objectiveBg from "./images/objective-bg.webp";
 import ourApproach from "./images/our-approach.webp";
+import keySolutionsBg from "./images/key-solutions-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -149,6 +150,11 @@ import digitalPlatform from "./icons/case-studies/btc/digital-platform.svg";
 import hiringPipeline from "./icons/case-studies/btc/hiring-pipeline.svg";
 import robotAssistant from "./icons/case-studies/btc/robot-assistant.svg";
 import userRegistration from "./icons/case-studies/btc/user-registration.svg";
+import jobPosting from "./icons/case-studies/btc/job-posting.svg";
+import applicationTracking from "./icons/case-studies/btc/application-tracking.svg";
+import guardianDashboard from "./icons/case-studies/btc/guardian-dashboard.svg";
+import adminVerification from "./icons/case-studies/btc/admin-verification-layer.svg";
+import automatedOperations from "./icons/case-studies/btc/automated-operations.svg";
 
 
 
@@ -193,6 +199,7 @@ export const IMAGES = {
     btcProblem,
     objectiveBg,
     ourApproach,
+    keySolutionsBg,
 
     // Clients
     bcoEco,
@@ -306,5 +313,10 @@ export const ICONS = {
     digitalPlatform,
     hiringPipeline,
     robotAssistant,
-    userRegistration
+    userRegistration,
+    jobPosting,
+    applicationTracking,
+    guardianDashboard,
+    adminVerification,
+    automatedOperations
 };
