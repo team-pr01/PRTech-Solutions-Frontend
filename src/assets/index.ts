@@ -37,6 +37,7 @@ import scalingChallenge from "./images/scaling-challenge-bg.webp";
 import howItWorksBg from "./images/how-it-works-bg.webp";
 import caseStudyDetailsHeroBg from "./images/case-study-details-hero-bg.webp";
 import btcProblem from "./images/case-studies/btc-problem.png";
+import objectiveBg from "./images/objective-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -142,6 +143,11 @@ import download from "./icons/download.svg";
 import downloadBlue from "./icons/download-blue.svg";
 import downloadGray from "./icons/download-gray.svg";
 import lock from "./icons/lock.svg";
+// BTC CAse Study Icons
+import digitalPlatform from "./icons/case-studies/btc/digital-platform.svg";
+import hiringPipeline from "./icons/case-studies/btc/hiring-pipeline.svg";
+import robotAssistant from "./icons/case-studies/btc/robot-assistant.svg";
+import userRegistration from "./icons/case-studies/btc/user-registration.svg";
 
 
 
@@ -184,7 +190,8 @@ export const IMAGES = {
     howItWorksBg,
     caseStudyDetailsHeroBg,
     btcProblem,
-    
+    objectiveBg,
+
     // Clients
     bcoEco,
     attributionBooster,
@@ -288,9 +295,14 @@ export const ICONS = {
     quality,
     standardsApproach,
     toolPractices,
-    gift, 
+    gift,
     download,
     downloadBlue,
     downloadGray,
-    lock
+    lock,
+    // BTC CAse Study Icons
+    digitalPlatform,
+    hiringPipeline,
+    robotAssistant,
+    userRegistration
 };

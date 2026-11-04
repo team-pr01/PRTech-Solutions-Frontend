@@ -24,6 +24,8 @@
   --color-primary-45: #CEF;
   --color-primary-50: #78d7ff33;
   --color-primary-55: #06a0ed33;
+  --color-primary-60: #05a0ed33;
+  --color-primary-65: #06a0ed80;
 
   /* neutral */
   --color-neutral-10: #dbe2eb;
@@ -41,6 +43,7 @@
   --color-neutral-73: #4E5762;
   --color-neutral-74: #ffffff4d;
   --color-neutral-75: #838494;
+  --color-neutral-76: #ffffff80;
   --color-neutral-80: #727881;
   --color-neutral-81: #ffffff1a;
   --color-neutral-82: #2d48b233;

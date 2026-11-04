@@ -1,4 +1,5 @@
 import CaseStudyDetailsHero from "../../components/CaseStudyDetailsPage/CaseStudyDetailsHero/CaseStudyDetailsHero";
+import Objectives from "../../components/CaseStudyDetailsPage/Objectives/Objectives";
 import TheProblem from "../../components/CaseStudyDetailsPage/TheProblem/TheProblem";
 
 const CaseStudyDetails = () => {
@@ -6,6 +7,7 @@ const CaseStudyDetails = () => {
     <div>
       <CaseStudyDetailsHero />
       <TheProblem />
+      <Objectives />
     </div>
   );
 };
