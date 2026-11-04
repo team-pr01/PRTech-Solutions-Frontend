@@ -26,6 +26,7 @@
   --color-primary-55: #06a0ed33;
   --color-primary-60: #05a0ed33;
   --color-primary-65: #06a0ed80;
+  --color-primary-70: #BAE8FF;
 
   /* neutral */
   --color-neutral-10: #dbe2eb;
@@ -148,6 +149,7 @@
   --bg-gradient-case-study-img: linear-gradient(180deg, rgba(71, 71, 71, 0.00) 0%, rgba(0, 0, 0, 0.36) 100%);
   --bg-gradient-why-work-with-us-tab: radial-gradient(22.15% 152.31% at 100% 0%, #020B16 0%, rgba(2, 11, 22, 0.00) 100%), radial-gradient(18.14% 131.78% at 0% 0%, #020B16 0%, rgba(2, 11, 22, 0.00) 100%), linear-gradient(180deg, rgba(2, 11, 22, 0.00) 20%, rgba(74, 167, 255, 0.40) 100%);
   --bg-gradient-why-work-with-us-section-divider: linear-gradient(90deg, rgba(116, 209, 255, 0.00) 0%, rgba(116, 209, 255, 0.40) 30%, rgba(116, 209, 255, 0.40) 70%, rgba(116, 209, 255, 0.00) 100%);
+  --bg-gradient-our-approach: conic-gradient(from 232deg at 104.42% 104.15%, #E8ECFF 0deg, #FFF 21.385518014431deg, #FFF 24.11387711763382deg, #D5DEFF 245.09671926498413deg, #E8ECFF 360deg);
 
 
   --breakpoint-xs: 375px;
@@ -229,6 +231,10 @@
 
 .bg-gradient-why-work-with-us-section-divider {
   background: var(--bg-gradient-why-work-with-us-section-divider);
+}
+
+.bg-gradient-our-approach {
+  background: var(--bg-gradient-our-approach);
 }
 
 button {

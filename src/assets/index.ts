@@ -38,6 +38,7 @@ import howItWorksBg from "./images/how-it-works-bg.webp";
 import caseStudyDetailsHeroBg from "./images/case-study-details-hero-bg.webp";
 import btcProblem from "./images/case-studies/btc-problem.png";
 import objectiveBg from "./images/objective-bg.webp";
+import ourApproach from "./images/our-approach.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -191,6 +192,7 @@ export const IMAGES = {
     caseStudyDetailsHeroBg,
     btcProblem,
     objectiveBg,
+    ourApproach,
 
     // Clients
     bcoEco,
