@@ -1,4 +1,5 @@
 import CaseStudyDetailsHero from "../../components/CaseStudyDetailsPage/CaseStudyDetailsHero/CaseStudyDetailsHero";
+import ChallengesAndTradeoffs from "../../components/CaseStudyDetailsPage/ChallengesAndTradeoffs/ChallengesAndTradeoffs";
 import KeySolutions from "../../components/CaseStudyDetailsPage/KeySolutions/KeySolutions";
 import Objectives from "../../components/CaseStudyDetailsPage/Objectives/Objectives";
 import OurApproach from "../../components/CaseStudyDetailsPage/OurApproach/OurApproach";
@@ -14,6 +15,7 @@ const CaseStudyDetails = () => {
       <OurApproach />
       <KeySolutions />
       <Results />
+      <ChallengesAndTradeoffs />
     </div>
   );
 };

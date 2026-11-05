@@ -102,6 +102,7 @@ import seoService from "./icons/seo.svg";
 import graphicsDesign from "./icons/graphics-design.svg";
 import tickMarkWhite from "./icons/tick-mark-white.svg";
 import tickMarkGreen from "./icons/tick-mark-green.svg";
+import tickMarkBlue from "./icons/tick-mark-blue.svg";
 import crossRed from "./icons/cross-red.svg";
 import inHouseTeam from "./icons/in-house-team.svg";
 import agencies from "./icons/creative-agencies.svg";
@@ -266,6 +267,7 @@ export const ICONS = {
     graphicsDesign,
     tickMarkWhite,
     tickMarkGreen,
+    tickMarkBlue,
     crossRed,
     inHouseTeam,
     agencies,
