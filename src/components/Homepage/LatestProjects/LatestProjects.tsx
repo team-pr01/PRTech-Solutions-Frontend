@@ -187,7 +187,7 @@ export const projectsData = [
 
 const LatestProjects = () => {
   // const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
   // const industries = ["All", "Fintech", "Healthcare", "SaaS", "E-commerce"];
