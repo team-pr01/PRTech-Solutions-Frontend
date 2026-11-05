@@ -1,3 +1,4 @@
+import BeforeVSAfter from "../../components/CaseStudyDetailsPage/BeforeVSAfter/BeforeVSAfter";
 import CaseStudyDetailsHero from "../../components/CaseStudyDetailsPage/CaseStudyDetailsHero/CaseStudyDetailsHero";
 import ChallengesAndTradeoffs from "../../components/CaseStudyDetailsPage/ChallengesAndTradeoffs/ChallengesAndTradeoffs";
 import KeySolutions from "../../components/CaseStudyDetailsPage/KeySolutions/KeySolutions";
@@ -15,6 +16,7 @@ const CaseStudyDetails = () => {
       <OurApproach />
       <KeySolutions />
       <Results />
+      <BeforeVSAfter />
       <ChallengesAndTradeoffs />
     </div>
   );

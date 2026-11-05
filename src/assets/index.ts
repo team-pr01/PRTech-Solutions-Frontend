@@ -40,6 +40,7 @@ import btcProblem from "./images/case-studies/btc-problem.png";
 import objectiveBg from "./images/objective-bg.webp";
 import ourApproach from "./images/our-approach.webp";
 import keySolutionsBg from "./images/key-solutions-bg.webp";
+import beforeVsAfterBg from "./images/before-vs-after-bg.webp";
 // Clients
 import bcoEco from "./images/prtech-clients/BcoEco.webp";
 import attributionBooster from "./images/prtech-clients/atribution-booster.webp";
@@ -146,6 +147,8 @@ import download from "./icons/download.svg";
 import downloadBlue from "./icons/download-blue.svg";
 import downloadGray from "./icons/download-gray.svg";
 import lock from "./icons/lock.svg";
+import cancelCircle from "./icons/cancel-circle.svg";
+import thunder from "./icons/thunder.svg";
 // BTC CAse Study Icons
 import digitalPlatform from "./icons/case-studies/btc/digital-platform.svg";
 import hiringPipeline from "./icons/case-studies/btc/hiring-pipeline.svg";
@@ -201,6 +204,7 @@ export const IMAGES = {
     objectiveBg,
     ourApproach,
     keySolutionsBg,
+    beforeVsAfterBg,
 
     // Clients
     bcoEco,
@@ -311,6 +315,8 @@ export const ICONS = {
     downloadBlue,
     downloadGray,
     lock,
+    cancelCircle,
+    thunder,
     // BTC CAse Study Icons
     digitalPlatform,
     hiringPipeline,

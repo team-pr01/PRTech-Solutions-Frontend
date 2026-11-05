@@ -47,6 +47,7 @@
   --color-neutral-76: #ffffff80;
   --color-neutral-77: #323F4F;
   --color-neutral-78: #F6FCFF;
+  --color-neutral-79: #ffffff52;
   --color-neutral-80: #727881;
   --color-neutral-81: #ffffff1a;
   --color-neutral-82: #2d48b233;
@@ -154,6 +155,7 @@
   --bg-gradient-our-approach: conic-gradient(from 232deg at 104.42% 104.15%, #E8ECFF 0deg, #FFF 21.385518014431deg, #FFF 24.11387711763382deg, #D5DEFF 245.09671926498413deg, #E8ECFF 360deg);
   --bg-gradient-key-solution-card: linear-gradient(180deg, rgba(131, 156, 255, 0.12) 0%, rgba(13, 20, 49, 0.00) 80%), #0D1431;
   --bg-gradient-challenge-card: linear-gradient(141deg, #FFF 44.84%, #AFE5FF 161.87%), #FFF;
+  --bg-gradient-after-card: linear-gradient(180deg, rgba(3, 140, 248, 0.00) 0%, #038CF8 80%);
 
 
   --breakpoint-xs: 375px;
@@ -247,6 +249,10 @@
 
 .bg-gradient-challenge-card {
   background: var(--bg-gradient-challenge-card);
+}
+
+.bg-gradient-after-card {
+  background: var(--bg-gradient-after-card);
 }
 
 button {
