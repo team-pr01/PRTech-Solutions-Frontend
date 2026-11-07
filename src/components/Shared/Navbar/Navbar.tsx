@@ -36,7 +36,7 @@ const Navbar = () => {
         <img
           src={isLightPage ? IMAGES.logoBlack : IMAGES.logo}
           alt="logo"
-          className="w-32"
+          className="w-32 md:w-44"
         />
       </Link>
 
