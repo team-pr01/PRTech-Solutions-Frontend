@@ -1,55 +1,8 @@
-import { IMAGES } from "../../../assets";
+import { testimonials } from "../../../data/testimonials";
 import Container from "../../Reusable/Container/Container";
 import TextTestimonialCard from "./TextTestimonialCard";
 
 const AllTestimonial = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Serlina Saui",
-      role: "Recent graduate, Marketing at Sweatpals",
-      rating: 5.0,
-      review:
-        "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
-      image: IMAGES.dummyClientPicture,
-    },
-    {
-      id: 2,
-      name: "Jerry Tang",
-      role: "Recent graduate, Marketing at Sweatpals",
-      rating: 5.0,
-      review:
-        "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
-      image: IMAGES.dummyClientPicture,
-    },
-    {
-      id: 3,
-      name: "Stevano Albert",
-      role: "Recent graduate, Marketing at Sweatpals",
-      rating: 5.0,
-      review:
-        "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
-      image: IMAGES.dummyClientPicture,
-    },
-    {
-      id: 4,
-      name: "Sarah Johnson",
-      role: "Founder, TechStart",
-      rating: 5.0,
-      review:
-        "The team exceeded our expectations. They delivered a product that perfectly fits our needs and their support has been outstanding.",
-      image: IMAGES.dummyClientPicture,
-    },
-    {
-      id: 5,
-      name: "Michael Chen",
-      role: "CTO, InnovateHub",
-      rating: 5.0,
-      review:
-        "Working with PRTech has been transformative for our business. Their expertise in AI and automation is unmatched.",
-      image: IMAGES.dummyClientPicture,
-    },
-  ];
 
   // Duplicate testimonials for seamless loop
   const allTestimonials = [...testimonials, ...testimonials, ...testimonials];
@@ -93,7 +46,7 @@ const AllTestimonial = () => {
       </div>
 
       {/* Row 2 - Left to Right */}
-      <div className="mt-6 relative overflow-hidden">
+      {/* <div className="mt-6 relative overflow-hidden">
         <div className="flex gap-0 lg:gap-6 animate-marquee-left">
           {allTestimonials
             .slice()
@@ -102,7 +55,7 @@ const AllTestimonial = () => {
               <TextTestimonialCard key={index} testimonial={testimonial} />
             ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Add styles */}
       <style>{`

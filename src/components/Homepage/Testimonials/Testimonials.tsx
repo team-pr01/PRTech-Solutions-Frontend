@@ -1,34 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaStar } from "react-icons/fa";
-import { IMAGES } from "../../../assets";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Container from "../../Reusable/Container/Container";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
+import { testimonials } from "../../../data/testimonials";
 
-const projectsData = [
-  {
-    id: 1,
-    name: "John Doe",
-    role: "CEO, Bright Tuition Care",
-    rating: "5.0",
-    text: "I just wanted to share a quick note and let you know that you guys do a really job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
-  },
-  {
-    id: 2,
-    name: "Alex Smith",
-    role: "Founder, TechGrow",
-    rating: "5.0",
-    text: "The design strategy completely transformed our business metrics. Updating content takes minutes now, and our clients constantly compliment the layout.",
-  },
-  {
-    id: 3,
-    name: "Sarah Jenkins",
-    role: "Operations, Creative Pulse",
-    rating: "5.0",
-    text: "Incredible attention to detail from genuine professionals. Working together was seamless, and the post-launch support has been absolute gold.",
-  },
-];
 
 // Card configurations
 const cardConfigs = [
@@ -62,19 +39,19 @@ const Testimonials = () => {
   };
 
   const nextSlide = () => {
-    handleSlideChange((activeIndex + 1) % projectsData.length);
+    handleSlideChange((activeIndex + 1) % testimonials.length);
   };
 
   const prevSlide = () => {
     handleSlideChange(
-      (activeIndex - 1 + projectsData.length) % projectsData.length,
+      (activeIndex - 1 + testimonials.length) % testimonials.length,
     );
   };
 
   const getCardData = (offset: number) => {
     const index =
-      (activeIndex + offset + projectsData.length) % projectsData.length;
-    return projectsData[index];
+      (activeIndex + offset + testimonials.length) % testimonials.length;
+    return testimonials[index];
   };
 
   const slideVariants = {
@@ -121,8 +98,8 @@ const Testimonials = () => {
       className={`w-86 lg:w-100 xl:w-109 h-127.75 rounded-[30px] xl:rounded-[40px] p-5 lg:p-10 text-center flex flex-col items-center border select-none ${index % 2 === 0 ? "mt-20" : "mt-0"} ${bg} ${textColor} ${rotate}`}
     >
       <img
-        src={IMAGES.dummyClientPicture}
-        className="size-18.71 rounded-full object-cover"
+        src={data.image}
+        className="size-18 rounded-full object-cover"
         alt=""
       />
 
@@ -130,12 +107,35 @@ const Testimonials = () => {
       <p className="text-sm mt-2 font-light">{data.role}</p>
 
       <div className="flex items-center justify-center gap-1 mt-20">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <FaStar
-            key={i}
-            className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
-          />
-        ))}
+        {Array.from({ length: 5 }).map((_, i) => {
+          const ratingValue = Number(data.rating);
+
+          if (i < Math.floor(ratingValue)) {
+            // Full star
+            return (
+              <FaStar
+                key={i}
+                className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
+              />
+            );
+          } else if (i === Math.floor(ratingValue) && ratingValue % 1 !== 0) {
+            // Half star
+            return (
+              <FaStarHalfAlt
+                key={i}
+                className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
+              />
+            );
+          } else {
+            // Empty star (optional, if you want to show greyed out stars)
+            return (
+              <FaRegStar
+                key={i}
+                className={`text-xl lg:text-2xl ${isCenter ? "text-white/30" : "text-[#FF5F5F]/30"}`}
+              />
+            );
+          }
+        })}
         <p className="text-lg ml-2">{data.rating}</p>
       </div>
 
@@ -144,7 +144,10 @@ const Testimonials = () => {
   );
 
   return (
-    <div id="testimonials" className="sectionPadding font-Manrope overflow-hidden">
+    <div
+      id="testimonials"
+      className="sectionPadding font-Manrope overflow-hidden"
+    >
       <Container>
         {/* Header */}
         <div className="text-center">
@@ -152,9 +155,7 @@ const Testimonials = () => {
             <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
               <div className="size-1.5 rounded-full bg-primary-10"></div>
             </div>
-            <p className="text-neutral-70 subHeading">
-              TESTIMONIALS
-            </p>
+            <p className="text-neutral-70 subHeading">TESTIMONIALS</p>
           </div>
 
           <h2 className="text-neutral-70 heading mt-2.5">
@@ -204,7 +205,7 @@ const Testimonials = () => {
           </button>
 
           <div className="flex gap-3">
-            {projectsData.map((_, idx) => (
+            {testimonials.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSlideChange(idx)}

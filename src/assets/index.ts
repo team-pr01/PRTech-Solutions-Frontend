@@ -18,6 +18,11 @@ import ctaBg6 from "./images/cta-bg6.webp";
 import ctaBg7 from "./images/cta-bg7.webp";
 import ctaBg8 from "./images/cta-bg8.webp";
 import dummyClientPicture from "./images/clients-pictures/dummyClient.webp";
+import ShorifulIslamTonmoy from "./images/clients-pictures/Shoriful-Islam-Tonmoy.webp";
+import AkashDevnath from "./images/clients-pictures/Akash-Devnath.webp";
+import MuhammadNurullah from "./images/clients-pictures/Muhammad-Nurullah.webp";
+import AjinkyaMore from "./images/clients-pictures/Ajinkya-More.webp";
+import UmaBadwane from "./images/clients-pictures/Uma-Badwane.webp";
 import aiAssistant from "./images/ai-assistant.webp";
 import intelligentMatching from "./images/intelligent-matching.webp";
 import contentAware from "./images/content-aware.webp";
@@ -207,6 +212,13 @@ export const IMAGES = {
     ourApproach,
     keySolutionsBg,
     beforeVsAfterBg,
+
+    // Client's Picture
+    ShorifulIslamTonmoy,
+    AkashDevnath,
+    MuhammadNurullah,
+    AjinkyaMore,
+    UmaBadwane,
 
     // Clients
     bcoEco,

@@ -1,4 +1,5 @@
-import { FaStar } from "react-icons/fa";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { ICONS } from "../../../assets";
 
 type TextTestimonialCardProps = {
@@ -6,9 +7,9 @@ type TextTestimonialCardProps = {
     id: number;
     name: string;
     role: string;
-    rating: number;
-    review: string;
-    image: string;
+    rating: number | string;
+    text: string;
+    image: any;
   };
 };
 
@@ -27,12 +28,43 @@ const TextTestimonialCard: React.FC<TextTestimonialCardProps> = ({
           <h3 className="text-neutral-65 text-sl md:text-2xl font-medium">
             {testimonial.name}
           </h3>
-          <p className="text-neutral-65 mt-2 text-sm md:text-base">{testimonial.role}</p>
+          <p className="text-neutral-65 mt-2 text-sm md:text-base">
+            {testimonial.role}
+          </p>
 
           <div className="flex items-center gap-1 mt-2">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar key={i} className="text-xl md:text-2xl text-[#FF5F5F]" />
-            ))}
+            {Array.from({ length: 5 }).map((_, i) => {
+              const ratingValue = Number(testimonial.rating);
+
+              if (i < Math.floor(ratingValue)) {
+                // Full star
+                return (
+                  <FaStar
+                    key={i}
+                    className={`text-xl lg:text-2xl text-[#FF5F5F]`}
+                  />
+                );
+              } else if (
+                i === Math.floor(ratingValue) &&
+                ratingValue % 1 !== 0
+              ) {
+                // Half star
+                return (
+                  <FaStarHalfAlt
+                    key={i}
+                    className={`text-xl lg:text-2xl text-[#FF5F5F]`}
+                  />
+                );
+              } else {
+                // Empty star (optional, if you want to show greyed out stars)
+                return (
+                  <FaRegStar
+                    key={i}
+                    className={`text-xl lg:text-2xl text-[#FF5F5F]`}
+                  />
+                );
+              }
+            })}
             <p className="text-lg ml-2">{testimonial.rating}</p>
           </div>
         </div>
@@ -41,7 +73,7 @@ const TextTestimonialCard: React.FC<TextTestimonialCardProps> = ({
       <div className="mt-8 p-0 lg:p-5">
         <img src={ICONS.quotation} alt="" className="size-5 md:size-6" />
         <p className="text-neutral-86 text-base md:text-lg 2xl:text-2xl font-semibold mt-4 lg:mt-6 leading-relaxed line-clamp-3">
-          "{testimonial.review}"
+          "{testimonial.text}"
         </p>
       </div>
     </div>
