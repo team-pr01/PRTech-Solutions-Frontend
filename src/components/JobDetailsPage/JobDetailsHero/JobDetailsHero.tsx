@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
+import Breadcrumb from "../../Reusable/Breadcrumb/Breadcrumb";
 
 export interface JobHeroData {
   id: string;
@@ -51,9 +52,8 @@ const DEFAULT_HERO_JOB: JobHeroData = {
 
 const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
   job = DEFAULT_HERO_JOB,
-  onBack,
 }) => {
-  const [copiedLink, setCopiedLink] = useState(false);
+  const [copiedLink, setCopiedLink] = useState<boolean>(false);
 
   const handleCopyLink = async () => {
     try {
@@ -65,13 +65,8 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
     setTimeout(() => setCopiedLink(false), 2500);
   };
 
-  const handleBack = () => {
-    if (onBack) onBack();
-    else window.history.back();
-  };
-
   return (
-    <header className="relative overflow-hidden bg-gradient-start-project pt-20 pb-16 md:pt-50 md:pb-24 text-white">
+    <header className="relative overflow-hidden bg-gradient-start-project pt-20 pb-16 md:pt-50 md:pb-24 text-white font-Manrope">
       {/* Subtle Asymmetric Ambient Accent */}
       <div
         aria-hidden="true"
@@ -81,37 +76,19 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
       <Container>
         {/* Top Breadcrumb & Share Utility Row */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-81 pb-6">
-          <nav
-            aria-label="Breadcrumb"
-            className="flex flex-wrap items-center gap-2 text-xs md:text-sm"
-          >
-            <button
-              type="button"
-              onClick={handleBack}
-              className="inline-flex items-center gap-1.5 font-medium text-neutral-93 transition-colors hover:text-primary-35"
-            >
-              <svg
-                className="h-4 w-4 text-primary-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              <span>Careers</span>
-            </button>
-            <span className="text-neutral-80">/</span>
-            <span className="text-neutral-93">{job.department}</span>
-            <span className="text-neutral-80">/</span>
-            <span className="font-medium text-white truncate max-w-60 sm:max-w-none">
-              {job.titlePrefix} {job.titleHighlight}
-            </span>
-          </nav>
+          <Breadcrumb
+            variant="dark"
+            homeLabel="Home"
+            homePath="/"
+            items={[
+              { label: "Careers", path: "/careers" },
+              { label: job.department },
+              {
+                label: `${job.titlePrefix} ${job.titleHighlight}`,
+                isActive: true,
+              },
+            ]}
+          />
 
           <button
             type="button"
@@ -121,7 +98,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
             {copiedLink ? (
               <>
                 <svg
-                  className="h-3.5 w-3.5 text-primary-35"
+                  className="h-3.5 w-3.5 text-primary-10"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -133,12 +110,12 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-primary-35">Link Copied</span>
+                <span className="text-primary-10">Link Copied</span>
               </>
             ) : (
               <>
                 <svg
-                  className="h-3.5 w-3.5 text-primary-35"
+                  className="h-3.5 w-3.5 text-primary-10"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -158,7 +135,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
 
         {/* Main Asymmetric Split Content */}
         <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 items-center">
-          {/* Left Column: Title, Summary, Tech Stack, CTAs */}
+          {/* Left Column */}
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
               <span className="subHeading text-primary-35">
@@ -197,7 +174,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Elevated Role Brief Card */}
+          {/* Right Column */}
           <div className="lg:col-span-5">
             <div className="overflow-hidden rounded-3xl border border-neutral-81 bg-gradient-key-solution-card shadow-our-work-client-box">
               {/* Highlighted Compensation Header */}
@@ -215,7 +192,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                   </span>
                 </div>
 
-                <div className="mt-2 font-Manrope text-2xl md:text-[26px] font-bold text-white">
+                <div className="mt-2 text-2xl md:text-[26px] font-bold text-white">
                   {job.compensation}
                 </div>
               </div>
