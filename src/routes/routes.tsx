@@ -14,6 +14,8 @@ import TermsAndConditions from "../pages/Legal/TermsAndConditions/TermsAndCondit
 import PrivacyPolicy from "../pages/Legal/PrivacyPolicy/PrivacyPolicy";
 import LeadGen from "../pages/LeadGen/LeadGen";
 import CaseStudyDetails from "../pages/CaseStudyDetails/CaseStudyDetails";
+import Career from "../pages/Career/Career";
+import JobDetails from "../pages/JobDetails/JobDetails";
 
 export const router = createBrowserRouter([
   {
@@ -68,6 +70,14 @@ export const router = createBrowserRouter([
       {
         path: "/lead-gen/:industry",
         element: <LeadGen />,
+      },
+      {
+        path: "/career",
+        element: <Career />,
+      },
+      {
+        path: "/career/job/:slug",
+        element: <JobDetails />,
       },
       {
         path: "*",

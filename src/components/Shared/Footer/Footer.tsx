@@ -46,6 +46,10 @@ const Footer = () => {
       label: "Blogs",
       path: "/blogs",
     },
+    {
+      label: "Career",
+      path: "/career",
+    },
   ];
   const services = [
     {
