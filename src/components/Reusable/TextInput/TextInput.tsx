@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 import type { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 
 interface TextInputProps {
+  variant?: "light" | "dark";
   label?: string;
   name: string;
   placeholder?: string;
@@ -18,6 +19,7 @@ interface TextInputProps {
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
+      variant = "dark",
       label,
       name,
       placeholder = "",
@@ -35,7 +37,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         {label && (
           <label
             htmlFor={name}
-            className="flex flex-row items-center w-full justify-between text-white"
+            className={`flex flex-row items-center w-full justify-between ${error ? "text-red-500" : variant === "light" ? "text-neutral-50" : "text-white"}`}
           >
             <span className="leading-4.5 text-[13px] md:text-[15px] font-medium tracking-[-0.16]">
               {label}{" "}
@@ -53,7 +55,11 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           ref={ref}
           disabled={isDisabled}
           className={`w-full px-4 py-3.5 rounded-lg  border leading-4.5 focus:outline-none focus:border-primary-10 transition duration-300 ${isDisabled ? "cursor-not-allowed bg-white/80" : "bg-white"} ${
-            error ? "border-red-500" : "border-white"
+            error
+              ? "border-red-500"
+              : variant === "light"
+                ? "border-neutral-50/20"
+                : "border-white"
           }`}
           {...rest}
         />

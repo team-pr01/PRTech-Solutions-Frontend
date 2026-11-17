@@ -3,8 +3,12 @@ import { motion } from "framer-motion";
 import { ICONS, IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import ServiceCard from "./ServiceCard";
+import FeasibilityReviewFormModal from "../FeasibilityReviewFormModal/FeasibilityReviewFormModal";
 
 const Services = () => {
+  const [preselectedService, setPreselectedService] = useState<string>("");
+  const [isFeasibilityReviewModalOpen, setIsFeasibilityReviewModalOpen] =
+    useState<boolean>(false);
   const services = [
     {
       id: "01",
@@ -179,7 +183,7 @@ const Services = () => {
         </Container>
 
         {/* Slider Container */}
-        <div className="mt-10 md:mt-16 w-full overflow-x-auto scrollbar-none relative">
+        <div className="mt-10 md:mt-16 w-full overflow-hidden h-[480px] md:h-[520px] 2xl:h-[600px] relative flex items-center">
           <motion.div
             animate={{ x: targetXOffset }}
             transition={{ type: "spring", stiffness: 30, damping: 15 }}
@@ -194,12 +198,25 @@ const Services = () => {
                   data={service}
                   isExpanded={isCardExpanded}
                   cardWidth={cardWidth}
+                  onClick={() => 
+                  {
+                    setPreselectedService(service?.title);
+                    setIsFeasibilityReviewModalOpen(true);
+                  }
+                  }
                 />
               );
             })}
           </motion.div>
         </div>
       </div>
+
+      <FeasibilityReviewFormModal
+        isModalOpen={isFeasibilityReviewModalOpen}
+        setIsModalOpen={setIsFeasibilityReviewModalOpen}
+        showServiceContext={false}
+        preselectedService={preselectedService}
+      />
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import AboutUs from "../../components/Homepage/AboutUs/AboutUs";
 import AiPoweredSolutions from "../../components/Homepage/AiPoweredSolutions/AiPoweredSolutions";
 import Comparison from "../../components/Homepage/Comparison/Comparison";
@@ -10,9 +9,12 @@ import Services from "../../components/Homepage/Services/Services";
 import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
 import CTA from "../../components/Reusable/CTA/CTA";
 import { handleScrollToServices } from "../../helpers/handleScrollToServicesSection";
+import StartYourProjectModal from "../../components/Shared/StartYourProjectModal/StartYourProjectModal";
+import { useState } from "react";
 
 const Home = () => {
-  const navigate = useNavigate();
+   const [isStartYourProjectModalOpen, setIsStartYourProjectModalOpen] =
+      useState<boolean>(false);
   return (
     <div>
       <Hero />
@@ -26,7 +28,7 @@ const Home = () => {
         description="We don't just build websites — we create systems that generate leads, automate operations, and help you scale faster."
         primaryButton={{
           label: "Let's Get Started",
-          onClick: () => navigate("/contact-us"),
+          onClick: () => setIsStartYourProjectModalOpen(true),
           variant: "secondary",
         }}
         secondaryButton={{
@@ -38,6 +40,12 @@ const Home = () => {
       <Testimonials />
       <AiPoweredSolutions />
       <HomeFaq />
+
+
+      <StartYourProjectModal
+        isModalOpen={isStartYourProjectModalOpen}
+        setIsModalOpen={setIsStartYourProjectModalOpen}
+      />
     </div>
   );
 };

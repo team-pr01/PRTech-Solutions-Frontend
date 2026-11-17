@@ -2,8 +2,12 @@ import { ICONS, IMAGES } from "../../../assets";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import FeasibilityReviewFormModal from "../FeasibilityReviewFormModal/FeasibilityReviewFormModal";
 
 const Hero = () => {
+  const [isFeasibilityReviewModalOpen, setIsFeasibilityReviewModalOpen] =
+    useState<boolean>(false);
   const featuredProjects = [
     IMAGES.vedicWisdomWebsite,
     IMAGES.brightTuitionCareWebsite,
@@ -67,10 +71,11 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6 lg:mt-8 2xl:mt-10">
-            <Link to="/contact-us">
-              <Button label="Get Your Project Feasibility Review" />
-            </Link>
-            <Link to="/our-work">
+            <Button
+              onClick={() => setIsFeasibilityReviewModalOpen(true)}
+              label="Get Your Project Feasibility Review"
+            />
+            <Link to="/our-work" state={{ scrollTo: "all-projects" }}>
               <Button
                 variant="tertiary"
                 label="Explore Systems We've Built"
@@ -96,6 +101,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <FeasibilityReviewFormModal
+        isModalOpen={isFeasibilityReviewModalOpen}
+        setIsModalOpen={setIsFeasibilityReviewModalOpen}
+      />
     </div>
   );
 };

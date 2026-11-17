@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Container from "../../Reusable/Container/Container";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import { testimonials } from "../../../data/testimonials";
-
 
 // Card configurations
 const cardConfigs = [
@@ -29,22 +28,133 @@ const cardConfigs = [
   },
 ];
 
+const slideVariants = {
+  enter: (dir: number) => ({
+    x: dir > 0 ? 120 : -120,
+    opacity: 0,
+    scale: 0.95,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+  },
+  exit: (dir: number) => ({
+    x: dir > 0 ? -120 : 120,
+    opacity: 0,
+    scale: 0.95,
+  }),
+};
+
+interface TestimonialCardProps {
+  data: any;
+  bg: string;
+  textColor: string;
+  rotate: string;
+  isCenter: boolean;
+  index: number;
+  direction: number;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}
+
+const TestimonialCard = ({
+  data,
+  bg,
+  textColor,
+  rotate,
+  isCenter,
+  index,
+  direction,
+  onMouseEnter,
+  onMouseLeave,
+}: TestimonialCardProps) => (
+  <motion.div
+    custom={direction}
+    variants={slideVariants}
+    initial="enter"
+    animate="center"
+    exit="exit"
+    transition={{ duration: 0.35, ease: "easeInOut" }}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    className={`w-86 lg:w-100 xl:w-109 h-127.75 rounded-[30px] xl:rounded-[40px] p-5 lg:p-10 text-center flex flex-col items-center border select-none ${index % 2 === 0 ? "mt-20" : "mt-0"} ${bg} ${textColor} ${rotate}`}
+  >
+    <img
+      src={data.image}
+      className="size-18 rounded-full object-cover"
+      alt={data.name || ""}
+    />
+
+    <h2 className="text-2xl font-medium mt-4">{data.name}</h2>
+    <p className="text-sm mt-2 font-light">{data.role}</p>
+
+    <div className="flex items-center justify-center gap-1 mt-20">
+      {Array.from({ length: 5 }).map((_, i) => {
+        const ratingValue = Number(data.rating);
+
+        if (i < Math.floor(ratingValue)) {
+          return (
+            <FaStar
+              key={i}
+              className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
+            />
+          );
+        } else if (i === Math.floor(ratingValue) && ratingValue % 1 !== 0) {
+          return (
+            <FaStarHalfAlt
+              key={i}
+              className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
+            />
+          );
+        } else {
+          return (
+            <FaRegStar
+              key={i}
+              className={`text-xl lg:text-2xl ${isCenter ? "text-white/30" : "text-[#FF5F5F]/30"}`}
+            />
+          );
+        }
+      })}
+      <p className="text-lg ml-2">{data.rating}</p>
+    </div>
+
+    <p className="text-base lg:text-lg mt-6 line-clamp-4">"{data.text}"</p>
+  </motion.div>
+);
+
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-scroll smoothly and pause when hovering a card
+  useEffect(() => {
+    if (isPaused || testimonials.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setDirection(1);
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   const handleSlideChange = (newIndex: number) => {
+    if (newIndex === activeIndex) return;
     setDirection(newIndex > activeIndex ? 1 : -1);
     setActiveIndex(newIndex);
   };
 
   const nextSlide = () => {
-    handleSlideChange((activeIndex + 1) % testimonials.length);
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevSlide = () => {
-    handleSlideChange(
-      (activeIndex - 1 + testimonials.length) % testimonials.length,
+    setDirection(-1);
+    setActiveIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
   };
 
@@ -53,95 +163,6 @@ const Testimonials = () => {
       (activeIndex + offset + testimonials.length) % testimonials.length;
     return testimonials[index];
   };
-
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 120 : -120,
-      opacity: 0,
-      scale: 0.95,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -120 : 120,
-      opacity: 0,
-      scale: 0.95,
-    }),
-  };
-
-  const Card = ({
-    data,
-    bg,
-    textColor,
-    rotate,
-    isCenter,
-    index,
-  }: {
-    data: any;
-    bg: string;
-    textColor: string;
-    rotate: string;
-    isCenter: boolean;
-    index: number;
-  }) => (
-    <motion.div
-      key={data.id}
-      custom={direction}
-      variants={slideVariants}
-      initial="enter"
-      animate="center"
-      exit="exit"
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`w-86 lg:w-100 xl:w-109 h-127.75 rounded-[30px] xl:rounded-[40px] p-5 lg:p-10 text-center flex flex-col items-center border select-none ${index % 2 === 0 ? "mt-20" : "mt-0"} ${bg} ${textColor} ${rotate}`}
-    >
-      <img
-        src={data.image}
-        className="size-18 rounded-full object-cover"
-        alt=""
-      />
-
-      <h2 className="text-2xl font-medium mt-4">{data.name}</h2>
-      <p className="text-sm mt-2 font-light">{data.role}</p>
-
-      <div className="flex items-center justify-center gap-1 mt-20">
-        {Array.from({ length: 5 }).map((_, i) => {
-          const ratingValue = Number(data.rating);
-
-          if (i < Math.floor(ratingValue)) {
-            // Full star
-            return (
-              <FaStar
-                key={i}
-                className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
-              />
-            );
-          } else if (i === Math.floor(ratingValue) && ratingValue % 1 !== 0) {
-            // Half star
-            return (
-              <FaStarHalfAlt
-                key={i}
-                className={`text-xl lg:text-2xl ${isCenter ? "text-white" : "text-[#FF5F5F]"}`}
-              />
-            );
-          } else {
-            // Empty star (optional, if you want to show greyed out stars)
-            return (
-              <FaRegStar
-                key={i}
-                className={`text-xl lg:text-2xl ${isCenter ? "text-white/30" : "text-[#FF5F5F]/30"}`}
-              />
-            );
-          }
-        })}
-        <p className="text-lg ml-2">{data.rating}</p>
-      </div>
-
-      <p className="text-base lg:text-lg mt-6 line-clamp-4">"{data.text}"</p>
-    </motion.div>
-  );
 
   return (
     <div
@@ -168,11 +189,11 @@ const Testimonials = () => {
 
           <p className="description text-neutral-80 max-w-130 mx-auto mb-6 mt-4 2xl:mt-6">
             We help businesses grow with design, strategy, and genuine care but
-            don't just take our word for it.
+            don&apos;t just take our word for it.
           </p>
         </div>
 
-        {/* Cards - Fixed centering and overflow */}
+        {/* Cards */}
         <div className="-mt-4 xl:mt-18 flex justify-center items-center px-2">
           <div className="flex justify-center items-center gap-14">
             <AnimatePresence mode="wait" custom={direction}>
@@ -180,7 +201,7 @@ const Testimonials = () => {
                 const offset = idx === 0 ? -1 : idx === 1 ? 0 : 1;
                 const isCenter = idx === 1;
                 return (
-                  <Card
+                  <TestimonialCard
                     key={`card-${activeIndex}-${idx}`}
                     data={getCardData(offset)}
                     bg={config.bg}
@@ -188,6 +209,9 @@ const Testimonials = () => {
                     rotate={config.rotate}
                     isCenter={isCenter}
                     index={idx}
+                    direction={direction}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
                   />
                 );
               })}

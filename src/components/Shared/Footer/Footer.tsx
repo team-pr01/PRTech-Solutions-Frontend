@@ -118,49 +118,47 @@ const Footer = () => {
       <div className="relative flex flex-col items-center gap-6 w-full z-10">
         <Container>
           {/* CTA */}
-          {pathname !== "/our-work" ||
-            (pathname.startsWith("/case-study/") && (
-              <div className="relative h-100 font-medium overflow-hidden font-Manrope rounded-2xl">
-                <img
-                  src={IMAGES.ctaBg2}
-                  alt=""
-                  className="w-full h-full absolute inset-0 object-cover"
-                />
+          {pathname !== "/our-work" && pathname !== "/career" && !pathname.startsWith("/career/job/") && !pathname.startsWith("/case-study/") && (
+            <div className="relative h-100 font-medium overflow-hidden font-Manrope rounded-2xl">
+              <img
+                src={IMAGES.ctaBg2}
+                alt=""
+                className="w-full h-full absolute inset-0 object-cover"
+              />
 
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Container>
-                    <div className="text-center flex flex-col items-center justify-center">
-                      <h2 className="text-white text-center text-[28px] md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 max-w-230 mx-auto">
-                        Ready to Build a System That Actually Grows Your
-                        Business?
-                      </h2>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Container>
+                  <div className="text-center flex flex-col items-center justify-center">
+                    <h2 className="text-white text-center text-[28px] md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 max-w-230 mx-auto">
+                      Ready to Build a System That Actually Grows Your Business?
+                    </h2>
 
-                      <p className="description text-white max-w-120 mx-auto mt-4 2xl:mt-6">
-                        We don't just build websites — we create systems that
-                        generate leads, automate operations, and help you scale
-                        faster.
-                      </p>
+                    <p className="description text-white max-w-120 mx-auto mt-4 2xl:mt-6">
+                      We don't just build websites — we create systems that
+                      generate leads, automate operations, and help you scale
+                      faster.
+                    </p>
 
-                      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6">
-                        <Link to="/contact-us">
-                          <Button
-                            variant="secondary"
-                            label="Let's Get Started"
-                            className="w-full md:w-fit"
-                          />
-                        </Link>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6">
+                      <Link to="/contact-us">
                         <Button
-                          onClick={handleScrollToServices}
-                          variant="tertiary"
-                          label="See Our Services"
+                          variant="secondary"
+                          label="Let's Get Started"
                           className="w-full md:w-fit"
                         />
-                      </div>
+                      </Link>
+                      <Button
+                        onClick={handleScrollToServices}
+                        variant="tertiary"
+                        label="See Our Services"
+                        className="w-full md:w-fit"
+                      />
                     </div>
-                  </Container>
-                </div>
+                  </div>
+                </Container>
               </div>
-            ))}
+            </div>
+          )}
 
           <div className="flex flex-col xl:flex-row gap-10 lg:gap-15 2xl:gap-0 justify-between mt-15 lg:mt-20 w-full">
             {/* Left column */}

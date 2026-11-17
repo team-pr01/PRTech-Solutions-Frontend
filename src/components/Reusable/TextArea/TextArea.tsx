@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 import type { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 
 interface TextareaProps {
+  variant?: "light" | "dark";
   label: string;
   name: string;
   placeholder?: string;
@@ -17,6 +18,7 @@ interface TextareaProps {
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
+      variant = "dark",
       label,
       name,
       placeholder = "",
@@ -30,7 +32,9 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) => {
     return (
       <div className="flex flex-col gap-2 font-Nunito w-full">
-        <label className="flex flex-row items-center w-full justify-between text-white">
+        <label
+          className={`flex flex-row items-center w-full justify-between ${error ? "text-red-500" : variant === "light" ? "text-neutral-50" : "text-white"}`}
+        >
           <span className="leading-4.5 text-[13px] md:text-[15px] font-medium tracking-[-0.16] ">
             {label}{" "}
             <span className="text-primary-10">{isRequired ? "*" : ""}</span>
@@ -46,7 +50,13 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           required={isRequired}
           className={`w-full px-4 py-3.5 rounded-lg  border leading-4.5 focus:outline-none focus:border-primary-10 transition duration-300 ${
             isDisabled ? "cursor-not-allowed bg-white/80" : "bg-white"
-          } ${error ? "border-red-500" : "border-white"}`}
+          } ${
+            error
+              ? "border-red-500"
+              : variant === "light"
+                ? "border-neutral-50/20"
+                : "border-white"
+          }`}
           {...rest}
         ></textarea>
         {error && (

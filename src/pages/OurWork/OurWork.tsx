@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IMAGES } from "../../assets";
 // import Testimonials from "../../components/Homepage/Testimonials/Testimonials";
 import AllProjects from "../../components/OurWorkPage/AllProjects/AllProjects";
@@ -6,14 +6,27 @@ import OurExpertise from "../../components/OurWorkPage/OurExpertise/OurExpertise
 import OurWorkHero from "../../components/OurWorkPage/OurWorkHero/OurWorkHero";
 import CTA from "../../components/Reusable/CTA/CTA";
 import StartYourProject from "../../components/Shared/StartYourProject/StartYourProject";
+import { useEffect } from "react";
 
 const OurWork = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "all-projects") {
+      setTimeout(() => {
+        const element = document.getElementById("all-projects");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [location]);
   return (
     <div>
       <OurWorkHero />
       <AllProjects />
-      <StartYourProject/>
+      <StartYourProject />
       {/* <Testimonials /> */}
       <OurExpertise />
       <CTA

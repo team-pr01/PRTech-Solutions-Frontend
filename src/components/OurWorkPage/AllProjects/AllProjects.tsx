@@ -6,7 +6,7 @@ import { projectsData } from "../../Homepage/LatestProjects/LatestProjects";
 const AllProjects = () => {
   // const [activeIndustryTab, setActiveIndustryTab] = useState<string>("All");
   return (
-    <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
+    <div id="all-projects" className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
       <Container>
         {/* Header */}
         <LatestProjectsHeader />

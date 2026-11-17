@@ -12,9 +12,15 @@ type TServiceCardProps = {
   };
   isExpanded: boolean;
   cardWidth?: number;
+  onClick?: () => void;
 };
 
-const ServiceCard: React.FC<TServiceCardProps> = ({ data, isExpanded, cardWidth = 320 }) => {
+const ServiceCard: React.FC<TServiceCardProps> = ({
+  data,
+  isExpanded,
+  cardWidth = 320,
+  onClick,
+}) => {
   return (
     <motion.div
       layout
@@ -83,7 +89,11 @@ const ServiceCard: React.FC<TServiceCardProps> = ({ data, isExpanded, cardWidth 
 
               {/* Explore Button */}
               <div className="w-fit">
-                <Button variant="secondary" label="Explore Design" />
+                <Button
+                  onClick={onClick}
+                  variant="secondary"
+                  label="Know More"
+                />
               </div>
             </motion.div>
           )}
