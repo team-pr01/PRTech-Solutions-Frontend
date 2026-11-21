@@ -52,7 +52,7 @@ const TrustPanel = () => {
   };
 
   return (
-    <div className="relative flex w-full xl:w-[44%] flex-col justify-between overflow-hidden bg-gradient-our-work-hero-bg p-7 lg:p-8 text-white">
+    <div className="relative hidden md:flex w-full xl:w-[44%] flex-col justify-between overflow-hidden bg-gradient-our-work-hero-bg p-7 lg:p-8 text-white">
       {/* Background Image with subtle dark scrim */}
       <img
         src={IMAGES.serviceBg}

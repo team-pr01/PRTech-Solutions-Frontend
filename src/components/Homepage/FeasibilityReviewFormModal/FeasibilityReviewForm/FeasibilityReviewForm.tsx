@@ -101,7 +101,7 @@ const FeasibilityReviewForm: React.FC<TFeasibilityReviewFormProps> = ({
   };
 
   return (
-    <div className="w-full xl:w-[55%] flex flex-col bg-white p-5 md:p-8 relative overflow-hidden">
+    <div className="w-full xl:w-[55%] flex flex-col bg-white px-5 lg:px-8 py-6 relative overflow-hidden h-full overflow-y-auto">
       <AnimatePresence mode="wait">
         {isSuccess ? (
           /* Success State */
@@ -114,10 +114,15 @@ const FeasibilityReviewForm: React.FC<TFeasibilityReviewFormProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            <h2 className="text-neutral-30 font-Manrope text-lg font-bold mb-6">
-              Share your project details and our team will provide a feasibility
-              review, timelines, and next steps.
+            <h2 className="text-neutral-30 font-Manrope text-xl sm:text-2xl font-bold mb-2 leading-none max-w-[95%]">
+              Tell us about your project
             </h2>
+
+            <p className="text-sm text-neutral-50 leading-relaxed mb-6">
+              Share your goals and requirements. Our team will provide a
+              tailored roadmap, strategic timelines, and the next steps to move
+              forward.
+            </p>
 
             {/* Error Message */}
             {errorMessage && (
@@ -141,7 +146,7 @@ const FeasibilityReviewForm: React.FC<TFeasibilityReviewFormProps> = ({
                 variant="light"
               />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <TextInput
                   label="Email Address"
                   placeholder="john@example.com"
@@ -196,16 +201,16 @@ const FeasibilityReviewForm: React.FC<TFeasibilityReviewFormProps> = ({
                 variant="light"
               />
 
-              <div className="border-t border-neutral-100 flex flex-col sm:flex-row items-center gap-4 sm:gap-8 pt-5 mt-2">
+              <div className="border-none md:border-t md:border-solid border-neutral-100 flex items-center gap-4 sm:gap-8 pt-2 md:pt-5 mt-0 xl:mt-2">
                 {/* Verification Box */}
                 <div className="flex items-center gap-3 shrink-0">
                   <label className="text-neutral-500 font-Manrope text-base font-semibold whitespace-nowrap">
-                    Verify: {num1} + {num2} =
+                    {num1} + {num2} =
                   </label>
                   <input
                     value={answer}
                     onChange={(e) => setAnswer(e.target.value)}
-                    className="w-16 h-10 px-2 text-center text-lg font-bold text-neutral-70 bg-white border border-neutral-300 rounded-lg focus:outline-none focus:border-primary-10 focus:ring-2 focus:ring-primary-10/20 transition-all duration-200 shadow-sm"
+                    className="w-12 md:w-16 h-10 px-2 text-center text-lg font-bold text-neutral-70 bg-white border border-neutral-300 rounded-lg focus:outline-none focus:border-primary-10 focus:ring-2 focus:ring-primary-10/20 transition-all duration-200 shadow-sm"
                     placeholder="?"
                     required
                   />
@@ -216,7 +221,13 @@ const FeasibilityReviewForm: React.FC<TFeasibilityReviewFormProps> = ({
                   type="submit"
                   isLoading={isLoading}
                   label={"Submit Project Brief"}
-                  className="w-full"
+                  className="w-full hidden lg:flex"
+                />
+                <Button
+                  type="submit"
+                  isLoading={isLoading}
+                  label={"Submit"}
+                  className="w-full flex lg:hidden"
                 />
               </div>
 

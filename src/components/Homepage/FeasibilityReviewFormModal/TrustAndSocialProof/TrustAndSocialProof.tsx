@@ -50,7 +50,7 @@ const TrustAndSocialProof = () => {
     IMAGES.worldMarket,
   ];
   return (
-    <div className="w-full xl:w-[45%] flex flex-col items-center justify-center bg-neutral-20 relative overflow-hidden p-6">
+    <div className="w-full xl:w-[45%] hidden md:flex flex-col items-center justify-center bg-neutral-20 relative overflow-hidden p-6">
       {/* Background Image */}
       <img
         src={IMAGES.serviceBg}

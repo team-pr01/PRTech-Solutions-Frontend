@@ -93,7 +93,7 @@ const StartYourProjectForm = () => {
   };
 
   return (
-    <div className="flex w-full xl:w-[56%] flex-col justify-between bg-white p-6 lg:p-8">
+    <div className="flex w-full xl:w-[56%] flex-col justify-between bg-white px-5 lg:px-8 py-6 font-Manrope">
       <AnimatePresence mode="wait">
         {isSuccess ? (
           /* Success State */
@@ -115,7 +115,7 @@ const StartYourProjectForm = () => {
                     Project Brief
                   </span>
                 </div>
-                <h2 className="mt-2 font-Manrope text-lg sm:text-xl font-bold leading-snug text-neutral-65">
+                <h2 className="mt-2 text-sm md:text-xl font-semibold md:font-bold leading-snug text-neutral-65">
                   Share your project details and our team will provide a
                   feasibility review, timelines, and next steps.
                 </h2>
@@ -136,7 +136,7 @@ const StartYourProjectForm = () => {
                 className="flex flex-col gap-5"
               >
                 {/* Row 1: Name & Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   <TextInput
                     label="Full Name"
                     placeholder="Ex: John Doe"
@@ -155,7 +155,7 @@ const StartYourProjectForm = () => {
                 </div>
 
                 {/* Row 2: Company & Phone */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   <TextInput
                     label="Company Name (Optional)"
                     placeholder="Your company"
@@ -175,7 +175,7 @@ const StartYourProjectForm = () => {
                 </div>
 
                 {/* Row 4: Budget & Timeline */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   <SelectDropdown
                     label="Estimated Budget"
                     placeholder="Select budget range"

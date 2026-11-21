@@ -20,11 +20,11 @@ const FeasibilityReviewFormModal: React.FC<
     <Modal
       isModalOpen={isModalOpen}
       setIsModalOpen={setIsModalOpen}
-      width="w-[90%] sm:w-[60%] lg:w-[90%] 2xl:w-[60%]"
+      width="w-[100%] lg:w-[90%] 2xl:w-[60%]"
       classNames="p-0 bg-none"
       iconColor="text-neutral-30"
     >
-      <div className="relative bg-gradient-start-project backdrop-blur-[45px] font-Manrope flex flex-col xl:flex-row h-full max-h-[95vh] overflow-y-auto">
+      <div className="relative bg-gradient-start-project backdrop-blur-[45px] font-Manrope flex flex-col md:flex-row h-full max-h-full md:max-h-[95vh] overflow-y-auto">
         {/* Left Side */}
         <TrustAndSocialProof />
 

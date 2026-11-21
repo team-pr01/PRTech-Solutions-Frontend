@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
 import Container from "../../Reusable/Container/Container";
+import StrategicConsultModal from "../../Shared/StrategicConsultModal/StrategicConsultModal";
+import { useState } from "react";
 
 const AiPoweredSolutions = () => {
+  const [isStrategicConsultModalOpen, setIsStrategicConsultModalOpen] =
+    useState<boolean>(false);
+
   const aiPoweredSolutions = [
     {
       image: IMAGES.contentAware,
@@ -58,9 +62,10 @@ const AiPoweredSolutions = () => {
                 compliance, combined with expert hands-on support throughout.
               </p>
             </div>
-            <Link to="/contact-us">
-              <Button label="Let's started" />
-            </Link>
+            <Button
+              onClick={() => setIsStrategicConsultModalOpen(true)}
+              label="Let's started"
+            />
           </div>
 
           <div className="mt-10 xl:mt-17 w-full overflow-hidden relative">
@@ -154,13 +159,23 @@ const AiPoweredSolutions = () => {
             </div>
 
             <div className="flex items-center justify-center mt-10">
-              <Link to="/contact-us">
-                <Button variant="tertiary" label="Get Your AI Strategy Plan" />
-              </Link>
+              <Button
+                onClick={() => setIsStrategicConsultModalOpen(true)}
+                variant="tertiary"
+                label="Get Your AI Strategy Plan"
+              />
             </div>
           </div>
         </Container>
       </div>
+
+      <StrategicConsultModal
+        isModalOpen={isStrategicConsultModalOpen}
+        setIsModalOpen={setIsStrategicConsultModalOpen}
+        showServiceContext={false}
+        isAiService={true}
+        preselectedService="AI"
+      />
     </div>
   );
 };

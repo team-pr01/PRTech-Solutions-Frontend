@@ -82,13 +82,13 @@ const StartYourProjectModal: React.FC<TStartYourProjectModalProps> = ({
     <Modal
       isModalOpen={isModalOpen}
       setIsModalOpen={setIsModalOpen}
-      width="w-[94%] sm:w-[88%] lg:w-[90%] xl:w-[84%] 2xl:w-[75%]"
+      width="w-full md:w-[80%] lg:w-[90%] xl:w-[84%] 2xl:w-[75%]"
       classNames="p-0 bg-none rounded-3xl overflow-hidden shadow-2xl max-h-[90vh]"
       iconColor="text-neutral-70"
     >
-      <div className="relative flex h-full max-h-[92vh] flex-col xl:flex-row overflow-y-auto bg-gradient-start-project font-Manrope backdrop-blur-[45px]">
+      <div className="relative flex h-full max-h-full flex-col lg:flex-row overflow-y-auto bg-gradient-start-project font-Manrope backdrop-blur-[45px]">
         {/* Left Side */}
-        <div className="relative flex w-full xl:w-[44%] flex-col justify-between overflow-hidden bg-neutral-20 p-7 lg:p-8">
+        <div className="relative hidden lg:flex w-full xl:w-[44%] flex-col justify-between overflow-hidden bg-neutral-20 p-7 lg:p-8">
           {/* Subtle Background Image Texture */}
           <img
             src={IMAGES.serviceBg}

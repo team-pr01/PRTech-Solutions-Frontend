@@ -54,7 +54,7 @@ const Modal: React.FC<TModalProps> = ({
               setIsModalOpen(false);
             }
           }}
-          className="fixed inset-0 z-200000000 flex h-screen w-full items-center justify-center bg-neutral-16/55 p-4 backdrop-blur-sm font-Manrope"
+          className="fixed inset-0 z-999 flex h-screen w-full items-center justify-center bg-neutral-16/55 p-1 md:p-4 backdrop-blur-sm font-Manrope"
         >
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.96 }}
@@ -71,7 +71,7 @@ const Modal: React.FC<TModalProps> = ({
                 type="button"
                 aria-label="Close modal"
                 onClick={() => setIsModalOpen(false)}
-                className={`absolute top-4 right-4 z-20 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 hover:rotate-90 hover:bg-white/10 ${iconColor}`}
+                className={`absolute top-5 md:top-5.5 lg:top-5 right-4 z-20 flex size-8 items-center justify-center rounded-full transition-all duration-200 hover:rotate-90 hover:bg-neutral-10 ${iconColor}`}
               >
                 <RxCross1 className="text-base" />
               </button>
