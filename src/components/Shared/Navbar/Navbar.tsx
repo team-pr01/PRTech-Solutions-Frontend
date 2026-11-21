@@ -151,16 +151,12 @@ const Navbar = () => {
           </Link>
 
           <button className="lg:hidden shrink-0">
-            <img
-              src={isLightPage ? ICONS.hamburgerMenuBlack : ICONS.hamburgerMenu}
-              alt=""
-              className="size-7"
-            />
+            <img src={ICONS.hamburgerMenu} alt="" className="size-7" />
           </button>
         </motion.div>
 
         {/* Detached Mega Menu Anchor — No double motion.div, mode="wait" prevents overlap/shiver */}
-        <div className="relative w-full max-w-[1200px] flex justify-center pointer-events-none">
+        <div className="relative w-full max-w-300 flex justify-center pointer-events-none">
           <AnimatePresence mode="wait">
             {activeMenu && (
               <div
