@@ -1,55 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiCpu, FiTerminal, FiZap, FiCheckCircle } from "react-icons/fi";
-import { IMAGES } from "../../../../assets";
-
-const aiTestimonials = [
-  {
-    id: 1,
-    name: "Alex Rivera",
-    role: "CTO, NeuralFlow",
-    image: IMAGES.dummyClientPicture,
-    metric: "+340%",
-    metricLabel: "Efficiency Increase",
-    review:
-      "Their custom LLM integration completely automated our tier-1 support. It feels like we hired 50 engineers overnight.",
-  },
-  {
-    id: 2,
-    name: "Dr. Sarah Chen",
-    role: "Head of Data, OmniHealth",
-    image: IMAGES.dummyClientPicture,
-    metric: "99.9%",
-    metricLabel: "Model Accuracy",
-    review:
-      "They built a predictive model that reduced our patient readmission rates by 22%. The architecture is flawless.",
-  },
-  {
-    id: 3,
-    name: "Marcus Thorne",
-    role: "Founder, Synthetix",
-    image: IMAGES.dummyClientPicture,
-    metric: "10x",
-    metricLabel: "Faster Processing",
-    review:
-      "We were drowning in unstructured data. PRTech built a RAG system that retrieves insights in milliseconds.",
-  },
-];
-
-const clients = [
-  IMAGES.bcoEco,
-  IMAGES.attributionBooster,
-  IMAGES.brightTuitionCare,
-  IMAGES.globalCryptoAlliance,
-  IMAGES.goodKing,
-  IMAGES.logicalMedia,
-  IMAGES.tenStageMatrix,
-  IMAGES.vedicWisdom,
-  IMAGES.worldMarket,
-];
+import { testimonials } from "../../../../data/testimonials";
+import { clients } from "../../../../data/clients.logo";
 
 const AITrustPanel = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  // Auto-slide logic
+  useEffect(() => {
+    if (isHovered) return; // Pause on hover
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered, testimonials.length]);
 
   const slideVariants = {
     enter: { x: 30, opacity: 0 },
@@ -113,8 +83,12 @@ const AITrustPanel = () => {
         </div>
 
         {/* Terminal-Style Testimonial Card */}
-        <div className="space-y-3">
-          <div className="relative min-h-55 w-full">
+        <div
+          className="space-y-3"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="relative min-h-55 h-fit w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -137,35 +111,25 @@ const AITrustPanel = () => {
                   </span>
                 </div>
 
-                {/* Metric Row */}
-                <div className="flex items-end gap-2 mb-2">
-                  <span className="text-3xl font-bold text-primary-10 font-mono">
-                    {aiTestimonials[currentIndex].metric}
-                  </span>
-                  <span className="text-xs text-primary-35 mb-1 font-mono">
-                    {aiTestimonials[currentIndex].metricLabel}
-                  </span>
-                </div>
-
                 {/* Review */}
-                <p className="text-sm leading-relaxed text-neutral-93/90 font-mono">
+                <p className="text-sm leading-relaxed text-neutral-93/90 font-mono line-clamp-3">
                   <span className="text-primary-35 mr-2">&gt;</span>"
-                  {aiTestimonials[currentIndex].review}"
+                  {testimonials[currentIndex].text}"
                 </p>
 
                 {/* User Info */}
                 <div className="mt-auto pt-3 border-t border-white/5 flex items-center gap-3">
                   <img
-                    src={aiTestimonials[currentIndex].image}
-                    alt={aiTestimonials[currentIndex].name}
-                    className="h-8 w-8 rounded-md object-cover border border-primary-10/30 grayscale"
+                    src={testimonials[currentIndex].image}
+                    alt={testimonials[currentIndex].name}
+                    className="h-8 w-8 rounded-md object-cover border border-primary-10/30"
                   />
                   <div>
                     <p className="text-xs font-semibold text-white">
-                      {aiTestimonials[currentIndex].name}
+                      {testimonials[currentIndex].name}
                     </p>
                     <p className="text-[10px] text-neutral-93/60 font-mono">
-                      {aiTestimonials[currentIndex].role}
+                      {testimonials[currentIndex].role}
                     </p>
                   </div>
                   <FiCheckCircle className="ml-auto text-green-500/80" />
@@ -176,7 +140,7 @@ const AITrustPanel = () => {
 
           {/* Pagination Dots */}
           <div className="relative z-10 flex items-center justify-center gap-2 pt-2">
-            {aiTestimonials.map((_, idx) => (
+            {testimonials.map((_, idx) => (
               <button
                 key={idx}
                 type="button"
@@ -201,7 +165,7 @@ const AITrustPanel = () => {
         <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="marquee-track">
             <div className="marquee-content items-center gap-8">
-              {clients.map((client, index) => (
+              {clients?.map((client, index) => (
                 <img
                   key={index}
                   src={client}

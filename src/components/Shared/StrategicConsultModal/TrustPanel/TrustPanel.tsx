@@ -1,49 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiStar } from "react-icons/fi";
 import { IMAGES } from "../../../../assets";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "CEO, TechStart",
-    image: IMAGES.dummyClientPicture,
-    review:
-      "PRTech transformed our operations. The custom system they built saves us 20+ hours a week.",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Founder, InnovateHub",
-    image: IMAGES.dummyClientPicture,
-    review:
-      "Incredible attention to detail. They didn't just build an app, they built a scalable business solution.",
-  },
-  {
-    id: 3,
-    name: "Emily Davis",
-    role: "Marketing Director",
-    image: IMAGES.dummyClientPicture,
-    review:
-      "The AI integration they provided completely changed how we handle customer support.",
-  },
-];
-
-const clients = [
-  IMAGES.bcoEco,
-  IMAGES.attributionBooster,
-  IMAGES.brightTuitionCare,
-  IMAGES.globalCryptoAlliance,
-  IMAGES.goodKing,
-  IMAGES.logicalMedia,
-  IMAGES.tenStageMatrix,
-  IMAGES.vedicWisdom,
-  IMAGES.worldMarket,
-];
+import { testimonials } from "../../../../data/testimonials";
+import { clients } from './../../../../data/clients.logo';
 
 const TrustPanel = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  // Auto-slide logic
+  useEffect(() => {
+    if (isHovered) return; // Pause on hover
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered, testimonials.length]);
 
   const slideVariants = {
     enter: { y: 20, opacity: 0 },
@@ -119,7 +96,11 @@ const TrustPanel = () => {
         </div>
 
         {/* Testimonial Card Container */}
-        <div className="space-y-3.5">
+        <div
+          className="space-y-3.5"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <div className="relative min-h-50 w-full">
             <AnimatePresence mode="wait">
               <motion.div
@@ -131,26 +112,28 @@ const TrustPanel = () => {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="absolute inset-0 flex flex-col justify-between rounded-2xl border border-white/15 bg-neutral-15 p-5 sm:p-6 shadow-our-work-client-box backdrop-blur-xl"
               >
-                {/* Top Row: Stars & Quote Mark */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <FiStar
-                        key={i}
-                        className="fill-yellow-400 text-yellow-400"
-                        size={14}
-                      />
-                    ))}
+                <div className="spacey-3">
+                  {/* Top Row: Stars & Quote Mark */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <FiStar
+                          key={i}
+                          className="fill-yellow-400 text-yellow-400"
+                          size={14}
+                        />
+                      ))}
+                    </div>
+                    <span className="font-Playfair-Display text-2xl leading-none text-primary-35/40">
+                      &ldquo;
+                    </span>
                   </div>
-                  <span className="font-Playfair-Display text-2xl leading-none text-primary-35/40">
-                    &ldquo;
-                  </span>
-                </div>
 
-                {/* Review */}
-                <p className="my-2 text-sm md:text-[15px] italic leading-relaxed text-white/90 line-clamp-3">
-                  &ldquo;{testimonials[currentIndex].review}&rdquo;
-                </p>
+                  {/* Review */}
+                  <p className="my-2 text-sm md:text-[15px] italic leading-relaxed text-white/90 line-clamp-3">
+                    &ldquo;{testimonials[currentIndex].text}&rdquo;
+                  </p>
+                </div>
 
                 {/* User Info */}
                 <div className="flex items-center gap-3 border-t border-white/10 pt-3">
@@ -199,7 +182,7 @@ const TrustPanel = () => {
         <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="marquee-track">
             <div className="marquee-content items-center">
-              {clients.map((client, index) => (
+              {clients?.map((client, index) => (
                 <img
                   key={index}
                   src={client}

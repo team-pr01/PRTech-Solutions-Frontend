@@ -1,54 +1,32 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiStar } from "react-icons/fi";
 import { IMAGES } from "../../../../assets";
+import { testimonials } from "../../../../data/testimonials";
+import { clients } from "../../../../data/clients.logo";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "CEO, TechStart",
-    image: IMAGES.dummyClientPicture,
-    review:
-      "PRTech transformed our operations. The custom system they built saves us 20+ hours a week.",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Founder, InnovateHub",
-    image: IMAGES.dummyClientPicture,
-    review:
-      "Incredible attention to detail. They didn't just build an app, they built a scalable business solution.",
-  },
-  {
-    id: 3,
-    name: "Emily Davis",
-    role: "Marketing Director",
-    image: IMAGES.dummyClientPicture,
-    review:
-      "The AI integration they provided completely changed how we handle customer support.",
-  },
-];
 const TrustAndSocialProof = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  // Auto-slide logic
+  useEffect(() => {
+    if (isHovered) return; // Pause on hover
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered, testimonials.length]);
 
   const slideVariants = {
     enter: { y: 20, opacity: 0 },
     center: { y: 0, opacity: 1 },
     exit: { y: -20, opacity: 0 },
   };
-
-  const clients = [
-    IMAGES.bcoEco,
-    IMAGES.attributionBooster,
-    IMAGES.brightTuitionCare,
-    IMAGES.globalCryptoAlliance,
-    IMAGES.goodKing,
-    IMAGES.logicalMedia,
-    IMAGES.tenStageMatrix,
-    IMAGES.vedicWisdom,
-    IMAGES.worldMarket,
-  ];
   return (
     <div className="w-full xl:w-[45%] hidden md:flex flex-col items-center justify-center bg-neutral-20 relative overflow-hidden p-6">
       {/* Background Image */}
@@ -85,7 +63,11 @@ const TrustAndSocialProof = () => {
         </div>
 
         {/* Testimonial Card Container */}
-        <div className="relative h-50 w-full">
+        <div
+          className="relative h-50 w-full"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -108,8 +90,8 @@ const TrustAndSocialProof = () => {
               </div>
 
               {/* Review */}
-              <p className="text-white/90 text-sm md:text-base italic leading-relaxed line-clamp-3">
-                "{testimonials[currentIndex].review}"
+              <p className="text-white/90 text-sm md:text-base italic leading-relaxed line-clamp-5">
+                "{testimonials[currentIndex].text}"
               </p>
 
               {/* User Info */}
