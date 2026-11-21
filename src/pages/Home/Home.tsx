@@ -13,8 +13,8 @@ import StartYourProjectModal from "../../components/Shared/StartYourProjectModal
 import { useState } from "react";
 
 const Home = () => {
-   const [isStartYourProjectModalOpen, setIsStartYourProjectModalOpen] =
-      useState<boolean>(false);
+  const [isStartYourProjectModalOpen, setIsStartYourProjectModalOpen] =
+    useState<boolean>(false);
   return (
     <div>
       <Hero />
@@ -40,7 +40,6 @@ const Home = () => {
       <Testimonials />
       <AiPoweredSolutions />
       <HomeFaq />
-
 
       <StartYourProjectModal
         isModalOpen={isStartYourProjectModalOpen}

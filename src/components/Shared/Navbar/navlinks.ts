@@ -37,8 +37,4 @@ export const NAVLINKS: NavLink[] = [
         label: 'Case Studies',
         href: '/case-studies',
     },
-    {
-        label: 'Contact Us',
-        href: '/contact-us',
-    },
 ] as const;

@@ -8,7 +8,7 @@ import TextInput from "../../Reusable/TextInput/TextInput";
 import Textarea from "../../Reusable/TextArea/TextArea";
 import { useForm } from "react-hook-form";
 import Calendar from "./Calendar";
-import { useScheduleCallMutation } from "../../../redux/Features/ScheduleCall/scheduleCallApi";
+import { useBookDiscoveryCallMutation } from "../../../redux/Features/DiscoveryCall/discoveryCallApi";
 import { FiCheckCircle, FiXCircle, FiArrowLeft } from "react-icons/fi";
 
 type TFormData = {
@@ -19,7 +19,7 @@ type TFormData = {
 };
 
 const ScheduleCall = () => {
-  const [scheduleCall] = useScheduleCallMutation();
+  const [bookDiscoveryCall] = useBookDiscoveryCallMutation();
   const [isScheduleCallModalOpen, setIsScheduleCallModalOpen] =
     useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -83,7 +83,7 @@ const ScheduleCall = () => {
         scheduledTime: selectedTime,
       };
 
-      const response = await scheduleCall(payload).unwrap();
+      const response = await bookDiscoveryCall(payload).unwrap();
       if (response.success) {
         setIsSuccess(true);
         reset();

@@ -278,8 +278,8 @@ const Footer = () => {
           <hr className="border border-neutral-98 mt-14 mb-8" />
 
           <div className="flex flex-col-reverse lg:flex-row justify-center items-center lg:justify-between gap-3 lg:gap-0">
-            <p className="text-neutral-96 text-[15px] leading-6 hover:underline w-fit">
-              © 2026 PRTeach. All rights reserved.
+            <p className="text-neutral-96 text-[15px] leading-6">
+              © 2027 PRTeach. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a

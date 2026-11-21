@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { baseApi } from "../../Api/baseApi";
 
-const scheduleCallApi = baseApi.injectEndpoints({
+const discoveryCallApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    scheduleCall: builder.mutation<any, any>({
+    bookDiscoveryCall: builder.mutation<any, any>({
       query: (data) => ({
-        url: `/scheduled-call/schedule`,
+        url: `/discovery-call/book`,
         method: "POST",
         body: data,
         credentials: "include",
       }),
-      invalidatesTags: ["scheduledCalls"],
+      invalidatesTags: ["discoveryCall"],
     }),
   }),
 });
 
 export const {
-  useScheduleCallMutation
-} = scheduleCallApi;
+  useBookDiscoveryCallMutation
+} = discoveryCallApi;

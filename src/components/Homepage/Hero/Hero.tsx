@@ -71,10 +71,7 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-6 lg:mt-8 2xl:mt-10">
-            <Button
-              onClick={() => setIsFeasibilityReviewModalOpen(true)}
-              label="Get Your Project Feasibility Review"
-            />
+            
             <Link to="/our-work" state={{ scrollTo: "all-projects" }}>
               <Button
                 variant="tertiary"
@@ -82,6 +79,11 @@ const Hero = () => {
                 className="w-full md:w-fit"
               />
             </Link>
+
+            <Button
+              onClick={() => setIsFeasibilityReviewModalOpen(true)}
+              label="Get Your Project Feasibility Review"
+            />
           </div>
         </div>
       </Container>

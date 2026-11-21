@@ -53,12 +53,10 @@ const clients = [
 type TStartYourProjectModalProps = {
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  preselectedService?: string;
 };
 const StartYourProjectModal: React.FC<TStartYourProjectModalProps> = ({
   isModalOpen,
   setIsModalOpen,
-  preselectedService,
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
@@ -274,9 +272,7 @@ const StartYourProjectModal: React.FC<TStartYourProjectModalProps> = ({
         </div>
 
         {/* Right Side */}
-        <StartYourProjectForm
-          preselectedService={preselectedService}
-        />
+        <StartYourProjectForm/>
       </div>
     </Modal>
   );
