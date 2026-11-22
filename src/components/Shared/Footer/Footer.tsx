@@ -125,19 +125,22 @@ const Footer = () => {
           {pathname !== "/our-work" &&
             pathname !== "/career" &&
             !pathname.startsWith("/career/job/") &&
-            !pathname.startsWith("/case-study/") && (
-             <FooterCTA setIsStartYourProjectModalOpen={setIsStartYourProjectModalOpen} />
+            !pathname.startsWith("/case-study/") &&
+            pathname !== "/blogs" && (
+              <FooterCTA
+                setIsStartYourProjectModalOpen={setIsStartYourProjectModalOpen}
+              />
             )}
 
           <div className="flex flex-col xl:flex-row gap-10 lg:gap-15 2xl:gap-0 justify-between mt-15 lg:mt-20 w-full">
             {/* Left column */}
             <div className="max-w-95">
-              <p className="text-white text-center md:text-start">
+              <p className="text-white">
                 We build custom web, app, and AI-powered systems that help
                 businesses generate leads, automate operations, and scale
                 efficiently.
               </p>
-              <div className="flex justify-center md:justify-start gap-4 mt-5 lg:mt-10">
+              <div className="flex gap-4 mt-5 lg:mt-10">
                 {socialMediaLinks.map((link) => (
                   <a
                     key={link.name}

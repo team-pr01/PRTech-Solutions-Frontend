@@ -34,7 +34,7 @@ const SubscribeNewsletter = () => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full md:w-1/2 xl:w-1/3 py-1.5 lg:py-2 px-4 rounded-[30px] text-white placeholder:text-neutral-50 border border-neutral-50 focus:outline-none focus:border-primary-10 transition duration-300"
+                className="w-full md:w-1/2 xl:w-1/3 py-1.5 lg:py-2 px-4 rounded-[30px] text-white placeholder:text-neutral-40/50 border border-neutral-50 focus:outline-none focus:border-primary-10 transition duration-300"
               />
               <Button
                 label="Subscribe to Newsletter"

@@ -13,7 +13,7 @@ const FeaturedCaseStudies = () => {
               <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
                 <div className="size-1.5 rounded-full bg-primary-10"></div>
               </div>
-              <p className="text-neutral-70 font-medium uppercase">
+              <p className="text-neutral-70 font-medium uppercase text-sm md:text-base">
                 Featured Case Studies
               </p>
             </div>
@@ -27,7 +27,7 @@ const FeaturedCaseStudies = () => {
           </div>
 
           <div className="mt-3 xl:mt-0">
-            <p className="description text-xs md:text-sm 2xl:text-base text-neutral-80 max-w-90 mb-6 leading-normal">
+            <p className="description text-sm 2xl:text-base text-neutral-80 max-w-90 leading-normal">
               Real projects, real impact. See how we've helped businesses
               transform their operations.
             </p>
@@ -37,7 +37,7 @@ const FeaturedCaseStudies = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10 lg:mt-16">
           <FeaturedCaseStudyCard />
           <FeaturedCaseStudyCard />
           <FeaturedCaseStudyCard />

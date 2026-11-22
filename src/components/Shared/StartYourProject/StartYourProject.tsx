@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import { IMAGES } from "../../../assets";
 import Button from "../../Reusable/Button/Button";
 import Container from "../../Reusable/Container/Container";
+import { useState } from "react";
+import StartYourProjectModal from "../StartYourProjectModal/StartYourProjectModal";
 
 const StartYourProject = () => {
+  const [isStartYourProjectModalOpen, setIsStartYourProjectModalOpen] =
+    useState<boolean>(false);
   return (
     <div className="font-Manrope relative h-120 md:h-120 lg:h-140 bg-gradient-start-project">
       <Container>
@@ -28,13 +32,12 @@ const StartYourProject = () => {
                 className="w-full md:w-fit"
               />
             </Link>
-            <Link to="/contact-us">
-              <Button
-                variant="tertiary"
-                label="Discuss Project"
-                className="w-full md:w-fit"
-              />
-            </Link>
+            <Button
+              onClick={() => setIsStartYourProjectModalOpen(true)}
+              variant="tertiary"
+              label="Discuss Project"
+              className="w-full md:w-fit"
+            />
           </div>
         </div>
 
@@ -46,6 +49,11 @@ const StartYourProject = () => {
 
         <div className="size-100 rounded-full bg-primary-10/70 blur-[200px] absolute top-0 bottom-0"></div>
       </Container>
+
+      <StartYourProjectModal
+        isModalOpen={isStartYourProjectModalOpen}
+        setIsModalOpen={setIsStartYourProjectModalOpen}
+      />
     </div>
   );
 };

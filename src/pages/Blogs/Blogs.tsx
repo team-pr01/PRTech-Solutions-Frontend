@@ -17,7 +17,9 @@ const Blogs = () => {
   const [allBlogs, setAllBlogs] = useState<TBlog[]>([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const { data, isLoading,  isFetching } = useGetAllBlogsQuery({ category: selectedCategory });
+  const { data, isLoading, isFetching } = useGetAllBlogsQuery({
+    category: selectedCategory,
+  });
   const featuredBlogs = data?.data?.data?.filter(
     (blog: TBlog) => blog.isFeatured,
   );
@@ -51,7 +53,7 @@ const Blogs = () => {
   return (
     <div>
       <BlogsHero />
-      
+
       <AllBlogs
         blogs={allBlogs || []}
         meta={data?.data?.meta}

@@ -11,6 +11,7 @@ import CTA from "../../components/Reusable/CTA/CTA";
 import { handleScrollToServices } from "../../helpers/handleScrollToServicesSection";
 import StartYourProjectModal from "../../components/Shared/StartYourProjectModal/StartYourProjectModal";
 import { useState } from "react";
+import { IMAGES } from "../../assets";
 
 const Home = () => {
   const [isStartYourProjectModalOpen, setIsStartYourProjectModalOpen] =
@@ -36,6 +37,7 @@ const Home = () => {
           onClick: handleScrollToServices,
           variant: "tertiary",
         }}
+        backgroundImage={IMAGES.ctaBg7}
       />
       <Testimonials />
       <AiPoweredSolutions />

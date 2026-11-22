@@ -67,7 +67,7 @@ const AllBlogs = ({
             <span className="text-primary-10">Blogs</span>
           </h2>
 
-          <p className="description text-neutral-80 max-w-179 mx-auto my-6">
+          <p className="description text-neutral-80 max-w-179 mx-auto mt-3 lg:mt-6">
             Explore expert insights, practical guides, and the latest trends in
             web development, AI, software solutions, and digital innovation to
             help you stay ahead in the ever-evolving tech landscape.
@@ -75,21 +75,21 @@ const AllBlogs = ({
         </div>
 
         {/* Category Filters */}
-        <div className="flex items-center justify-center overflow-auto gap-5 w-full mx-auto mt-6">
-          {categories?.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`py-2 px-5 text-sm 2xl:text-base text-nowrap font-medium text-left rounded-3xl 2xl:rounded-[70px] w-fit transition duration-300 ${
-                selectedCategory === category
-                  ? "bg-primary-10 text-white"
-                  : "text-neutral-85 bg-primary-10/10 hover:bg-primary-10 hover:text-white"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        <div className="flex items-center justify-start md:justify-center overflow-x-auto gap-3 md:gap-5 w-full mx-auto mt-10 pb-2 scrollbar-hide [&::-webkit-scrollbar]:hidden">
+  {categories?.map((category) => (
+    <button
+      key={category}
+      onClick={() => setSelectedCategory(category)}
+      className={`py-2 px-5 text-sm 2xl:text-base text-nowrap font-medium text-left rounded-3xl 2xl:rounded-[70px] w-fit transition duration-300 shrink-0 ${
+        selectedCategory === category
+          ? "bg-primary-10 text-white"
+          : "text-neutral-85 bg-primary-10/10 hover:bg-primary-10 hover:text-white"
+      }`}
+    >
+      {category}
+    </button>
+  ))}
+</div>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">

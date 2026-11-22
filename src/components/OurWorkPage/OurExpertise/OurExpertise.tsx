@@ -8,7 +8,8 @@ import {
 } from "react-icons/fa";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
-import { Link } from "react-router-dom";
+import FeasibilityReviewFormModal from "../../Homepage/FeasibilityReviewFormModal/FeasibilityReviewFormModal";
+import { useState } from "react";
 
 const expertiseData = [
   {
@@ -68,6 +69,8 @@ const expertiseData = [
 ];
 
 const OurExpertise = () => {
+  const [isFeasibilityReviewModalOpen, setIsFeasibilityReviewModalOpen] =
+    useState<boolean>(false);
   return (
     <div className="sectionPadding bg-gradient-latest-project-bg font-Manrope">
       <Container>
@@ -123,11 +126,17 @@ const OurExpertise = () => {
 
         {/* Optional: CTA at bottom */}
         <div className="flex justify-center mt-5 xl:mt-8 2xl:mt-14">
-          <Link to="/contact-us">
-            <Button label="Build Yours" />
-          </Link>
+          <Button
+            onClick={() => setIsFeasibilityReviewModalOpen(true)}
+            label="Build Yours"
+          />
         </div>
       </Container>
+
+      <FeasibilityReviewFormModal
+        isModalOpen={isFeasibilityReviewModalOpen}
+        setIsModalOpen={setIsFeasibilityReviewModalOpen}
+      />
     </div>
   );
 };
