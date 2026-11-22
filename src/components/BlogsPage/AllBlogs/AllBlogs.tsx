@@ -48,7 +48,7 @@ const AllBlogs = ({
   }, [handleObserver]);
 
   return (
-    <div className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
+    <div id="all-blogs" className="bg-gradient-latest-project-bg sectionPadding font-Manrope">
       <Container>
         {/* Header */}
         <div className="text-center">

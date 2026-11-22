@@ -40,7 +40,7 @@ const Navbar = () => {
   const isLightPage =
     pathname === "/coming-soon" ||
     pathname === "/privacy-policy" ||
-    pathname.startsWith("/blog");
+    pathname.startsWith("/blog/");
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 flex flex-col items-center pointer-events-none px-3">

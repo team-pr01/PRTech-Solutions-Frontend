@@ -53,7 +53,7 @@ const Blogs = () => {
   
   return (
     <div>
-      <BlogsHero />
+      <BlogsHero totalBlogsCount={allBlogs?.length || 0} />
 
       <AllBlogs
         blogs={allBlogs || []}
