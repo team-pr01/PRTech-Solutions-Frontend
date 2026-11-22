@@ -37,14 +37,14 @@ const BlogDetails = () => {
           ]}
         />
 
-        <div className="flex gap-10 mt-3">
+        <div className="flex flex-col lg:flex-row gap-10 mt-3">
           {/* Left Side Content */}
-          <div className="w-[70%]">
+          <div className="w-full lg:w-[70%]">
             <BlogContents blog={blog} />
           </div>
 
           {/* Right Side Info */}
-          <div className="w-[30%] h-fit bg-neutral-50/5 rounded-2xl p-4 space-y-8">
+          <div className="w-full lg:w-[30%] h-fit bg-neutral-50/5 rounded-2xl p-4 space-y-8">
             <ShareOptions />
             <OtherBlogs otherBlogs={otherBlogs} />
             <Tags tags={blog?.tags as string[]} />

@@ -50,6 +50,7 @@ const Blogs = () => {
       setPage((prev) => prev + 1);
     }
   }, [isFetching, hasMore]);
+  
   return (
     <div>
       <BlogsHero />

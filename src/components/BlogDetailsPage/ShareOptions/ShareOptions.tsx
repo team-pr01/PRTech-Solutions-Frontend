@@ -44,7 +44,7 @@ const ShareOptions = () => {
   return (
     <div className="pb-5 border-b border-neutral-50/10">
       <p className="text-neutral-50 font-medium">Share on Social Media</p>
-      <div className="flex justify-center md:justify-start gap-4 mt-3">
+      <div className="flex gap-4 mt-3">
         {socialMediaLinks?.map((link) => (
           <a
             key={link.name}

@@ -3,7 +3,7 @@ import type { TBlog } from "../../../types/blog.type";
 const BlogContents = ({ blog }: { blog: TBlog }) => {
   return (
     <>
-      <h1 className="text-neutral-20 text-3xl md:text-[40px] lg:text-[48px] font-semibold leading-9 md:leading-12 lg:leading-14 mt-4">
+      <h1 className="text-neutral-20 text-2xl md:text-[40px] lg:text-[48px] font-semibold">
         {blog?.title}
       </h1>
 
@@ -19,7 +19,7 @@ const BlogContents = ({ blog }: { blog: TBlog }) => {
       <img
         src={blog?.imageUrl}
         alt=""
-        className="rounded-2xl 2xl:rounded-4xl w-full h-130 object-cover mt-5"
+        className="rounded-2xl 2xl:rounded-4xl w-full aspect-video h-60 md:h-100 xl:h-110 2xl:h-130 object-cover mt-5"
       />
 
       <p className="mt-8">

@@ -137,6 +137,7 @@ import clock from "./icons/clock.svg";
 import polygon from "./icons/polygon.svg";
 import quotation from "./icons/quotation.svg";
 import hamburgerMenu from "./icons/hamburger-menu.svg";
+import hamburgerMenuBlack from "./icons/hamburger-menu-black.svg";
 import handshake from "./icons/handshake.svg";
 import project from "./icons/project.svg";
 import clients from "./icons/clients.svg";
@@ -313,6 +314,7 @@ export const ICONS = {
     polygon,
     quotation,
     hamburgerMenu,
+    hamburgerMenuBlack,
     handshake,
     project,
     clients,
