@@ -4,15 +4,14 @@ import Button from "../../Reusable/Button/Button";
 import Breadcrumb from "../../Reusable/Breadcrumb/Breadcrumb";
 import type { TJob } from "../../../types/job.type";
 import { formatDate } from "../../../utils/formatDate";
+import JobDetailsHeroSkeleton from "../../Skeletons/JobDetailsPageSkeletons/JobDetailsHeroSkeleton/JobDetailsHeroSkeleton";
 
 interface JobDetailsHeroProps {
   job: Partial<TJob>;
-  onBack?: () => void;
+  isLoading: boolean;
 }
 
-const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
-  job,
-}) => {
+const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({ job, isLoading }) => {
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
 
   const handleCopyLink = async () => {
@@ -32,7 +31,9 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
     }
   };
 
-  return (
+  return isLoading ? (
+    <JobDetailsHeroSkeleton />
+  ) : (
     <header className="relative overflow-hidden bg-gradient-start-project pt-30 md:pt-36 lg:pt-44 3xl:pt-48 pb-16 md:pb-24 text-white font-Manrope">
       {/* Subtle Asymmetric Ambient Accent */}
       <div
@@ -110,9 +111,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
               </span>
             </div>
 
-            <h1 className="heading text-white mt-4">
-              {job?.title}
-            </h1>
+            <h1 className="heading text-white mt-4">{job?.title}</h1>
 
             <p className="text-sm lg:text-base mt-5 max-w-2xl text-neutral-99/85">
               {job?.overview}
@@ -135,8 +134,11 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
               <Button onClick={handleApplyClick} label="Apply for This Role" />
 
               <span className="text-xs md:text-sm text-neutral-93">
-                Posted <strong className="text-white">{formatDate(job?.createdAt as string)}</strong> ·{" "}
-                No cover letter required
+                Posted{" "}
+                <strong className="text-white">
+                  {formatDate(job?.createdAt as string)}
+                </strong>{" "}
+                · No cover letter required
               </span>
             </div>
           </div>
@@ -160,7 +162,9 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                 </div>
 
                 <div className="mt-2 text-2xl md:text-[26px] font-bold text-white">
-                  {job?.salary?.currency}{job?.salary?.min} - {job?.salary?.currency}{job?.salary?.max}
+                  {job?.salary?.currency}
+                  {job?.salary?.min} - {job?.salary?.currency}
+                  {job?.salary?.max}
                 </div>
               </div>
 

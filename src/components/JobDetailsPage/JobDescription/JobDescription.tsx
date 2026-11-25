@@ -1,9 +1,18 @@
 import type { TJob } from "../../../types/job.type";
 import Container from "../../Reusable/Container/Container";
+import JobDescriptionSkeleton from "../../Skeletons/JobDetailsPageSkeletons/JobDescriptionSkeleton/JobDescriptionSkeleton";
 import ApplicationForm from "./ApplicationForm";
 
-const JobDescription = ({ job }: { job: Partial<TJob> }) => {
-  return (
+const JobDescription = ({
+  job,
+  isLoading,
+}: {
+  job: Partial<TJob>;
+  isLoading: boolean;
+}) => {
+  return isLoading ? (
+    <JobDescriptionSkeleton />
+  ) : (
     <main className="sectionPadding font-Manrope">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-start">

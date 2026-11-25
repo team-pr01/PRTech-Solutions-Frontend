@@ -4,7 +4,6 @@ import OtherOpenPositions from "../../components/JobDetailsPage/OtherOpenPositio
 import JobDetailsCta from "../../components/JobDetailsPage/JobDetailsCta/JobDetailsCta";
 import { useParams } from "react-router-dom";
 import { useGetSingleJobByJobIdQuery } from "../../redux/Features/Job/jobApi";
-import { LoaderIcon } from "react-hot-toast";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -38,11 +37,10 @@ const JobDetails = () => {
     skills : job?.skills,
   }
 
-  if(isLoading) return <LoaderIcon/>
   return (
     <div className="min-h-screen bg-neutral-40 font-Manrope text-neutral-65 selection:bg-primary-10 selection:text-white">
-      <JobDetailsHero job={heroData} />
-      <JobDescription job={jobDetails} />
+      <JobDetailsHero job={heroData} isLoading={isLoading} />
+      <JobDescription job={jobDetails} isLoading={isLoading} />
       <OtherOpenPositions jobId={id as string} />
       <JobDetailsCta />
     </div>
