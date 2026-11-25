@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { TJob } from "../../../types/job.type";
 import Container from "../../Reusable/Container/Container";
 import JobDescriptionSkeleton from "../../Skeletons/JobDetailsPageSkeletons/JobDescriptionSkeleton/JobDescriptionSkeleton";
@@ -137,7 +138,7 @@ const JobDescription = ({
               </h2>
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {job?.growthRoadmap?.phases?.map((phase, index) => (
+                {job?.growthRoadmap?.phases?.map((phase:any, index:number) => (
                   <div
                     key={index}
                     className="rounded-2xl border border-neutral-10 bg-gradient-challenge-card p-5 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card"
@@ -192,7 +193,7 @@ const JobDescription = ({
           {/* RIGHT COLUMN: STICKY SNAPSHOT + APPLICATION FORM */}
           <aside id="apply-form" className="lg:col-span-5 lg:sticky lg:top-10">
             {/* Application Form Card */}
-            <ApplicationForm />
+            <ApplicationForm jobId={job?.jobId as string} />
           </aside>
         </div>
       </Container>

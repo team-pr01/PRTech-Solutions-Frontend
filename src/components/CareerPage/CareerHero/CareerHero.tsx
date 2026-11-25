@@ -175,6 +175,18 @@ export const JOB_OPENINGS = [
 ];
 
 const CareerHero = () => {
+  const handleOpenPositionsClick = () => {
+    const element = document.getElementById("open-positions");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+  const handleHiringProcessClick = () => {
+    const element = document.getElementById("hiring-process");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <section className="relative overflow-hidden bg-gradient-our-work-hero-bg pt-30 md:pt-32 lg:pt-44 3xl:pt-48 pb-20 md:pb-28 3xl:pb-32">
       {/* Subtle decorative grid & radial ambient glow */}
@@ -227,6 +239,15 @@ const CareerHero = () => {
         {/* Hero CTA Buttons */}
         <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
+            onClick={handleHiringProcessClick}
+            type="button"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-neutral-83 bg-neutral-15 px-7 py-3.5 text-sm md:text-base font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-primary-35/60 hover:bg-neutral-81"
+          >
+            View Hiring Process
+          </button>
+
+          <button
+            onClick={handleOpenPositionsClick}
             type="button"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-primary-button px-7 py-3.5 text-sm md:text-base font-semibold text-white shadow-button transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
           >
@@ -244,13 +265,6 @@ const CareerHero = () => {
                 d="M19 9l-7 7-7-7"
               />
             </svg>
-          </button>
-
-          <button
-            type="button"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-neutral-83 bg-neutral-15 px-7 py-3.5 text-sm md:text-base font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-primary-35/60 hover:bg-neutral-81"
-          >
-            <span>Life &amp; Benefits</span>
           </button>
         </div>
 

@@ -27,6 +27,7 @@ const JobDetails = () => {
   };
 
   const jobDetails = {
+    jobId : job?._id,
     description : job?.description,
     keyRequirements : job?.keyRequirements,
     responsibilities : job?.responsibilities,

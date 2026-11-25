@@ -135,7 +135,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({ job, isLoading }) => {
 
               <span className="text-xs md:text-sm text-neutral-93">
                 Posted{" "}
-                <strong className="text-white">
+                <strong>
                   {formatDate(job?.createdAt as string)}
                 </strong>{" "}
                 · No cover letter required

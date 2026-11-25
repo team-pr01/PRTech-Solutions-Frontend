@@ -108,7 +108,7 @@ const HiringProcess: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    <section className="sectionPadding relative overflow-hidden bg-gradient-key-solution-card text-white">
+    <section id="hiring-process" className="sectionPadding relative overflow-hidden bg-gradient-key-solution-card text-white">
       {/* Ambient Background Accents */}
       <div
         aria-hidden="true"

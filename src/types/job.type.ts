@@ -3,11 +3,7 @@ export type TWorkMode = "On-site" | "Remote" | "Hybrid";
 export type TEmploymentType = "Full-time" | "Part-time" | "Internship" | "Contract";
 export type TJobStatus = "Active" | "Inactive" | "Closed" | "Draft";
 
-export type TGrowthRoadmap = {
-  timeframe: "FIRST 30 DAYS" | "FIRST 60 DAYS" | "FIRST 90 DAYS",
-  title: string;
-  description: string;
-}
+
 export type TJob = {
   _id: string;
   jobId: string;
@@ -29,7 +25,7 @@ export type TJob = {
   qualifications: string[];
   niceToHave: string[];
   perks: string[];
-  growthRoadmap: TGrowthRoadmap;
+  growthRoadmap: any;
   applications: any[];
   applicationDeadline: Date;
   salary: {
