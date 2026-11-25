@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const JobCard = ({ job } : { job: any }) => {
   return (
-    <article className="group relative rounded-2xl border border-neutral-10 bg-white p-6 md:p-7 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card">
+    <article className="group relative rounded-2xl border border-neutral-10 bg-white p-4 md:p-7 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         {/* Left Info */}
         <div className="flex-1">
@@ -12,12 +12,6 @@ const JobCard = ({ job } : { job: any }) => {
             <span className="rounded-full border border-neutral-10 bg-neutral-96 px-3 py-1 text-xs font-medium text-neutral-73">
               {job.workMode}
             </span>
-            {job.featured && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-neutral-65 px-3 py-1 text-xs font-medium text-primary-35">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary-35" />
-                Priority Hiring
-              </span>
-            )}
             <span className="text-xs text-neutral-80">
               Posted {job.postedAt}
             </span>

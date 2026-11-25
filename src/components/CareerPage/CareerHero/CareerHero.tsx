@@ -176,7 +176,7 @@ export const JOB_OPENINGS = [
 
 const CareerHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-our-work-hero-bg pt-24 pb-20 md:pt-32 md:pb-28 3xl:pt-40 3xl:pb-32">
+    <section className="relative overflow-hidden bg-gradient-our-work-hero-bg pt-30 pb-20 md:pt-32 md:pb-28 lg:pt-44 3xl:pt-48 3xl:pb-32">
       {/* Subtle decorative grid & radial ambient glow */}
       <div
         aria-hidden="true"
@@ -196,12 +196,12 @@ const CareerHero = () => {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 text-center">
         {/* Top Pill Badge */}
-        <div className="bg-white rounded-3xl px-4 py-1 flex items-center justify-center gap-2 w-fit mx-auto">
+        <div className="bg-white rounded-3xl px-2 sm:px-4 py-1 flex items-center justify-center gap-2 w-fit mx-auto">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-35 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary-10" />
           </span>
-          <span className="subHeading text-neutral-65 text-xs font-semibold leading-6">
+          <span className="subHeading text-neutral-65 text-[9px] md:text-xs font-semibold leading-6">
             We&apos;re Hiring Builders &amp; Thinkers ({JOB_OPENINGS.length}{" "}
             Open Roles)
           </span>
@@ -255,10 +255,10 @@ const CareerHero = () => {
         </div>
 
         {/* Divider line */}
-        <div className="mx-auto mt-14 h-px max-w-3xl bg-gradient-why-work-with-us-section-divider" />
+        <div className="mx-auto mt-8 md:mt-14 h-px max-w-3xl bg-gradient-why-work-with-us-section-divider" />
 
         {/* Key Stats Row */}
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="mx-auto mt-8 md:mt-10 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
           {[
             { value: "40+", label: "Product Builders" },
             { value: "Remote", label: "Async-First Culture" },

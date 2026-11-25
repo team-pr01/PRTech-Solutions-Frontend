@@ -129,12 +129,12 @@ const HiringProcess: React.FC = () => {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
-           <div className="flex items-center justify-center gap-2">
-              <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
-                <div className="size-1.5 rounded-full bg-primary-10"></div>
-              </div>
-              <p className="text-white subHeading"> How We Hire</p>
+          <div className="flex items-center justify-center gap-2">
+            <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
+              <div className="size-1.5 rounded-full bg-primary-10"></div>
             </div>
+            <p className="text-white subHeading"> How We Hire</p>
+          </div>
 
           <h2 className="heading mt-4 text-white">
             A Hiring Process{" "}
@@ -158,7 +158,7 @@ const HiringProcess: React.FC = () => {
             />
             <div
               aria-hidden="true"
-              className="absolute left-[12.5%] top-1/2 h-[2px] -translate-y-1/2 bg-gradient-to-r from-primary-10 via-primary-35 to-primary-10 transition-all duration-500"
+              className="absolute left-[12.5%] top-1/2 h-0.5 -translate-y-1/2 bg-linear-to-r from-primary-10 via-primary-35 to-primary-10 transition-all duration-500"
               style={{
                 width: `${(activeIndex / (HIRING_STEPS.length - 1)) * 75}%`,
               }}
@@ -178,8 +178,8 @@ const HiringProcess: React.FC = () => {
                       isActive
                         ? "scale-110 border-primary-35 bg-gradient-primary-button text-white shadow-[0_0_24px_rgba(6,160,237,0.55)]"
                         : isPassedOrActive
-                        ? "border-primary-10 bg-neutral-65 text-primary-35"
-                        : "border-neutral-83 bg-neutral-65 text-neutral-93 hover:border-primary-35/60"
+                          ? "border-primary-10 bg-neutral-65 text-primary-35"
+                          : "border-neutral-83 bg-neutral-65 text-neutral-93 hover:border-primary-35/60"
                     }`}
                   >
                     {item.step}
@@ -191,7 +191,7 @@ const HiringProcess: React.FC = () => {
         </div>
 
         {/* Aligned Uniform-Height Step Cards */}
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-6 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-6 xl:grid-cols-4">
           {HIRING_STEPS.map((item, idx) => {
             const isActive = idx === activeIndex;
             return (
@@ -207,9 +207,9 @@ const HiringProcess: React.FC = () => {
               >
                 {/* Top Accent Bar */}
                 <div
-                  className={`absolute inset-x-6 top-0 h-[2px] rounded-full transition-opacity duration-300 ${
+                  className={`absolute inset-x-6 top-0 h-0.5 rounded-full transition-opacity duration-300 ${
                     isActive
-                      ? "bg-gradient-to-r from-transparent via-white to-transparent opacity-90"
+                      ? "bg-linear-to-r from-transparent via-white to-transparent opacity-90"
                       : "opacity-0"
                   }`}
                 />

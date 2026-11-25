@@ -1,16 +1,26 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { JOB_OPENINGS } from "../CareerHero/CareerHero";
 import JobCard from "./JobCard";
+import { FiFilter, FiX } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Department = "All" | "Engineering" | "Design" | "Product" | "Growth & Ops";
-
 type WorkMode = "All" | "Remote" | "Hybrid" | "On-site";
 
 const OpenPositions = () => {
-  const [selectedDepartment, setSelectedDepartment] =
-    useState<Department>("All");
+  const [selectedDepartment, setSelectedDepartment] = useState<Department>("All");
   const [selectedWorkMode, setSelectedWorkMode] = useState<WorkMode>("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Track screen size to force filter bar open on LG+ screens
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const departments: Department[] = [
     "All",
@@ -63,36 +73,44 @@ const OpenPositions = () => {
     setSearchQuery("");
   };
 
+  // Determine if the filter bar should be visible
+  const showFilterBar = isDesktop || isFilterOpen;
+
   return (
     <section
       id="open-positions"
-      className="sectionPadding bg-neutral-71 border-t border-neutral-10"
+      className="sectionPadding bg-neutral-71 border-t border-neutral-10 font-Manrope"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <span className="subHeading inline-block rounded-full bg-primary-30 px-4 py-1.5 text-primary-10 text-sm">
-              Open Positions
-            </span>
+            <div className="flex items-center gap-2">
+              <div className="size-3 md:size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
+                <div className="size-1 md:size-1.5 rounded-full bg-primary-10"></div>
+              </div>
+              <p className="text-neutral-70 font-medium uppercase text-xs md:text-base">
+                Open Positions
+              </p>
+            </div>
             <h2 className="heading text-neutral-65 mt-4">
               Find Your{" "}
               <span className="font-Playfair-Display italic font-medium text-primary-10">
                 Next Role
               </span>
             </h2>
-            <p className="description text-neutral-73! mt-3 max-w-xl">
+            <p className="description text-xs md:text-sm 2xl:text-base text-neutral-80 max-w-90 mt-3 leading-normal">
               Explore active opportunities across engineering, product design,
               and strategy. Every role has direct product ownership.
             </p>
           </div>
 
-          {/* Search Box */}
-          <div className="w-full lg:w-96">
-            <label htmlFor="job-search" className="sr-only">
-              Search open jobs
-            </label>
-            <div className="relative">
+          {/* Search Box & Mobile Filter Toggle */}
+          <div className="w-full lg:w-96 flex gap-3">
+            <div className="relative flex-1">
+              <label htmlFor="job-search" className="sr-only">
+                Search open jobs
+              </label>
               <svg
                 className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-80"
                 fill="none"
@@ -137,65 +155,85 @@ const OpenPositions = () => {
                 </button>
               )}
             </div>
+
+            {/* Mobile/Tablet Filter Button (Hidden on LG and up) */}
+            <button
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              className="lg:hidden flex items-center justify-center w-12 bg-white border border-neutral-10 rounded-full text-neutral-65 shadow-industry-tab shrink-0"
+            >
+              {isFilterOpen ? <FiX size={20} /> : <FiFilter size={20} />}
+            </button>
           </div>
         </div>
 
         {/* Filter Bar */}
-        <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-neutral-10 bg-white p-4 shadow-industry-tab">
-          {/* Department Tabs */}
-          <div className="flex flex-wrap items-center gap-2">
-            {departments.map((dept) => {
-              const active = selectedDepartment === dept;
-              return (
-                <button
-                  key={dept}
-                  type="button"
-                  onClick={() => setSelectedDepartment(dept)}
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs md:text-sm font-medium transition-all ${
-                    active
-                      ? "bg-gradient-primary-button text-white shadow-chip"
-                      : "bg-neutral-96 text-neutral-73 hover:bg-primary-40 hover:text-primary-25"
-                  }`}
-                >
-                  <span>{dept}</span>
-                  <span
-                    className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
-                      active
-                        ? "bg-white/20 text-white"
-                        : "bg-neutral-10/60 text-neutral-73"
-                    }`}
-                  >
-                    {departmentCounts[dept]}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+        <AnimatePresence initial={false}>
+          {showFilterBar && (
+            <motion.div
+              initial={{ height: 0, opacity: 0, marginTop: 0 }}
+              animate={{ height: "auto", opacity: 1, marginTop: 32 }}
+              exit={{ height: 0, opacity: 0, marginTop: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-neutral-10 bg-white p-4 shadow-industry-tab">
+                {/* Department Tabs */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {departments.map((dept) => {
+                    const active = selectedDepartment === dept;
+                    return (
+                      <button
+                        key={dept}
+                        type="button"
+                        onClick={() => setSelectedDepartment(dept)}
+                        className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs md:text-sm font-medium transition-all ${
+                          active
+                            ? "bg-gradient-primary-button text-white shadow-chip"
+                            : "bg-neutral-96 text-neutral-73 hover:bg-primary-40 hover:text-primary-25"
+                        }`}
+                      >
+                        <span>{dept}</span>
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+                            active
+                              ? "bg-white/20 text-white"
+                              : "bg-neutral-10/60 text-neutral-73"
+                          }`}
+                        >
+                          {departmentCounts[dept]}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
 
-          {/* Work Mode Filter */}
-          <div className="flex items-center gap-2 border-t border-neutral-10 pt-3 md:border-t-0 md:pt-0">
-            <span className="text-xs font-medium uppercase tracking-wider text-neutral-80 mr-1">
-              Mode:
-            </span>
-            {workModes.map((mode) => {
-              const active = selectedWorkMode === mode;
-              return (
-                <button
-                  key={mode}
-                  type="button"
-                  onClick={() => setSelectedWorkMode(mode)}
-                  className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                    active
-                      ? "bg-neutral-65 text-white"
-                      : "bg-neutral-96 text-neutral-73 hover:bg-neutral-10/50"
-                  }`}
-                >
-                  {mode}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+                {/* Work Mode Filter */}
+                <div className="flex items-center gap-2 border-t border-neutral-10 pt-3 md:border-t-0 md:pt-0">
+                  <span className="text-xs font-medium uppercase tracking-wider text-neutral-80 mr-1">
+                    Mode:
+                  </span>
+                  {workModes.map((mode) => {
+                    const active = selectedWorkMode === mode;
+                    return (
+                      <button
+                        key={mode}
+                        type="button"
+                        onClick={() => setSelectedWorkMode(mode)}
+                        className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors text-nowrap ${
+                          active
+                            ? "bg-neutral-65 text-white"
+                            : "bg-neutral-96 text-neutral-73 hover:bg-neutral-10/50"
+                        }`}
+                      >
+                        {mode}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Results Count */}
         <div className="mt-6 flex items-center justify-between text-sm text-neutral-73">
