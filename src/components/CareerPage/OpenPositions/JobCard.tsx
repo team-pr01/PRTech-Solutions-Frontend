@@ -1,23 +1,22 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../../Reusable/Button/Button";
+import { formatDate } from "../../../utils/formatDate";
+import type { TJob } from "../../../types/job.type";
+import { MdWorkOutline } from "react-icons/md";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-const JobCard = ({ job }: { job: any }) => {
+const JobCard = ({ job }: { job: TJob }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleApplyClick = () => {
-    const targetPath = `/career/job/${job?.id}`;
+    const targetPath = `/career/job/${job?.jobId}`;
 
-    // Check if we are already on the exact job page
     if (location.pathname === targetPath) {
-      // Just scroll smoothly
       const element = document.getElementById("apply-form");
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } else {
-      // Navigate and pass a state to trigger scroll on load
       navigate(targetPath, { state: { scrollToApply: true } });
     }
   };
@@ -28,22 +27,22 @@ const JobCard = ({ job }: { job: any }) => {
         <div className="flex-1">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="rounded-full bg-primary-40 px-3 py-1 text-xs font-semibold text-primary-25">
-              {job.department}
+              {job?.department}
             </span>
             <span className="rounded-full border border-neutral-10 bg-neutral-96 px-3 py-1 text-xs font-medium text-neutral-73">
-              {job.workMode}
+              {job?.workMode}
             </span>
             <span className="text-xs text-neutral-80">
-              Posted {job.postedAt}
+              Posted {formatDate(job?.createdAt)}
             </span>
           </div>
 
           <h3 className="mt-3.5 cursor-pointer font-Manrope text-xl md:text-2xl font-semibold text-neutral-65 transition-colors">
-            {job.title}
+            {job?.title}
           </h3>
 
           <p className="mt-2 max-w-3xl text-sm leading-6 text-neutral-73">
-            {job.summary}
+            {job?.overview}
           </p>
 
           {/* Metadata + Tags */}
@@ -67,7 +66,7 @@ const JobCard = ({ job }: { job: any }) => {
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              {job.location}
+              {job?.location}
             </span>
             <span className="inline-flex items-center gap-1.5">
               <svg
@@ -83,9 +82,13 @@ const JobCard = ({ job }: { job: any }) => {
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              {job.employmentType} · {job.experience}
+              {job?.employmentType}
             </span>
-            <span className="inline-flex items-center gap-1.5 font-medium text-neutral-65">
+            <span className="inline-flex items-center gap-1.5">
+              <MdWorkOutline className="h-4 w-4 text-primary-10" />
+              {job?.experienceRequired}
+            </span>
+            {/* <span className="inline-flex items-center gap-1.5 font-medium text-neutral-65">
               <svg
                 className="h-4 w-4 text-primary-10"
                 fill="none"
@@ -100,16 +103,16 @@ const JobCard = ({ job }: { job: any }) => {
                 />
               </svg>
               {job.compensation}
-            </span>
+            </span> */}
           </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {job.tags.map((tag: string) => (
+            {job?.skills?.map((skill: string) => (
               <span
-                key={tag}
+                key={skill}
                 className="rounded-md border border-neutral-10 bg-neutral-78 px-2.5 py-1 text-xs font-medium text-neutral-70"
               >
-                {tag}
+                {skill}
               </span>
             ))}
           </div>
@@ -122,14 +125,14 @@ const JobCard = ({ job }: { job: any }) => {
             label="Apply Now"
             className="w-fit lg:w-40"
           />
-          <Link to={`/career/job/${job?.id}`}>
+          <a href={`/career/job/${job?.jobId}`}>
             <Button
               variant="outlinePrimary"
               label=" View Details"
               isIconVisible={false}
               className="w-fit lg:w-40"
             />
-          </Link>
+          </a>
         </div>
       </div>
     </article>

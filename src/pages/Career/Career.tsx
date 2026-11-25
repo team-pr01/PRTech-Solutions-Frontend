@@ -8,14 +8,12 @@ import CTA from "../../components/Reusable/CTA/CTA";
 import { useNavigate } from "react-router-dom";
 import { IMAGES } from "../../assets";
 
-type Department = "All" | "Engineering" | "Design" | "Product" | "Growth & Ops";
-
 type WorkMode = "All" | "Remote" | "Hybrid" | "On-site";
 
 interface JobOpening {
   id: string;
   title: string;
-  department: Exclude<Department, "All">;
+  department: string;
   location: string;
   workMode: Exclude<WorkMode, "All">;
   employmentType: "Full-time" | "Contract";
@@ -67,7 +65,7 @@ const Career: React.FC = () => {
       <OpenPositions />
       <HiringProcess />
       <CareerFaq />
-       <CTA
+      <CTA
         title="Exceptional Builders Always Have a Seat Here"
         description="If you're passionate about clean architecture, thoughtful design, or operational automation, tell us what you've built and where you want to grow."
         primaryButton={{

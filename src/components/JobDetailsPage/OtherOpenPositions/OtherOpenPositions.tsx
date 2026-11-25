@@ -1,47 +1,25 @@
 import { Link } from "react-router-dom";
 import Container from "../../Reusable/Container/Container";
+import { useGetAllActiveJobsQuery } from "../../../redux/Features/Job/jobApi";
+import type { TJob } from "../../../types/job.type";
+import JobCard from "../../CareerPage/OpenPositions/JobCard";
+import JobCardSkeleton from "../../Skeletons/JobCardSkeleton/JobCardSkeleton";
 
-const RELATED_JOBS = [
-  {
-    id: "ai-automation-engineer",
-    title: "AI & Workflow Automation Engineer",
-    department: "Engineering",
-    location: "Remote",
-    workMode: "Remote",
-    compensation: "$115k – $150k",
-  },
-  {
-    id: "product-designer-systems",
-    title: "Lead Product & UI/UX Designer",
-    department: "Design",
-    location: "Remote / New York",
-    workMode: "Hybrid",
-    compensation: "$110k – $140k + Equity",
-  },
-  {
-    id: "frontend-engineer-motion",
-    title: "Frontend Engineer (React & Motion)",
-    department: "Engineering",
-    location: "Remote",
-    workMode: "Remote",
-    compensation: "$90k – $120k",
-  },
-];
-
-const OtherOpenPositions = () => {
-    return (
-         <section className="sectionPadding border-t border-neutral-10 bg-neutral-71">
-        <Container>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+const OtherOpenPositions = ({ jobId }: { jobId: string }) => {
+  const { data, isLoading, isFetching } = useGetAllActiveJobsQuery({});
+  const jobs = data?.data?.jobs?.filter((job: TJob) => job?.jobId != jobId);
+  return (
+    <section className="sectionPadding border-t border-neutral-10 bg-neutral-71">
+      <Container>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-             <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <div className="size-4 rounded-full border-2 border-primary-10 flex items-center justify-center">
                 <div className="size-1.5 rounded-full bg-primary-10"></div>
               </div>
               <p className="text-neutral-16 subHeading">Explore More</p>
             </div>
-            
-            
+
             <h2 className="heading text-neutral-65 mt-4">
               Other Open{" "}
               <span className="font-Playfair-Display italic font-medium text-primary-10">
@@ -50,62 +28,54 @@ const OtherOpenPositions = () => {
             </h2>
           </div>
 
-           <Link
-              to="/career"
-              className="self-start sm:self-auto text-sm font-semibold text-primary-10 hover:underline"
-            >
-              View all openings →
-            </Link>
+          <Link
+            to="/career"
+            className="self-start sm:self-auto text-sm font-semibold text-primary-10 hover:underline"
+          >
+            View in Career →
+          </Link>
         </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {RELATED_JOBS.map((item) => (
-              <div
-                key={item.id}
-                className="group cursor-pointer rounded-2xl border border-neutral-10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary-35 hover:shadow-accordion-card"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="rounded-full bg-primary-40 px-3 py-1 text-xs font-semibold text-primary-25">
-                    {item.department}
-                  </span>
-                  <span className="rounded-full border border-neutral-10 bg-neutral-96 px-3 py-1 text-xs font-medium text-neutral-73">
-                    {item.workMode}
-                  </span>
-                </div>
-
-                <h3 className="mt-4 font-Manrope text-lg font-semibold text-neutral-65 transition-colors group-hover:text-primary-10">
-                  {item.title}
-                </h3>
-
-                <div className="mt-3 text-xs text-neutral-73">
-                  {item.location} ·{" "}
-                  <span className="font-semibold text-neutral-65">
-                    {item.compensation}
-                  </span>
-                </div>
-
-                <div className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-10">
-                  <span>View Role</span>
-                  <svg
-                    className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
+        <div className="mt-8">
+          {isLoading || isFetching ? (
+            <div className="mt-5 grid grid-cols-1 gap-5">
+              {Array.from({ length: 3 }).map((_, index) => (
+                <JobCardSkeleton key={index} />
+              ))}
+            </div>
+          ) : jobs?.length > 0 ? (
+            <div className="mt-5 grid grid-cols-1 gap-5">
+              {jobs.map((job: TJob) => (
+                <JobCard key={job?.jobId} job={job} />
+              ))}
+            </div>
+          ) : (
+            /* Empty State */
+            <div className="mt-8 rounded-2xl border border-dashed border-neutral-10 bg-white px-6 py-14 text-center">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-40 text-primary-10">
+                <svg
+                  className="h-7 w-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"
+                  />
+                </svg>
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-    );
+              <h3 className="mt-4 font-Manrope text-xl font-semibold text-neutral-65">
+                No more job openings are available at this moment
+              </h3>
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
+  );
 };
 
 export default OtherOpenPositions;

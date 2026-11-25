@@ -2,56 +2,16 @@ import React, { useState } from "react";
 import Container from "../../Reusable/Container/Container";
 import Button from "../../Reusable/Button/Button";
 import Breadcrumb from "../../Reusable/Breadcrumb/Breadcrumb";
-
-export interface JobHeroData {
-  id: string;
-  titlePrefix: string;
-  titleHighlight: string;
-  department: string;
-  team: string;
-  location: string;
-  workMode: "Remote" | "Hybrid" | "On-site";
-  employmentType: "Full-time" | "Contract";
-  experience: string;
-  compensation: string;
-  postedAt: string;
-  reportsTo: string;
-  summary: string;
-  tags: string[];
-}
+import type { TJob } from "../../../types/job.type";
+import { formatDate } from "../../../utils/formatDate";
 
 interface JobDetailsHeroProps {
-  job?: JobHeroData;
+  job: Partial<TJob>;
   onBack?: () => void;
 }
 
-const DEFAULT_HERO_JOB: JobHeroData = {
-  id: "senior-fullstack-engineer",
-  titlePrefix: "Senior Full-Stack",
-  titleHighlight: "Systems Engineer",
-  department: "Engineering",
-  team: "Core Product & Client Systems",
-  location: "Remote (Global)",
-  workMode: "Remote",
-  employmentType: "Full-time",
-  experience: "4+ Years",
-  compensation: "$120k – $155k + Equity",
-  postedAt: "2 days ago",
-  reportsTo: "VP of Engineering",
-  summary:
-    "Architect and ship custom web platforms, internal automation tools, and high-throughput APIs tailored around real business workflows—never bloated templates.",
-  tags: [
-    "TypeScript",
-    "React 19",
-    "Node.js",
-    "PostgreSQL",
-    "AWS",
-    "Tailwind CSS",
-  ],
-};
-
 const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
-  job = DEFAULT_HERO_JOB,
+  job,
 }) => {
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
 
@@ -88,8 +48,8 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
             homeLabel="Home"
             homePath="/"
             items={[
-              { label: "Careers", path: "/careers" },
-              { label: job.department },
+              { label: "Career", path: "/career" },
+              { label: job?.department as string },
               {
                 label: `${job?.jobId}`,
                 isActive: true,
@@ -146,26 +106,26 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
               <span className="subHeading text-primary-35">
-                {job.department} · {job.workMode}
+                {job?.department} · {job?.workMode}
               </span>
             </div>
 
             <h1 className="heading text-white mt-4">
-              {job.titlePrefix} {job.titleHighlight}
+              {job?.title}
             </h1>
 
             <p className="text-sm lg:text-base mt-5 max-w-2xl text-neutral-99/85">
-              {job.summary}
+              {job?.overview}
             </p>
 
             {/* Core Stack Tags */}
             <div className="mt-6 flex flex-wrap gap-2">
-              {job.tags.map((tag) => (
+              {job?.skills?.map((skill) => (
                 <span
-                  key={tag}
+                  key={skill}
                   className="rounded-lg border border-neutral-81 bg-neutral-15 px-3 py-1 text-xs font-medium text-primary-45 backdrop-blur-sm"
                 >
-                  {tag}
+                  {skill}
                 </span>
               ))}
             </div>
@@ -175,7 +135,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
               <Button onClick={handleApplyClick} label="Apply for This Role" />
 
               <span className="text-xs md:text-sm text-neutral-93">
-                Posted <strong className="text-white">{job.postedAt}</strong> ·{" "}
+                Posted <strong className="text-white">{formatDate(job?.createdAt as string)}</strong> ·{" "}
                 No cover letter required
               </span>
             </div>
@@ -200,7 +160,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                 </div>
 
                 <div className="mt-2 text-2xl md:text-[26px] font-bold text-white">
-                  {job.compensation}
+                  {job?.salary?.currency}{job?.salary?.min} - {job?.salary?.currency}{job?.salary?.max}
                 </div>
               </div>
 
@@ -211,7 +171,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                     Location
                   </dt>
                   <dd className="mt-1 text-sm font-semibold text-white">
-                    {job.location}
+                    {job?.location}
                   </dd>
                 </div>
 
@@ -220,7 +180,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                     Experience
                   </dt>
                   <dd className="mt-1 text-sm font-semibold text-white">
-                    {job.experience}
+                    {job?.experienceRequired}
                   </dd>
                 </div>
 
@@ -229,7 +189,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                     Employment Type
                   </dt>
                   <dd className="mt-1 text-sm font-semibold text-white">
-                    {job.employmentType} · {job.workMode}
+                    {job?.employmentType} · {job?.workMode}
                   </dd>
                 </div>
 
@@ -238,7 +198,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                     Reports To
                   </dt>
                   <dd className="mt-1 text-sm font-semibold text-white">
-                    {job.reportsTo}
+                    {job?.reportTo}
                   </dd>
                 </div>
 
@@ -247,7 +207,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
                     Team / Pod
                   </dt>
                   <dd className="mt-1 text-sm font-semibold text-primary-35">
-                    {job.team}
+                    {job?.team}
                   </dd>
                 </div>
               </dl>

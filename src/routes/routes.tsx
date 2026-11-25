@@ -76,7 +76,7 @@ export const router = createBrowserRouter([
         element: <Career />,
       },
       {
-        path: "/career/job/:slug",
+        path: "/career/job/:id",
         element: <JobDetails />,
       },
       {

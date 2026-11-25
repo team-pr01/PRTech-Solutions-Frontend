@@ -1,18 +1,76 @@
-import { useMemo, useState, useEffect } from "react";
-import { JOB_OPENINGS } from "../CareerHero/CareerHero";
+/* eslint-disable react-refresh/only-export-components */
+import { useState, useEffect } from "react";
 import JobCard from "./JobCard";
 import { FiFilter, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-
-type Department = "All" | "Engineering" | "Design" | "Product" | "Growth & Ops";
+import { useGetAllActiveJobsQuery } from "../../../redux/Features/Job/jobApi";
+import type { TJob } from "../../../types/job.type";
+import JobCardSkeleton from "../../Skeletons/JobCardSkeleton/JobCardSkeleton";
 type WorkMode = "All" | "Remote" | "Hybrid" | "On-site";
 
+export const COMPANY_DEPARTMENTS = [
+  "All",
+  // Tech & Product
+  "Engineering",
+  "Software Development",
+  "Product",
+  "Design",
+  "UI/UX",
+  "QA & Testing",
+  "DevOps & Infrastructure",
+  "Data & Analytics",
+  "AI & Machine Learning",
+  "IT & Support",
+  "Cybersecurity",
+
+  // Business & Operations
+  "Growth & Ops",
+  "Marketing",
+  "Digital Marketing",
+  "Sales",
+  "Business Development",
+  "Customer Success",
+  "Customer Support",
+  "Operations",
+  "Project Management",
+  "Strategy",
+
+  // Corporate & Admin
+  "Human Resources",
+  "Recruitment",
+  "Finance",
+  "Accounting",
+  "Legal & Compliance",
+  "Administration",
+  "Procurement",
+
+  // Physical & On-site
+  "Warehouse & Logistics",
+  "Manufacturing",
+  "Field Operations",
+  "Facilities Management",
+  "Retail",
+  "Quality Assurance (Physical)",
+
+  // Creative & Content
+  "Content & Copywriting",
+  "Video & Production",
+  "Public Relations",
+];
+
 const OpenPositions = () => {
-  const [selectedDepartment, setSelectedDepartment] = useState<Department>("All");
+  const [selectedDepartment, setSelectedDepartment] = useState<string>("All");
   const [selectedWorkMode, setSelectedWorkMode] = useState<WorkMode>("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+
+  const { data, isLoading, isFetching } = useGetAllActiveJobsQuery({
+    department: selectedDepartment,
+    workMode: selectedWorkMode,
+    keyword: searchQuery,
+  });
+  const jobs = data?.data?.jobs || [];
 
   // Track screen size to force filter bar open on LG+ screens
   useEffect(() => {
@@ -22,50 +80,7 @@ const OpenPositions = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const departments: Department[] = [
-    "All",
-    "Engineering",
-    "Design",
-    "Product",
-    "Growth & Ops",
-  ];
   const workModes: WorkMode[] = ["All", "Remote", "Hybrid", "On-site"];
-
-  const filteredJobs = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    return JOB_OPENINGS.filter((job) => {
-      const matchesDept =
-        selectedDepartment === "All" || job.department === selectedDepartment;
-      const matchesMode =
-        selectedWorkMode === "All" || job.workMode === selectedWorkMode;
-      const matchesQuery =
-        !query ||
-        job.title.toLowerCase().includes(query) ||
-        job.summary.toLowerCase().includes(query) ||
-        job.department.toLowerCase().includes(query) ||
-        job.location.toLowerCase().includes(query) ||
-        job.tags.some((tag) => tag.toLowerCase().includes(query));
-
-      return matchesDept && matchesMode && matchesQuery;
-    });
-  }, [selectedDepartment, selectedWorkMode, searchQuery]);
-
-  const departmentCounts = useMemo(() => {
-    const counts: Record<Department, number> = {
-      All: JOB_OPENINGS.length,
-      Engineering: 0,
-      Design: 0,
-      Product: 0,
-      "Growth & Ops": 0,
-    };
-    JOB_OPENINGS.forEach((job) => {
-      const department = departments.find((item) => item === job.department);
-      if (department && department !== "All") {
-        counts[department] += 1;
-      }
-    });
-    return counts;
-  }, []);
 
   const resetFilters = () => {
     setSelectedDepartment("All");
@@ -178,48 +193,44 @@ const OpenPositions = () => {
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-neutral-10 bg-white p-4 shadow-industry-tab">
                 {/* Department Tabs */}
-                <div className="flex flex-wrap items-center gap-2">
-                  {departments.map((dept) => {
-                    const active = selectedDepartment === dept;
-                    return (
-                      <button
-                        key={dept}
-                        type="button"
-                        onClick={() => setSelectedDepartment(dept)}
-                        className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs md:text-sm font-medium transition-all ${
-                          active
-                            ? "bg-gradient-primary-button text-white shadow-chip"
-                            : "bg-neutral-96 text-neutral-73 hover:bg-primary-40 hover:text-primary-25"
-                        }`}
-                      >
-                        <span>{dept}</span>
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+                <div className="w-[700px] min-w-0 shrink-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  <div className="flex w-max flex-nowrap items-center gap-2">
+                    {COMPANY_DEPARTMENTS?.map((dept) => {
+                      const active = selectedDepartment === dept;
+
+                      return (
+                        <button
+                          key={dept}
+                          type="button"
+                          onClick={() => setSelectedDepartment(dept)}
+                          className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-xs md:text-sm font-medium transition-all ${
                             active
-                              ? "bg-white/20 text-white"
-                              : "bg-neutral-10/60 text-neutral-73"
+                              ? "bg-gradient-primary-button text-white shadow-chip"
+                              : "bg-neutral-96 text-neutral-73 hover:bg-primary-40 hover:text-primary-25"
                           }`}
                         >
-                          {departmentCounts[dept]}
-                        </span>
-                      </button>
-                    );
-                  })}
+                          {dept}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Work Mode Filter */}
-                <div className="flex items-center gap-2 border-t border-neutral-10 pt-3 md:border-t-0 md:pt-0">
-                  <span className="text-xs font-medium uppercase tracking-wider text-neutral-80 mr-1">
+                <div className="flex shrink-0 items-center gap-2 border-t border-neutral-10 pt-3 md:border-t-0 md:pt-0">
+                  <span className="mr-1 text-xs font-medium uppercase tracking-wider text-neutral-80">
                     Mode:
                   </span>
+
                   {workModes.map((mode) => {
                     const active = selectedWorkMode === mode;
+
                     return (
                       <button
                         key={mode}
                         type="button"
                         onClick={() => setSelectedWorkMode(mode)}
-                        className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors text-nowrap ${
+                        className={`shrink-0 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                           active
                             ? "bg-neutral-65 text-white"
                             : "bg-neutral-96 text-neutral-73 hover:bg-neutral-10/50"
@@ -240,9 +251,9 @@ const OpenPositions = () => {
           <span>
             Showing{" "}
             <strong className="font-semibold text-neutral-65">
-              {filteredJobs.length}
+              {jobs?.length}
             </strong>{" "}
-            {filteredJobs.length === 1 ? "opening" : "openings"}
+            {jobs?.length === 1 ? "opening" : "openings"}
           </span>
           {(selectedDepartment !== "All" ||
             selectedWorkMode !== "All" ||
@@ -258,10 +269,17 @@ const OpenPositions = () => {
         </div>
 
         {/* Job Listings Grid / List */}
-        {filteredJobs.length > 0 ? (
+
+        {isLoading || isFetching ? (
           <div className="mt-5 grid grid-cols-1 gap-5">
-            {filteredJobs.map((job) => (
-              <JobCard key={job.id} job={job} />
+            {Array.from({ length: 3 }).map((_, index) => (
+              <JobCardSkeleton key={index} />
+            ))}
+          </div>
+        ) : jobs?.length > 0 ? (
+          <div className="mt-5 grid grid-cols-1 gap-5">
+            {jobs.map((job: TJob) => (
+              <JobCard key={job?.jobId} job={job} />
             ))}
           </div>
         ) : (
