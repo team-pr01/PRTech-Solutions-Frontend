@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "../../Reusable/Container/Container";
 
 const RELATED_JOBS = [
@@ -49,12 +50,12 @@ const OtherOpenPositions = () => {
             </h2>
           </div>
 
-           <button
-              type="button"
+           <Link
+              to="/career"
               className="self-start sm:self-auto text-sm font-semibold text-primary-10 hover:underline"
             >
               View all openings →
-            </button>
+            </Link>
         </div>
 
           <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">

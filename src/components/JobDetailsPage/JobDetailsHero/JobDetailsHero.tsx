@@ -65,8 +65,15 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
     setTimeout(() => setCopiedLink(false), 2500);
   };
 
+  const handleApplyClick = () => {
+    const element = document.getElementById("apply-form");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <header className="relative overflow-hidden bg-gradient-start-project pt-20 pb-16 md:pt-50 md:pb-24 text-white font-Manrope">
+    <header className="relative overflow-hidden bg-gradient-start-project pt-30 md:pt-36 lg:pt-44 3xl:pt-48 pb-16 md:pb-24 text-white font-Manrope">
       {/* Subtle Asymmetric Ambient Accent */}
       <div
         aria-hidden="true"
@@ -84,7 +91,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
               { label: "Careers", path: "/careers" },
               { label: job.department },
               {
-                label: `${job.titlePrefix} ${job.titleHighlight}`,
+                label: `${job?.jobId}`,
                 isActive: true,
               },
             ]}
@@ -134,7 +141,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
         </div>
 
         {/* Main Asymmetric Split Content */}
-        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 items-center">
+        <div className="mt-6 md:mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 items-center">
           {/* Left Column */}
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
@@ -165,7 +172,7 @@ const JobDetailsHero: React.FC<JobDetailsHeroProps> = ({
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
-              <Button label="Apply for This Role" />
+              <Button onClick={handleApplyClick} label="Apply for This Role" />
 
               <span className="text-xs md:text-sm text-neutral-93">
                 Posted <strong className="text-white">{job.postedAt}</strong> ·{" "}

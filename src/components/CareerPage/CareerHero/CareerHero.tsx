@@ -176,7 +176,7 @@ export const JOB_OPENINGS = [
 
 const CareerHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-our-work-hero-bg pt-30 pb-20 md:pt-32 md:pb-28 lg:pt-44 3xl:pt-48 3xl:pb-32">
+    <section className="relative overflow-hidden bg-gradient-our-work-hero-bg pt-30 md:pt-32 lg:pt-44 3xl:pt-48 pb-20 md:pb-28 3xl:pb-32">
       {/* Subtle decorative grid & radial ambient glow */}
       <div
         aria-hidden="true"
@@ -258,7 +258,7 @@ const CareerHero = () => {
         <div className="mx-auto mt-8 md:mt-14 h-px max-w-3xl bg-gradient-why-work-with-us-section-divider" />
 
         {/* Key Stats Row */}
-        <div className="mx-auto mt-8 md:mt-10 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="mx-auto t-8 md:mt-10 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
           {[
             { value: "40+", label: "Product Builders" },
             { value: "Remote", label: "Async-First Culture" },

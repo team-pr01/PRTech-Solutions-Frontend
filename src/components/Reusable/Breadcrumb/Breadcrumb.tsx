@@ -56,7 +56,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
       aria-label="Breadcrumb"
       className={`font-Manrope text-xs md:text-[13px] tracking-wide ${className}`}
     >
-      <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+      <ol className="flex items-center gap-1.5 sm:gap-2">
         {showHome && (
           <li className="flex items-center">
             <Link to={homePath} className={linkClasses}>

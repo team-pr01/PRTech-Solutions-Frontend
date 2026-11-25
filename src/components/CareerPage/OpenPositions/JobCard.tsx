@@ -1,7 +1,28 @@
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Button from "../../Reusable/Button/Button";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const JobCard = ({ job } : { job: any }) => {
+const JobCard = ({ job }: { job: any }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleApplyClick = () => {
+    const targetPath = `/career/job/${job?.id}`;
+
+    // Check if we are already on the exact job page
+    if (location.pathname === targetPath) {
+      // Just scroll smoothly
+      const element = document.getElementById("apply-form");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      // Navigate and pass a state to trigger scroll on load
+      navigate(targetPath, { state: { scrollToApply: true } });
+    }
+  };
   return (
-    <article className="group relative rounded-2xl border border-neutral-10 bg-white p-4 md:p-7 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card">
+    <article className="relative rounded-2xl border border-neutral-10 bg-white p-4 md:p-7 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         {/* Left Info */}
         <div className="flex-1">
@@ -17,7 +38,7 @@ const JobCard = ({ job } : { job: any }) => {
             </span>
           </div>
 
-          <h3 className="mt-3.5 cursor-pointer font-Manrope text-xl md:text-2xl font-semibold text-neutral-65 transition-colors group-hover:text-primary-10">
+          <h3 className="mt-3.5 cursor-pointer font-Manrope text-xl md:text-2xl font-semibold text-neutral-65 transition-colors">
             {job.title}
           </h3>
 
@@ -96,18 +117,19 @@ const JobCard = ({ job } : { job: any }) => {
 
         {/* Right Actions */}
         <div className="flex flex-row lg:flex-col items-center lg:items-end justify-start gap-3 shrink-0 border-t border-neutral-10 pt-4 lg:border-t-0 lg:pt-0">
-          <button
-            type="button"
-            className="flex-1 lg:flex-none w-full lg:w-40 rounded-full bg-gradient-primary-button px-5 py-2.5 text-sm font-semibold text-white shadow-chip transition-all hover:brightness-110"
-          >
-            Apply Now
-          </button>
-          <button
-            type="button"
-            className="flex-1 lg:flex-none w-full lg:w-40 rounded-full border border-neutral-10 bg-white px-5 py-2.5 text-sm font-medium text-neutral-65 transition-colors hover:border-primary-10 hover:bg-primary-40/50 hover:text-primary-25"
-          >
-            View Details
-          </button>
+          <Button
+            onClick={handleApplyClick}
+            label="Apply Now"
+            className="w-fit lg:w-40"
+          />
+          <Link to={`/career/job/${job?.id}`}>
+            <Button
+              variant="outlinePrimary"
+              label=" View Details"
+              isIconVisible={false}
+              className="w-fit lg:w-40"
+            />
+          </Link>
         </div>
       </div>
     </article>

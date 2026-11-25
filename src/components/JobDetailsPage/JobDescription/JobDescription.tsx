@@ -263,7 +263,7 @@ const JobDescription = () => {
           </div>
 
           {/* RIGHT COLUMN: STICKY SNAPSHOT + APPLICATION FORM */}
-          <aside className="lg:col-span-5 lg:sticky lg:top-10">
+          <aside id="apply-form" className="lg:col-span-5 lg:sticky lg:top-10">
                         {/* Application Form Card */}
             <ApplicationForm />
           </aside>
