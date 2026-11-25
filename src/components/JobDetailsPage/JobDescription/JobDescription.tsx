@@ -138,22 +138,24 @@ const JobDescription = ({
               </h2>
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {job?.growthRoadmap?.phases?.map((phase:any, index:number) => (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-neutral-10 bg-gradient-challenge-card p-5 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card"
-                  >
-                    <span className="inline-block rounded-full bg-primary-40 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary-25">
-                      {phase?.timeframe}
-                    </span>
-                    <h3 className="mt-3.5 text-base font-bold text-neutral-65">
-                      {phase?.title}
-                    </h3>
-                    <p className="mt-2 text-xs md:text-sm leading-6 text-neutral-73">
-                      {phase?.description}
-                    </p>
-                  </div>
-                ))}
+                {job?.growthRoadmap?.phases?.map(
+                  (phase: any, index: number) => (
+                    <div
+                      key={index}
+                      className="rounded-2xl border border-neutral-10 bg-gradient-challenge-card p-5 transition-all duration-300 hover:border-primary-35 hover:shadow-accordion-card"
+                    >
+                      <span className="inline-block rounded-full bg-primary-40 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary-25">
+                        {phase?.timeframe}
+                      </span>
+                      <h3 className="mt-3.5 text-base font-bold text-neutral-65">
+                        {phase?.title}
+                      </h3>
+                      <p className="mt-2 text-xs md:text-sm leading-6 text-neutral-73">
+                        {phase?.description}
+                      </p>
+                    </div>
+                  ),
+                )}
               </div>
             </section>
 
